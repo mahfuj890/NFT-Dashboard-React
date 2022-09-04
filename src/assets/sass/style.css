@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Hover Transistion */
+/* Custom scroll Bar */
+/* Custom scroll Bar Inner */
+/*
+!Utilities Or Helper CSS
+*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Poppins", sans-serif;
+}
+
+p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 27px;
+  color: #000000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 0;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+a {
+  display: inline-block;
+  color: unset;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+:focus {
+  outline: none !important;
+}
+
+input,
+select,
+textarea {
+  font-weight: 400;
+  font-size: 16px;
+  color: #101010;
+}
+
+input:focus,
+select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 1px solid #e65581 !important;
+}
+
+textarea:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+button {
+  cursor: pointer;
+  border: none !important;
+  background-color: transparent;
+}
+
+button:hover {
+  border: none !important;
+}
+
+*::-moz-placeholder {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+}
+
+*:-ms-input-placeholder {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+}
+
+*::placeholder {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+}
+
+*::-moz-placeholder {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+}
+
+::-moz-selection {
+  color: rgb(255, 255, 255);
+  background: rgba(254, 33, 188, 0.978);
+}
+
+::selection {
+  color: rgb(255, 255, 255);
+  background: rgba(254, 33, 188, 0.978);
+}
+
+::-moz-selection {
+  color: rgb(255, 255, 255);
+  background: rgba(254, 33, 188, 0.978);
+}
+
+/*  Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Common Class */
+@media all and (max-width: 575px) {
+  .container {
+    transition: 0.5s;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+.g-sm {
+  gap: 8px 12px;
+}
+
+.g-lg {
+  gap: 10px 15px;
+}
+
+@media all and (max-width: 767px) {
+  .mm-30 {
+    transition: 0.5s;
+    margin-top: 30px;
+  }
+}
+
+@media all and (max-width: 991px) {
+  .mlg-30 {
+    transition: 0.5s;
+    margin-top: 30px;
+  }
+}
+
+.default_section_gap {
+  margin-top: 80px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .default_section_gap {
+    transition: 0.5s;
+    margin-top: 60px;
+  }
+}
+@media all and (max-width: 767px) {
+  .default_section_gap {
+    transition: 0.5s;
+    margin-top: 50px;
+  }
+}
+
+/* ============ ScrollToUP Section =========== */
+.scrolltop {
+  position: fixed;
+  right: 70px;
+  bottom: 150px;
+  z-index: 100000;
+  background-color: #111111;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+@media all and (max-width: 991px) {
+  .scrolltop {
+    transition: 0.5s;
+    right: 20px;
+  }
+}
+.scrolltop i {
+  font-size: 16px;
+  color: #fec021;
+}
+.scrolltop:hover {
+  background-color: rgba(17, 17, 17, 0.7);
+}
+
+.scroll_active {
+  bottom: 60px;
+  visibility: visible;
+  opacity: 1;
+}
+
+.img_zoom_animate {
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+.img_zoom_animate:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+.bounes_animate {
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+.bounes_animate:hover {
+  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  -o-transform: translateY(-10px);
+}/*# sourceMappingURL=style.css.map */
