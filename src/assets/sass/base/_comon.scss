@@ -6,11 +6,13 @@
 ::before,
 ::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 body {
-  background-color: $body-bg;
   font-family: $body-font-family;
   font-size: $font-size-base;
+  color: $white-color;
 }
 html,
 body {
@@ -21,7 +23,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   font-family: $primary-font;
 }
 p {
@@ -38,7 +41,7 @@ h4,
 h5,
 h6,
 p {
-  margin-bottom: 0;
+  margin: 0;
 }
 img,
 svg {
@@ -46,13 +49,17 @@ svg {
 }
 
 a {
-  display: inline-block;
   color: unset;
   text-decoration: none;
 
   &:hover {
     text-decoration: none;
   }
+}
+a,
+span,
+button {
+  display: inline-block;
 }
 
 ul {
@@ -143,6 +150,11 @@ input[type="number"] {
 }
 
 /* Common Class */
+.AppWrapper {
+  width: 100%;
+  min-height: 100vh;
+  @include Background-Image();
+}
 .container {
   @include max-media-width(575) {
     padding-left: 16px !important;
