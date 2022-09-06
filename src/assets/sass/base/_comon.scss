@@ -117,14 +117,14 @@ button:hover {
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
-  color: #000000;
+  color: rgba($white-color, 0.75);
 }
 
 *::-moz-placeholder {
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
-  color: #000000;
+  color: rgba($white-color, 0.75);
 }
 ::selection {
   color: rgb(255, 255, 255);
@@ -160,6 +160,30 @@ input[type="number"] {
     padding-left: 16px !important;
     padding-right: 16px !important;
   }
+}
+
+/* Common Class Utilities */
+.d-flex {
+  display: flex;
+}
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-end {
+  justify-content: end;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+.align-items-start {
+  align-items: start;
+}
+.align-items-center {
+  align-items: center;
+}
+.flex-wrap-wrap {
+  flex-wrap: wrap;
 }
 .g-sm {
   gap: 8px 12px;

@@ -13,7 +13,6 @@ function Sidebar() {
       <div className="sidebar_menu_area">
         <ul className="top_menu_list">
           {SidebarData.map((item) => {
-            console.log(item);
             return (
               <li
                 className={`${item.borderBottom ? "add_border menu_list" : "menu_list"}`}
