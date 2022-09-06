@@ -26,19 +26,64 @@
 }
 .sidebar_wrapper::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 .sidebar_wrapper::-webkit-scrollbar-track {
-  background: rgba(153, 153, 153, 0.2);
+  background: rgba(110, 107, 255, 0.5);
   border-radius: 5px;
 }
 .sidebar_wrapper::-webkit-scrollbar-thumb {
-  background: #999999;
+  background: linear-gradient(65.58deg, rgba(0, 66, 255, 0.5) -11.84%, rgba(235, 0, 27, 0.5) 98.75%);
   border-radius: 5px;
 }
 .sidebar_wrapper::-webkit-scrollbar-thumb:hover {
-  background: #f84f4f;
+  background: #6E6BFF;
   cursor: -webkit-grab;
   cursor: grab;
+}
+.sidebar_wrapper .logo_area img {
+  max-width: 60px;
+}
+.sidebar_wrapper .top_menu_list {
+  margin-top: 40px;
+}
+.sidebar_wrapper .menu_link {
+  display: grid;
+  grid-template-columns: minmax(0, 26px) repeat(1, minmax(0, 1fr));
+  align-items: center;
+  gap: 10px 14px;
+  padding: 13px 18px;
+  border-radius: 16.6406px;
+}
+.sidebar_wrapper .menu_link:hover {
+  background-color: black;
+}
+.sidebar_wrapper .menu_link.active {
+  background: linear-gradient(65.58deg, rgba(0, 66, 255, 0.5) -11.84%, rgba(235, 0, 27, 0.5) 98.75%);
+}
+.sidebar_wrapper .menu_link.active svg path {
+  fill: white;
+}
+.sidebar_wrapper .menu_link.active .menu_label {
+  color: white;
+}
+.sidebar_wrapper .menu_icon {
+  width: 26px;
+  max-width: 26px;
+}
+.sidebar_wrapper .menu_list {
+  margin-top: 5px;
+}
+.sidebar_wrapper .menu_label {
+  font-weight: 400;
+  font-size: 16.6406px;
+  line-height: 21px;
+  color: #A2A3A4;
+}
+.sidebar_wrapper .add_border {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1.10938px solid #B3B3B3;
 }
 
 /*

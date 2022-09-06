@@ -17,6 +17,7 @@ const SidebarData = [
     ),
     sidebarLabel: "Dashboard",
     sidebarPath: "/",
+
   },
   {
     id: 2,
@@ -36,6 +37,7 @@ const SidebarData = [
     ),
     sidebarLabel: "Auctions ",
     sidebarPath: "/auctions",
+
   },
   {
     id: 3,
@@ -75,6 +77,7 @@ const SidebarData = [
     ),
     sidebarLabel: "Favourites ",
     sidebarPath: "/favourites",
+    borderBottom: true,
   },
   {
     id: 5,
@@ -223,6 +226,7 @@ const SidebarData = [
     ),
     sidebarLabel: "USD Coin ",
     sidebarPath: "/usdcoin",
+    borderBottom: true,
   },
   {
     id: 8,

@@ -9,4 +9,55 @@
   background-color: $black-color-13;
   @include customScrollbarInner();
   overflow: auto;
+  .logo_area {
+    img {
+      max-width: 60px;
+    }
+  }
+  .top_menu_list {
+    margin-top: 40px;
+  }
+  .menu_link {
+    display: grid;
+    grid-template-columns: minmax(0, 26px) repeat(1, minmax(0, 1fr));
+    align-items: center;
+    gap: 10px 14px;
+    padding: 13px 18px;
+    border-radius: 16.6406px;
+    &:hover {
+
+      background-color: $black-color;
+    }
+    &.active {
+      background: $menu-gradient;
+      svg {
+        path {
+          fill: $white-color;
+        }
+      }
+      .menu_label {
+        color: $white-color;
+      }
+    }
+  }
+  .menu_icon {
+    width: 26px;
+    max-width: 26px;
+  }
+  .menu_list{
+    margin-top: 5px;
+  }
+  .menu_label {
+    font-weight: 400;
+    font-size: 16.6406px;
+    line-height: 21px;
+    color: $gray-color-a2;
+  }
+  .add_border{
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+
+      border-bottom: 1.10938px solid #B3B3B3;
+
+  }
 }
