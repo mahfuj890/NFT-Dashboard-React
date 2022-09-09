@@ -7,13 +7,16 @@ import userImage from "../assets/images/dashboard/user_img.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import OutSideDetectHook from "../Hooks/OutSideDetectHook";
+import Notification from "../Data/Notification";
+import Button from "../Components/Button/Button";
 
 function Header() {
+  const [userNotification, setUserNotification] = useState(true);
   const [userDropdown, setUserDropdown] = useState(false);
 
   //Gettings Message
   let date = new Date();
-  let getHours = date.setHours(4);
+  let getHours = date.getHours();
   let showHour;
   if (getHours < 12) {
     showHour = "Good Morning";
@@ -24,9 +27,11 @@ function Header() {
   } else {
     showHour = "Good Morning ";
   }
-
-  //User Dropdown OutSideDetectHook
-  const handleClose = () => {
+  // OutSideDetectHook
+  const handleNotifiClose = () => {
+    setUserNotification(false);
+  };
+  const handleUserClose = () => {
     setUserDropdown(false);
   };
 
@@ -48,9 +53,52 @@ function Header() {
             </button>
           </li>
           <li>
-            <button type="button" className="icon_btn">
+            <button
+              type="button"
+              className="icon_btn"
+              onClick={(e) => setUserNotification(!userNotification)}
+            >
               <img src={notificationIcon} alt="notificationIcon" />
             </button>
+            <OutSideDetectHook>
+              <div
+                className={`dropdwon_area notifi_dropdown_area ${
+                  userNotification ? "dropdownActive" : ""
+                }`}
+              >
+                <div className="notification_header d-flex align-items-center justify-content-between flex-wrap-wrap g-sm">
+                  <h3>
+                    Notification <span>5</span>
+                  </h3>
+                  <button type="button" className="all_delete_btn">
+                    Delete All
+                  </button>
+                </div>
+                <ul className="notification_list">
+                  {Notification.map((item) => {
+                    return (
+                      <li
+                        className={`${item.received ? "received" : ""} ${item.transfer ? "transfer" : ""}  `}
+                        key={item.id}
+                      >
+                        <Link
+                          to="#"
+                          dangerouslySetInnerHTML={{
+                            __html: item.notificationText,
+                          }}
+                        ></Link>
+                        <button type="button" className="delete_btn">
+                          <HiOutlineMenuAlt2 size={20} />
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+                <div className="text-center">
+<Button  />
+                </div>
+              </div>
+            </OutSideDetectHook>
           </li>
           <li>
             <button
@@ -60,7 +108,7 @@ function Header() {
             >
               <img src={userImage} alt="userImage" />
             </button>
-            <OutSideDetectHook outsideHooks={handleClose}>
+            <OutSideDetectHook outsideHooks={handleUserClose}>
               <div
                 className={`dropdwon_area user_dropdown_area ${
                   userDropdown ? "dropdownActive" : ""

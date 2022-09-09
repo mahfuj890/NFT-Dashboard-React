@@ -4,6 +4,7 @@
 /* Hover Transistion */
 /* Custom scroll Bar */
 /* Custom scroll Bar Inner */
+/* Custom scroll Bar Inner */
 .header_wrapper {
   position: fixed;
   top: 0;
@@ -165,6 +166,106 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   margin-bottom: 15px;
+}
+.header_wrapper .notifi_dropdown_area {
+  min-width: 300px;
+}
+.header_wrapper .notification_header h3 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 18px;
+  font-weight: 400;
+}
+.header_wrapper .notification_header h3 span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #131313;
+  background: white;
+  padding: 4px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  min-width: 20px;
+  height: 20px;
+}
+.header_wrapper .notification_list {
+  max-height: 250px;
+  padding-left: 15px;
+  padding-right: 10px;
+  overflow-y: scroll;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.header_wrapper .notification_list::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.header_wrapper .notification_list::-webkit-scrollbar-track {
+  background: rgba(110, 107, 255, 0.5);
+  border-radius: 5px;
+}
+.header_wrapper .notification_list::-webkit-scrollbar-thumb {
+  background: linear-gradient(65.58deg, rgba(0, 66, 255, 0.5) -11.84%, rgba(235, 0, 27, 0.5) 98.75%);
+  border-radius: 5px;
+}
+.header_wrapper .notification_list::-webkit-scrollbar-thumb:hover {
+  background: #6E6BFF;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.header_wrapper .notification_list li {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 25px);
+  align-items: center;
+  gap: 10px 10px;
+  margin-top: 10px;
+}
+.header_wrapper .notification_list li:before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: -14px;
+  width: 7px;
+  height: 7px;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.header_wrapper .notification_list li a {
+  font-size: 14px;
+  line-height: 20px;
+  height: 44px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.header_wrapper .notification_list li a:hover {
+  opacity: 0.9;
+}
+.header_wrapper .notification_list .received span {
+  color: #0DDB84;
+  font-weight: 700;
+}
+.header_wrapper .notification_list .transfer span {
+  color: #FF0000;
+  font-weight: 700;
+}
+.header_wrapper .all_delete_btn:hover {
+  opacity: 0.9;
 }
 
 .dashboard_wrapper .main_content_wrapper {
@@ -362,6 +463,7 @@ button:focus {
 
 button {
   cursor: pointer;
+  color: white;
   border: none !important;
   background-color: transparent;
 }
