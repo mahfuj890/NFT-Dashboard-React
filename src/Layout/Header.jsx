@@ -13,7 +13,7 @@ import { toast } from "react-toastify";
 
 function Header() {
   const [notificationData, setNotificationData] = useState(Notification);
-  const [userNotification, setUserNotification] = useState(true);
+  const [userNotification, setUserNotification] = useState(false);
   const [userDropdown, setUserDropdown] = useState(false);
 
   //Gettings Message
@@ -42,7 +42,9 @@ function Header() {
   };
   //Delete All Notification
   const deleteAllNotification = () => {
-    setNotificationData([]);
+    if (window.confirm("Are you sure you want to delete")) {
+      setNotificationData([]);
+    }
   };
   //Delete Notification
   const deleteNotification = (id) => {
@@ -86,7 +88,7 @@ function Header() {
             >
               <img src={notificationIcon} alt="notificationIcon" />
             </button>
-            <OutSideDetectHook>
+            <OutSideDetectHook outsideHooks={handleNotifiClose}>
               <div
                 className={`dropdwon_area notifi_dropdown_area ${
                   userNotification ? "dropdownActive" : ""
