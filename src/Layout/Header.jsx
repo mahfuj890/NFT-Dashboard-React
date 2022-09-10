@@ -11,6 +11,7 @@ import Notification from "../Data/Notification";
 import Button from "../Components/Button/Button";
 
 function Header() {
+  const [notificationData, setNotificationData] = useState(Notification);
   const [userNotification, setUserNotification] = useState(true);
   const [userDropdown, setUserDropdown] = useState(false);
 
@@ -34,7 +35,18 @@ function Header() {
   const handleUserClose = () => {
     setUserDropdown(false);
   };
-
+  //Delete All Notification
+  const deleteAllNotification = () => {
+    setNotificationData([]);
+  };
+  //Delete Notification
+  const deleteNotification = (id) => {
+    setNotificationData(
+      notificationData.filter((item) => {
+        return item.id !== id;
+      })
+    );
+  };
   return (
     <header className="header_wrapper">
       <div className="header_search_user_area d-flex align-items-center justify-content-between flex-wrap-wrap g-lg">
@@ -66,39 +78,68 @@ function Header() {
                   userNotification ? "dropdownActive" : ""
                 }`}
               >
-                <div className="notification_header d-flex align-items-center justify-content-between flex-wrap-wrap g-sm">
-                  <h3>
-                    Notification <span>5</span>
-                  </h3>
-                  <button type="button" className="all_delete_btn">
-                    Delete All
-                  </button>
-                </div>
-                <ul className="notification_list">
-                  {Notification.map((item) => {
-                    return (
-                      <li
-                        className={`${item.received ? "received" : ""} ${
-                          item.transfer ? "transfer" : ""
-                        }  `}
-                        key={item.id}
+                {notificationData.length > 0 ? (
+                  <>
+                    <div className="notification_header d-flex align-items-center justify-content-between flex-wrap-wrap g-sm">
+                      <h3>
+                        Notification
+                        <span
+                          className={` ${
+                            notificationData.length > 9 ? "highlighted" : ""
+                          }`}
+                        >
+                          {notificationData.length > 9
+                            ? "9+"
+                            : notificationData.length}
+                        </span>
+                      </h3>
+                      <button
+                        type="button"
+                        className="all_delete_btn"
+                        onClick={deleteAllNotification}
                       >
-                        <Link
-                          to="#"
-                          dangerouslySetInnerHTML={{
-                            __html: item.notificationText,
-                          }}
-                        ></Link>
-                        <button type="button" className="delete_btn">
-                          <HiOutlineMenuAlt2 size={20} />
-                        </button>
-                      </li>
-                    );
-                  })}
-                </ul>
-                <div className="text-center">
-                  <Button hylerLink={true} version="mt-1">Sell All</Button>
-                </div>
+                        Delete All
+                      </button>
+                    </div>
+                    <ul className="notification_list">
+                      {notificationData.map((item) => {
+                        return (
+                          <li
+                            className={`${item.received ? "received" : ""} ${
+                              item.transfer ? "transfer" : ""
+                            }  `}
+                            key={item.id}
+                          >
+                            <Link
+                              to="#"
+                              dangerouslySetInnerHTML={{
+                                __html: item.notificationText,
+                              }}
+                            ></Link>
+                            <button
+                              type="button"
+                              className="delete_btn"
+                              onClick={() => deleteNotification(item.id)}
+                            >
+                              <HiOutlineMenuAlt2 size={20} />
+                            </button>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                    <div className="text-center">
+                      <Button hylerLink={true} version="mt-1">
+                        Sell All
+                      </Button>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <h4 className="text-center">
+                      There is no Notification 😤{" "}
+                    </h4>
+                  </>
+                )}
               </div>
             </OutSideDetectHook>
           </li>

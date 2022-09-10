@@ -169,7 +169,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 600;
         color: $black-color-13;
         background: $white-color;
@@ -181,6 +181,10 @@
         -o-border-radius: 50%;
         min-width: 20px;
         height: 20px;
+      }
+      .highlighted{
+        color: $white-color;
+background: $menu-gradient;
       }
     }
   }

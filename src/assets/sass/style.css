@@ -181,7 +181,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   color: #131313;
   background: white;
@@ -193,6 +193,10 @@
   -o-border-radius: 50%;
   min-width: 20px;
   height: 20px;
+}
+.header_wrapper .notification_header h3 .highlighted {
+  color: white;
+  background: linear-gradient(65.58deg, rgba(0, 66, 255, 0.5) -11.84%, rgba(235, 0, 27, 0.5) 98.75%);
 }
 .header_wrapper .notification_list {
   max-height: 250px;
