@@ -1,24 +1,44 @@
-import PropTypes from 'prop-types'
-
-function Button(text, type, disabled, children) {
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+function Button({ hylerLink, path, children, type, version, isdisable }) {
   return (
-    <button type={type} disabled={disabled && true}>
-      {text} {children ? children : null}
-    </button>
+    <>
+      {hylerLink ? (
+        <Link
+          to={path}
+          disabled={isdisable}
+          className={`default_btn ${version}`}
+        >
+          {children}
+        </Link>
+      ) : (
+        <button
+          type={type}
+          disabled={isdisable}
+          className={`default_btn ${version}`}
+        >
+          {children}
+        </button>
+      )}
+    </>
   );
 }
 
 Button.defaultProps = {
-  text: "Button Title",
-  type: "submit",
-  disabled: false,
-//   children: null,
+  hylerLink: false,
+  path: "#",
+  type: "button",
+  version: "",
+  isdisable: false,
 };
+
 Button.propTypes = {
-  text: PropTypes.string,
+  hylerLink: PropTypes.bool,
+  path: PropTypes.string,
+  children: PropTypes.node.isRequired,
   type: PropTypes.string,
-  disabled: PropTypes.bool,
-//   children: PropTypes.object,
+  version: PropTypes.string,
+  isdisable: PropTypes.bool,
 };
 
 export default Button;

@@ -78,7 +78,9 @@ function Header() {
                   {Notification.map((item) => {
                     return (
                       <li
-                        className={`${item.received ? "received" : ""} ${item.transfer ? "transfer" : ""}  `}
+                        className={`${item.received ? "received" : ""} ${
+                          item.transfer ? "transfer" : ""
+                        }  `}
                         key={item.id}
                       >
                         <Link
@@ -95,7 +97,7 @@ function Header() {
                   })}
                 </ul>
                 <div className="text-center">
-<Button  />
+                  <Button hylerLink={true} version="mt-1">Sell All</Button>
                 </div>
               </div>
             </OutSideDetectHook>

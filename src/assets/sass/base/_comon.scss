@@ -108,7 +108,6 @@ button {
   color: $white-color;
   border: none !important;
   background-color: transparent;
-
 }
 
 button:hover {
@@ -194,8 +193,17 @@ input[type="number"] {
 .g-lg {
   gap: 10px 15px;
 }
-.d-none{
+.d-none {
   display: none;
+}
+.text-center {
+  text-align: center;
+}
+.mt-1 {
+  margin-top: 15px;
+}
+.my-1 {
+  margin: 15px 0;
 }
 .mm-30 {
   @include max-media-width(767) {
@@ -214,6 +222,16 @@ input[type="number"] {
   }
   @include max-media-width(767) {
     margin-top: 50px;
+  }
+}
+.default_btn {
+  padding: 10px 24px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  background: $menu-gradient;
+  &:hover {
+    background: $menu-gradient-hover;
   }
 }
 
