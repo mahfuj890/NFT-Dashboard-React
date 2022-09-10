@@ -182,9 +182,9 @@
         min-width: 20px;
         height: 20px;
       }
-      .highlighted{
+      .highlighted {
         color: $white-color;
-background: $menu-gradient;
+        background: $menu-gradient;
       }
     }
   }
@@ -230,22 +230,22 @@ background: $menu-gradient;
         }
       }
     }
-    .received{
-      span{
+    .received {
+      span {
         color: $green-color-0d;
         font-weight: 700;
       }
     }
-    .transfer{
-      span{
+    .transfer {
+      span {
         color: $red-color-ff;
         font-weight: 700;
       }
     }
   }
-  .all_delete_btn{
-    &:hover{
-    opacity: 0.9
+  .all_delete_btn {
+    &:hover {
+      opacity: 0.9;
     }
   }
 }

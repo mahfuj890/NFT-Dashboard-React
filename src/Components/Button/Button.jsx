@@ -1,6 +1,14 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-function Button({ hylerLink, path, children, type, version, isdisable }) {
+function Button({
+  hylerLink,
+  path,
+  children,
+  type,
+  version,
+  isdisable,
+  onHandleClick,
+}) {
   return (
     <>
       {hylerLink ? (
@@ -16,6 +24,7 @@ function Button({ hylerLink, path, children, type, version, isdisable }) {
           type={type}
           disabled={isdisable}
           className={`default_btn ${version}`}
+          onClick={onHandleClick}
         >
           {children}
         </button>

@@ -1,6 +1,8 @@
 import "../src/assets/sass/style.css";
+import "react-toastify/dist/ReactToastify.css";
 import bodyBG from "../src/assets/images/dashboard/bodyBG.jpg";
 import { Routes, Route } from "react-router-dom";
+import { ToastContainer, Slide } from "react-toastify";
 import Layout from "./Layout/Layout";
 import Dashboard from "./Pages/Dashboard";
 import Auctions from "./Pages/Auctions";
@@ -18,6 +20,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
+      <ToastContainer limit={3} transition={Slide} />
     </div>
   );
 }

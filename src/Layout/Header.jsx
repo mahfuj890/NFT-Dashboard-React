@@ -9,6 +9,7 @@ import { useState } from "react";
 import OutSideDetectHook from "../Hooks/OutSideDetectHook";
 import Notification from "../Data/Notification";
 import Button from "../Components/Button/Button";
+import { toast } from "react-toastify";
 
 function Header() {
   const [notificationData, setNotificationData] = useState(Notification);
@@ -35,17 +36,30 @@ function Header() {
   const handleUserClose = () => {
     setUserDropdown(false);
   };
+  //Wait Toast if toast length is greater 3
+  const clearWaitingQueue = () => {
+    toast.clearWaitingQueue();
+  };
   //Delete All Notification
   const deleteAllNotification = () => {
     setNotificationData([]);
   };
   //Delete Notification
   const deleteNotification = (id) => {
+    toast.success("Success Notification Delete !", {
+      position: toast.POSITION.BOTTOM_RIGHT,
+      autoClose: 1500,
+      theme: "dark",
+    });
     setNotificationData(
       notificationData.filter((item) => {
         return item.id !== id;
       })
     );
+  };
+  //Navigate Notification
+  const handleClick = () => {
+    setUserNotification(!userNotification);
   };
   return (
     <header className="header_wrapper">
@@ -128,7 +142,7 @@ function Header() {
                       })}
                     </ul>
                     <div className="text-center">
-                      <Button hylerLink={true} version="mt-1">
+                      <Button version="mt-1" onHandleClick={handleClick}>
                         Sell All
                       </Button>
                     </div>
