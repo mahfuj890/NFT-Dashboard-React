@@ -1,6 +1,15 @@
 .dashboard_wrapper {
   .main_content_wrapper {
-    margin-left: 256px;
+
     padding-top: 100px;
+    @include min-media-width(992) {
+      margin-left: 256px;
+    }
+    @include media-break-width(768,991) {
+      padding: 15px 20px;
+    }
+    @include max-media-width(767) {
+      padding: 15px 16px;
+    }
   }
 }

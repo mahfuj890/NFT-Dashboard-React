@@ -9,6 +9,9 @@
   background-color: $black-color-13;
   @include customScrollbarInner();
   overflow: auto;
+  @include max-media-width(991) {
+  left: -100%;
+  }
   .logo_area {
     img {
       max-width: 60px;

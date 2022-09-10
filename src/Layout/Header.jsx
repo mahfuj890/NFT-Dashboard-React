@@ -87,6 +87,9 @@ function Header() {
               onClick={(e) => setUserNotification(!userNotification)}
             >
               <img src={notificationIcon} alt="notificationIcon" />
+              {notificationData.length > 0 ? (
+                <span className="circle_shape"></span>
+              ) : null}
             </button>
             <OutSideDetectHook outsideHooks={handleNotifiClose}>
               <div

@@ -3,6 +3,7 @@ import logo from "../../../src/assets/images/dashboard/logo.png";
 import SidebarData from "../../Data/SidebarRouteData";
 
 function Sidebar() {
+  
   return (
     <div className="sidebar_wrapper">
       <div className="logo_area">
