@@ -3,7 +3,6 @@ import logo from "../../../src/assets/images/dashboard/logo.png";
 import SidebarData from "../../Data/SidebarRouteData";
 
 function Sidebar() {
-  
   return (
     <div className="sidebar_wrapper">
       <div className="logo_area">
@@ -16,7 +15,9 @@ function Sidebar() {
           {SidebarData.map((item) => {
             return (
               <li
-                className={`${item.borderBottom ? "add_border menu_list" : "menu_list"}`}
+                className={`${
+                  item.borderBottom ? "add_border menu_list" : "menu_list"
+                }`}
                 key={item.id}
               >
                 <NavLink to={item.sidebarPath} className="menu_link">

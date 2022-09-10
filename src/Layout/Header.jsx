@@ -1,3 +1,4 @@
+import { useContext, useState } from "react";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { FaUserAlt } from "react-icons/fa";
 import SearchBox from "../Components/Form/SearchBox";
@@ -5,17 +6,17 @@ import messageIcon from "../assets/images/icon/message_icon.svg";
 import notificationIcon from "../assets/images/icon/notification_icon.svg";
 import userImage from "../assets/images/dashboard/user_img.png";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import OutSideDetectHook from "../Hooks/OutSideDetectHook";
 import Notification from "../Data/Notification";
 import Button from "../Components/Button/Button";
 import { toast } from "react-toastify";
+import SidebarContext from "../Context/SidebarContext";
 
 function Header() {
   const [notificationData, setNotificationData] = useState(Notification);
   const [userNotification, setUserNotification] = useState(false);
   const [userDropdown, setUserDropdown] = useState(false);
-
+  const {onSidebarToggle} = useContext(SidebarContext)
   //Gettings Message
   let date = new Date();
   let getHours = date.getHours();
@@ -63,12 +64,13 @@ function Header() {
   const handleClick = () => {
     setUserNotification(!userNotification);
   };
+
   return (
     <header className="header_wrapper">
       <div className="header_search_user_area d-flex align-items-center justify-content-between flex-wrap-wrap g-lg">
         <div className="header_search_area">
           <div className="sidebar_icon">
-            <button type="button">
+            <button type="button" onClick={onSidebarToggle}>
               <HiOutlineMenuAlt2 size={24} />
             </button>
           </div>

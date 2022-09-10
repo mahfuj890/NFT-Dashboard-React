@@ -14,6 +14,11 @@
   padding: 20px 25px;
   background-color: #131313;
   border-bottom: 1.33333px solid #2C2D33;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
 }
 @media all and (min-width: 992px) {
   .header_wrapper {
@@ -22,8 +27,8 @@
     -moz-transition: 0.5s;
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
-    left: 256px;
-    width: calc(100% - 256px);
+    padding-left: 275px;
+    width: 100%;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -328,7 +333,13 @@
 }
 
 .dashboard_wrapper .main_content_wrapper {
+  padding: 25px;
   padding-top: 100px;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
 }
 @media all and (min-width: 992px) {
   .dashboard_wrapper .main_content_wrapper {
@@ -343,14 +354,38 @@
 @media (min-width: 768px) and (max-width: 991px) {
   .dashboard_wrapper .main_content_wrapper {
     transition: 0.5s;
-    padding: 15px 20px;
+    padding: 20px;
+    padding-top: 80px;
   }
 }
 @media all and (max-width: 767px) {
   .dashboard_wrapper .main_content_wrapper {
     transition: 0.5s;
-    padding: 15px 16px;
+    padding: 16px;
+    padding-top: 70px;
   }
+}
+
+.sidebar_toggle .sidebar_wrapper {
+  width: 70px;
+  padding: 24px 12px;
+}
+.sidebar_toggle .sidebar_wrapper .menu_link {
+  grid-template-columns: minmax(0, 26px);
+  justify-content: center;
+  padding: 0;
+  width: 100%;
+  height: 45px;
+}
+.sidebar_toggle .sidebar_wrapper .menu_label {
+  display: none;
+}
+.sidebar_toggle .header_wrapper {
+  padding-left: 85px;
+}
+.sidebar_toggle .main_content_wrapper {
+  margin-left: 70px;
+  padding-left: 10px;
 }
 
 .sidebar_wrapper {
@@ -359,6 +394,7 @@
   left: 0;
   width: 256px;
   height: 100vh;
+  z-index: 1000;
   padding: 24px 12px 24px 24px;
   border-right: 1.33px solid #2C2D33;
   background-color: #131313;
@@ -812,5 +848,12 @@ input[type=number] {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  background: #F9A135;
+  background: #f9a135;
+}
+@media all and (max-width: 767px) {
+  .circle_shape {
+    transition: 0.5s;
+    top: 5px;
+    right: 7px;
+  }
 }/*# sourceMappingURL=style.css.map */

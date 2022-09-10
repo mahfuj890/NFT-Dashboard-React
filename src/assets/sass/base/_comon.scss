@@ -305,7 +305,7 @@ input[type="number"] {
   }
 }
 
-.circle_shape{
+.circle_shape {
   position: absolute;
   top: 12px;
   right: 12px;
@@ -316,5 +316,9 @@ input[type="number"] {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  background: #F9A135;
+  background: #f9a135;
+  @include max-media-width(767) {
+    top: 5px;
+    right: 7px;
+  }
 }

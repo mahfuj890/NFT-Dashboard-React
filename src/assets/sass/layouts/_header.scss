@@ -7,11 +7,12 @@
   padding: 20px 25px;
   background-color: $black-color-13;
   border-bottom: 1.33333px solid $black-color-2c;
+  @include hover-transition();
   @include min-media-width(992) {
-    left: 256px;
-  width: calc(100% - 256px);
+    padding-left: 275px;
+    width: 100%;
   }
-  @include media-break-width(768,991) {
+  @include media-break-width(768, 991) {
     padding: 15px 20px;
     height: 70px;
   }
@@ -109,9 +110,8 @@
         background-color: rgba($white-color, 0.1);
       }
       @include max-media-width(767) {
-        width:30px;
-        height:30px;
-
+        width: 30px;
+        height: 30px;
       }
     }
     .user_btn {
