@@ -16,7 +16,8 @@ function Header() {
   const [notificationData, setNotificationData] = useState(Notification);
   const [userNotification, setUserNotification] = useState(false);
   const [userDropdown, setUserDropdown] = useState(false);
-  const {onSidebarToggle} = useContext(SidebarContext)
+  const { onSidebarToggle, onMobileSidebar } = useContext(SidebarContext);
+
   //Gettings Message
   let date = new Date();
   let getHours = date.getHours();
@@ -64,13 +65,28 @@ function Header() {
   const handleClick = () => {
     setUserNotification(!userNotification);
   };
+  //Header Toggle Button
+  const headerToggleBtn = () => {
+    if (window.innerWidth >= 992) {
+      onSidebarToggle();
+    } else if (window.innerWidth <= 991) {
+      onMobileSidebar();
+    }
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 992) {
+        onSidebarToggle();
+      } else if (window.innerWidth <= 991) {
+        onMobileSidebar();
+      }
+    });
+  };
 
   return (
     <header className="header_wrapper">
       <div className="header_search_user_area d-flex align-items-center justify-content-between flex-wrap-wrap g-lg">
         <div className="header_search_area">
           <div className="sidebar_icon">
-            <button type="button" onClick={onSidebarToggle}>
+            <button type="button" onClick={headerToggleBtn}>
               <HiOutlineMenuAlt2 size={24} />
             </button>
           </div>

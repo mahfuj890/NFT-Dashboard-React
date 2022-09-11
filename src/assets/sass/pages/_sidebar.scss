@@ -11,7 +11,11 @@
   @include customScrollbarInner();
   overflow: auto;
   @include max-media-width(991) {
-  left: -100%;
+    left: -100%;
+  }
+  @include max-media-width(767) {
+    width: 200px;
+    padding: 24px 12px;
   }
   .logo_area {
     img {
@@ -28,8 +32,12 @@
     gap: 10px 14px;
     padding: 13px 18px;
     border-radius: 16.6406px;
+    @include max-media-width(767) {
+      grid-template-columns: minmax(0, 20px) repeat(1, minmax(0, 1fr));
+      gap:  10px;
+      padding: 8px 12px;
+    }
     &:hover {
-
       background-color: $black-color;
     }
     &.active {
@@ -47,21 +55,30 @@
   .menu_icon {
     width: 26px;
     max-width: 26px;
+    @include max-media-width(767) {
+      width: 20px;
+      max-width: 20px;
+    }
   }
-  .menu_list{
+  .menu_list {
     margin-top: 5px;
   }
   .menu_label {
     font-weight: 400;
-    font-size: 16.6406px;
+    font-size: 16px;
     line-height: 21px;
     color: $gray-color-a2;
+    @include max-media-width(767) {
+      font-size: 15px;
+    }
   }
-  .add_border{
+  .add_border {
     padding-bottom: 10px;
     margin-bottom: 10px;
 
-      border-bottom: 1.10938px solid #B3B3B3;
-
+    border-bottom: 1.10938px solid #b3b3b3;
   }
+}
+.sidebar_active {
+  left: 0;
 }

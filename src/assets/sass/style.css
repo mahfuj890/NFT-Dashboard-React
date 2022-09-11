@@ -87,7 +87,7 @@
     width: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 100000;
+    z-index: 50;
   }
 }
 .header_wrapper .search_form_area.search_form_grid {
@@ -170,6 +170,7 @@
   position: absolute;
   top: 60px;
   right: 0;
+  z-index: 100;
   background: #131313;
   padding: 20px 25px;
   min-width: 200px;
@@ -428,6 +429,13 @@
     left: -100%;
   }
 }
+@media all and (max-width: 767px) {
+  .sidebar_wrapper {
+    transition: 0.5s;
+    width: 200px;
+    padding: 24px 12px;
+  }
+}
 .sidebar_wrapper .logo_area img {
   max-width: 60px;
 }
@@ -441,6 +449,14 @@
   gap: 10px 14px;
   padding: 13px 18px;
   border-radius: 16.6406px;
+}
+@media all and (max-width: 767px) {
+  .sidebar_wrapper .menu_link {
+    transition: 0.5s;
+    grid-template-columns: minmax(0, 20px) repeat(1, minmax(0, 1fr));
+    gap: 10px;
+    padding: 8px 12px;
+  }
 }
 .sidebar_wrapper .menu_link:hover {
   background-color: black;
@@ -458,19 +474,36 @@
   width: 26px;
   max-width: 26px;
 }
+@media all and (max-width: 767px) {
+  .sidebar_wrapper .menu_icon {
+    transition: 0.5s;
+    width: 20px;
+    max-width: 20px;
+  }
+}
 .sidebar_wrapper .menu_list {
   margin-top: 5px;
 }
 .sidebar_wrapper .menu_label {
   font-weight: 400;
-  font-size: 16.6406px;
+  font-size: 16px;
   line-height: 21px;
   color: #A2A3A4;
+}
+@media all and (max-width: 767px) {
+  .sidebar_wrapper .menu_label {
+    transition: 0.5s;
+    font-size: 15px;
+  }
 }
 .sidebar_wrapper .add_border {
   padding-bottom: 10px;
   margin-bottom: 10px;
-  border-bottom: 1.10938px solid #B3B3B3;
+  border-bottom: 1.10938px solid #b3b3b3;
+}
+
+.sidebar_active {
+  left: 0;
 }
 
 /*
@@ -855,5 +888,22 @@ input[type=number] {
     transition: 0.5s;
     top: 5px;
     right: 7px;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background-color: rgba(255, 255, 255, 0.75);
+  display: none;
+}
+@media all and (max-width: 991px) {
+  .overlay.search_overlay_active {
+    transition: 0.5s;
+    display: block;
   }
 }/*# sourceMappingURL=style.css.map */

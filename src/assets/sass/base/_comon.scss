@@ -322,3 +322,22 @@ input[type="number"] {
     right: 7px;
   }
 }
+
+
+//Overlay
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background-color: rgba($white-color, 0.75);
+  display: none;
+  &.search_overlay_active{
+
+    @include max-media-width(991) {
+      display: block;
+    }
+  }
+}
