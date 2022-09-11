@@ -11,13 +11,13 @@ import Notification from "../Data/Notification";
 import Button from "../Components/Button/Button";
 import { toast } from "react-toastify";
 import SidebarContext from "../Context/SidebarContext";
-
+import searchIcon from "../assets/images/icon/search_icon.svg";
 function Header() {
   const [notificationData, setNotificationData] = useState(Notification);
   const [userNotification, setUserNotification] = useState(false);
   const [userDropdown, setUserDropdown] = useState(false);
   const { onSidebarToggle, onMobileSidebar } = useContext(SidebarContext);
-
+  const [headerSearch, setHeaderSearch] = useState(false);
   //Gettings Message
   let date = new Date();
   let getHours = date.getHours();
@@ -84,13 +84,31 @@ function Header() {
   return (
     <header className="header_wrapper">
       <div className="header_search_user_area d-flex align-items-center justify-content-between flex-wrap-wrap g-lg">
-        <div className="header_search_area">
+        <div
+          className={`header_search_area ${
+            headerSearch ? "header_active" : ""
+          }`}
+        >
           <div className="sidebar_icon">
             <button type="button" onClick={headerToggleBtn}>
               <HiOutlineMenuAlt2 size={24} />
             </button>
           </div>
+          {window.innerWidth <= 991 && (
+            <>
+              <button
+                type="button"
+                onClick={() => setHeaderSearch(!headerSearch)}
+              >
+                <img src={searchIcon} alt="icon" />
+              </button>
+            </>
+          )}
           <SearchBox />
+          <div
+            className="overlay"
+            onClick={() => setHeaderSearch(!headerSearch)}
+          ></div>
         </div>
         <ul className="header_info_list d-flex align-items-center flex-wrap-wrap g-sm">
           <li>

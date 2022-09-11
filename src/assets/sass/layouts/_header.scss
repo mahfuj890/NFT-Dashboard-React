@@ -53,12 +53,14 @@
     -o-border-radius: 8px;
     @include max-media-width(991) {
       position: fixed;
-      top: 50%;
+      top: 55%;
       max-width: 400px;
       width: 90%;
       left: 50%;
       transform: translate(-50%, -50%);
-      z-index: 50;
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
     }
     &.search_form_grid {
       display: grid;
@@ -87,6 +89,18 @@
     }
     ::placeholder {
       font-size: 14px;
+    }
+  }
+  .header_active {
+    .search_form_area {
+      @include max-media-width(991) {
+        top: 50%;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    .overlay {
+      display: block;
     }
   }
   .header_info_list {
