@@ -1,4 +1,5 @@
 .dashboard_wrapper {
+  position: relative;
   .main_content_wrapper {
     padding: 25px;
     padding-top: 100px;
@@ -13,6 +14,185 @@
     @include max-media-width(767) {
       padding: 16px;
       padding-top: 70px;
+    }
+  }
+
+  .dashboard_outer_grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 400px);
+    align-items: start;
+    gap: 30px 20px;
+    @include max-media-width(1199) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  .dasbhoard_left_wrapper {
+    position: relative;
+    @include min-media-width(992) {
+      &::before {
+        content: "";
+        position: absolute;
+        right: -10px;
+        top: -20px;
+        width: 1px;
+        height: calc(100% + 20px);
+        background-color: $black-color-2c;
+      }
+    }
+  }
+  .slider_area {
+    margin-top: 20px;
+  }
+  .slider_grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 20px;
+    padding: 20px;
+    background: $menu-gradient;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    @include max-media-width(767) {
+      padding: 15px;
+    }
+    @include max-media-width(575) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  .slider_img {
+    position: relative;
+    height: 100%;
+    img {
+      max-height: 100%;
+      @include min-media-width(768) {
+        position: absolute;
+        left: -28px;
+        top: 50%;
+
+        transform: translateY(-50%);
+      }
+      @include min-media-width(1400) {
+        max-width: 359px;
+        max-height: 400px;
+      }
+    }
+  }
+  .slider_header {
+    h4 {
+      font-family: $secondery-font;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 50px;
+      color: $white-color;
+      @include media-break-width(768, 991) {
+        font-size: 26px;
+        line-height: 45px;
+      }
+      @include max-media-width(767) {
+        font-size: 24px;
+        line-height: 40px;
+      }
+    }
+  }
+  .slider_user_grid {
+    display: grid;
+    grid-template-columns: minmax(0, 54px) repeat(1, minmax(0, 1fr));
+    align-items: start;
+    gap: 20px 15px;
+    margin-top: 15px;
+    .user_img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 54px;
+      img {
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+      }
+    }
+
+    h4 {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+      color: $white-color;
+    }
+    h5 {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      color: rgba($white-color, 0.7);
+    }
+  }
+
+  .user_price_grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 20px 30px;
+    margin-top: 25px;
+  }
+  .price_item {
+    h5 {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      color: $white-color;
+    }
+    h4 {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-family: $secondery-font;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 31px;
+      color: #ffffff;
+      margin-top: 10px;
+      @include max-media-width(767) {
+        font-size: 18px;
+      }
+    }
+  }
+  .slider_btn_area {
+    margin-top: 100px;
+    @include media-break-width(768, 991) {
+      margin-top: 70px;
+    }
+    @include max-media-width(767) {
+      margin-top: 50px;
+    }
+    .slider_btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: $secondery-font;
+      font-weight: 600;
+      font-size: 16px;
+      color: #ffffff;
+      min-width: 159px;
+      height: 50px;
+      border: 1px solid #ffffff;
+      border-radius: 8px;
+      @include max-media-width(767) {
+        min-width: 145px;
+        height: 45px;
+      }
+      &:hover {
+        opacity: 0.8;
+      }
+      &:nth-child(1) {
+        color: $black-color;
+        border-color: rgba($white-color, 0.7);
+        background-color: rgba($white-color, 0.7);
+      }
     }
   }
 }

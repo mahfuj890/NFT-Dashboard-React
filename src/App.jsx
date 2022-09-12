@@ -1,5 +1,6 @@
 import "../src/assets/sass/style.css";
 import "react-toastify/dist/ReactToastify.css";
+import 'swiper/css';
 import bodyBG from "../src/assets/images/dashboard/bodyBG.jpg";
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer, Slide } from "react-toastify";
