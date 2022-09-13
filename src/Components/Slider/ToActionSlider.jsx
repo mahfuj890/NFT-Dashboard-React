@@ -1,14 +1,20 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
 import topActionSliderData from "../../Data/TopActionSliderData";
 import { Link } from "react-router-dom";
+import Countdown from "../Countdown";
 function ToActionSlider() {
   return (
     <div className="slider_area">
       <Swiper
+        modules={[Navigation]}
         spaceBetween={10}
         slidesPerView={1}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
+        navigation={{
+          prevEl: ".top_auction_slider_prev_icon",
+          nextEl: ".top_auction_slider_next_icon",
+        }}
+
       >
         {topActionSliderData.map((data) => {
           return (
@@ -37,10 +43,14 @@ function ToActionSlider() {
                     <div className="price_item">
                       <h5> {data.priceNft} </h5>
                       <h4>
-                        {" "}
-                        <img src={data.sliderCoinImg} alt="slider icon" />{" "}
-                        {data.nftPlayar}{" "}
+
+                        <img src={data.sliderCoinImg} alt="slider icon" />
+                        {data.nftPlayar}
                       </h4>
+                    </div>
+                    <div className="price_item">
+                      <h5> {data.eventStartTitle} </h5>
+                       <Countdown eventDate={data.eventEndDate} />
                     </div>
                   </div>
                   <div className="slider_btn_area d-flex align-items-center flex-wrap-wrap g-lg">

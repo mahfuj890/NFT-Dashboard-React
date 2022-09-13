@@ -244,6 +244,13 @@ input[type="number"] {
     background: $menu-gradient-hover;
   }
 }
+.header_area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 .page_title {
   font-family: $secondery-font;
   font-weight: 600;
@@ -358,4 +365,46 @@ input[type="number"] {
       display: block;
     }
   }
+}
+
+//Slider Arrow
+.slider_arrow_area {
+  .slider_arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1.10938px solid rgba($black-color-2c, 0.9) !important;
+    border-radius: 12px;
+    @include hover-transition();
+    &:hover {
+      background-color: $black-color-2c;
+      path {
+        fill: $white-color;
+      }
+    }
+  }
+}
+
+//Count Down Text
+.countdown_wrapper{
+  margin-top: 10px;
+  ul{
+    li{
+      font-family: $secondery-font;
+      font-weight: 600;
+font-size: 20px;
+line-height: 31px;
+color: $white-color;
+    }
+  }
+}
+.expoire_msg{
+  font-family: $secondery-font;
+  font-weight: 600 !important;
+font-size: 18px !important;
+line-height: 31px !important;
+color: $white-color;
+margin-top: 10px;
 }
