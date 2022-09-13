@@ -1,8 +1,7 @@
-import React from "react";
-import Countdown from "../Countdown";
+
 import PageTitle from "../PageTitle";
 import ToActionSlider from "../Slider/ToActionSlider";
-import SliderArrow from "./SliderArrow";
+import SliderArrow from "../Slider/SliderArrow";
 
 function ToActionSection() {
   return (
@@ -16,7 +15,7 @@ function ToActionSection() {
           />
         }
       />
-     
+
       <div className="slider_area">
         <ToActionSlider />
       </div>

@@ -7,3 +7,4 @@
 07.change all notification alter
 08.sidebar toggle animation
 09.dark white mood
+10.add border radius

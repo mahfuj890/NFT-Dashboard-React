@@ -51,7 +51,7 @@ const topActionSliderData = [
 
   },
   {
-    id: 1,
+    id: 4,
     sliderImg: "../../src/assets/images/dashboard/top_action_img.png",
     sliderUserImg: "../../src/assets/images/dashboard/top_actions_user.png",
     sliderCoinImg: "../../src/assets/images/icon/eather_icon.png",

@@ -250,6 +250,7 @@ input[type="number"] {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 24px;
 }
 .page_title {
   font-family: $secondery-font;
@@ -407,4 +408,13 @@ font-size: 18px !important;
 line-height: 31px !important;
 color: $white-color;
 margin-top: 10px;
+}
+
+.border_linear{
+  position: relative;
+  border: 1.74px solid;
+border-image: $border-gradient;
+border-image-slice: 1;
+border-radius: 8px;
+ 
 }

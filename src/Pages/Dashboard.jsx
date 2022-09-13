@@ -1,4 +1,5 @@
 import ToActionSection from "../Components/Section/ToActionSection";
+import WalletSection from "../Components/Section/WalletSection";
 
 function Dashboard() {
   return <section className="dashboard_content_wrapper">
@@ -7,7 +8,9 @@ function Dashboard() {
       <ToActionSection />
 
       </div>
-      <div>2</div>
+      <div className="dasbhoard_right_wrapper">
+<WalletSection />
+      </div>
     </div>
   </section>;
 }
