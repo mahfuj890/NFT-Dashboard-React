@@ -2,7 +2,40 @@ import { LineChart, Line, Tooltip, ResponsiveContainer } from "recharts";
 import PageTitle from "../PageTitle";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
+import { useState, useEffect } from "react";
+import walletData from "../../Data/WalletData";
+import SidebarRouterData from "../../Data/SidebarRouteData";
 const dataEarning = [
+  {
+    name: "Point A",
+    pv: 2400,
+  },
+  {
+    name: "Point B",
+    pv: 1398,
+  },
+  {
+    name: "Point C",
+    pv: 3500,
+  },
+  {
+    name: "Point D",
+    pv: 4208,
+  },
+  {
+    name: "Point E",
+    pv: 4500,
+  },
+  {
+    name: "Point F",
+    pv: 3800,
+  },
+  {
+    name: "Point G",
+    pv: 4300,
+  },
+];
+const dataSpedning = [
   {
     name: "Point A",
     pv: 2400,
@@ -34,12 +67,55 @@ const dataEarning = [
 ];
 
 function WalletSection() {
+  const [change, setChange] = useState({
+    id:1,
+    walletName:"ETH",
+    balance:21.5331,
+    filterWallet:"eth",
+    earningBalance:7.048,
+    spendingBalance:2.013,
+});
+
+  const handleChangeWallet = (e) => {
+    walletData.filter((item) => {
+      if (item.filterWallet == e.target.value) {
+        setChange(item);
+      }
+    });
+  };
+  console.log(change.dataEarning,walletData);
+
+
+  // useEffect(() => {
+  //   console.log("Test from effect 1");
+
+  //   setChange(
+  //     walletData.filter((item) => {
+  //       if (item.filterWallet == "eth") {
+  //         console.log("yes got ite from effect", item);
+  //         setChange(item);
+  //       }
+  //     })
+  //   );
+  //   // return () => {
+  //   //   console.log("Test from effect 2");
+  //   //   setChange(
+  //   //     walletData.filter((item) => {
+  //   //       if (item.filterWallet == "eth") {
+  //   //         console.log("yes got ite from effect", item);
+  //   //         setChange(item);
+  //   //       }
+  //   //     })
+  //   //   );
+  //   // };
+  // }, []);
+
   return (
     <div className="my_wallet_item_area">
       <PageTitle text={"My Wallet"} />
       <div className="my_wallet_item border_linear">
         <div className="wallet_title_area">
-          <h5>Your Balance</h5>
+          <h5>Your Balance </h5>
           <h4
             style={{
               width: "100%",
@@ -49,7 +125,7 @@ function WalletSection() {
               gap: "10px",
             }}
           >
-            ETH
+           {change.walletName}
             <VisibilitySensor partialVisibility offset={{ top: 100 }}>
               {({ isVisible }) => (
                 <div
@@ -58,7 +134,7 @@ function WalletSection() {
                   {isVisible ? (
                     <CountUp
                       start={0}
-                      end={21.5331}
+                      end={change.balance}
                       duration={2.75}
                       separator=" "
                       decimals={4}
@@ -71,7 +147,7 @@ function WalletSection() {
           </h4>
         </div>
         <div className="text-center">
-          <select name="" id="" onChange={(e) => console.log(e.target.value)}>
+          <select name="" id="" onChange={(e) => handleChangeWallet(e)}>
             <option value="eth">ETH</option>
             <option value="btc">BTC</option>
           </select>
@@ -96,7 +172,7 @@ function WalletSection() {
               <h5>Earnings</h5>
             </div>
             <h4>
-              7.048 <span>ETH</span>
+            {change.earningBalance} <span>{change.walletName}</span>
             </h4>
             <div className="wallet_chart">
               <ResponsiveContainer width="100%" height="100%">
@@ -146,11 +222,11 @@ function WalletSection() {
               <h5>Spendings</h5>
             </div>
             <h4>
-              2.013 <span>ETH</span>
+            {change.spendingBalance} <span>{change.walletName}</span>
             </h4>
             <div className="wallet_chart">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart width={300} height={100} data={dataEarning}>
+                <LineChart width={300} height={100} data={dataSpedning}>
                   <Line
                     type="monotone"
                     dataKey="pv"
