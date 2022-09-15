@@ -221,11 +221,13 @@
       }
     }
   }
+
   .wallet_chart_grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
     gap: 20px 30px;
+    margin-top: 30px;
   }
   .chart_title_area {
     display: grid;
@@ -251,6 +253,15 @@
         color: $white-color;
       }
     }
+    &:nth-child(2) {
+      .chart_icon {
+        background: rgba($red-color-ff, 0.12);
+      }
+      h4 {
+        color: $red-color-ff;
+      }
+      color: rgba(255, 0, 0, 0.581);
+    }
   }
   .chart_icon {
     display: flex;
@@ -266,7 +277,7 @@
     background: rgba($green-color-0d, 0.12);
   }
 
-  .wallet_chart{
+  .wallet_chart {
     width: 100%;
     height: 100px;
   }
