@@ -36,6 +36,36 @@ const walletData = [
         pv: 4300,
       },
     ],
+    dataSpedning : [
+      {
+        name: "Point A",
+        pv: 2400,
+      },
+      {
+        name: "Point B",
+        pv: 1398,
+      },
+      {
+        name: "Point C",
+        pv: 3000,
+      },
+      {
+        name: "Point D",
+        pv: 3908,
+      },
+      {
+        name: "Point E",
+        pv: 4800,
+      },
+      {
+        name: "Point F",
+        pv: 3800,
+      },
+      {
+        name: "Point G",
+        pv: 4300,
+      },
+    ],
   },
   {
     id: 1,
@@ -47,19 +77,19 @@ const walletData = [
     dataEarning: [
       {
         name: "Point A",
-        pv: 2400,
+        pv: 2800,
       },
       {
         name: "Point B",
-        pv: 1398,
+        pv: 1598,
       },
       {
         name: "Point C",
-        pv: 3500,
+        pv: 3000,
       },
       {
         name: "Point D",
-        pv: 4208,
+        pv: 3508,
       },
       {
         name: "Point E",
@@ -67,11 +97,41 @@ const walletData = [
       },
       {
         name: "Point F",
-        pv: 3800,
+        pv: 4200,
       },
       {
         name: "Point G",
-        pv: 4300,
+        pv: 1500,
+      },
+    ],
+    dataSpedning : [
+      {
+        name: "Point A",
+        pv: 1800,
+      },
+      {
+        name: "Point B",
+        pv: 3598,
+      },
+      {
+        name: "Point C",
+        pv: 2800,
+      },
+      {
+        name: "Point D",
+        pv: 3908,
+      },
+      {
+        name: "Point E",
+        pv: 4800,
+      },
+      {
+        name: "Point F",
+        pv: 3400,
+      },
+      {
+        name: "Point G",
+        pv: 2500,
       },
     ],
   },

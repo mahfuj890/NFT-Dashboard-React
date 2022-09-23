@@ -10,11 +10,11 @@ function ToActionSlider() {
         modules={[Navigation]}
         spaceBetween={10}
         slidesPerView={1}
+        speed={1050}
         navigation={{
           prevEl: ".top_auction_slider_prev_icon",
           nextEl: ".top_auction_slider_next_icon",
         }}
-
       >
         {topActionSliderData.map((data) => {
           return (
@@ -43,14 +43,13 @@ function ToActionSlider() {
                     <div className="price_item">
                       <h5> {data.priceNft} </h5>
                       <h4>
-
                         <img src={data.sliderCoinImg} alt="slider icon" />
                         {data.nftPlayar}
                       </h4>
                     </div>
                     <div className="price_item">
                       <h5> {data.eventStartTitle} </h5>
-                       <Countdown eventDate={data.eventEndDate} />
+                      <Countdown eventDate={data.eventEndDate} />
                     </div>
                   </div>
                   <div className="slider_btn_area d-flex align-items-center flex-wrap-wrap g-lg">
@@ -66,10 +65,6 @@ function ToActionSlider() {
             </SwiperSlide>
           );
         })}
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
       </Swiper>
     </div>
   );

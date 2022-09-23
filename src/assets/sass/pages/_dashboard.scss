@@ -281,6 +281,12 @@
     width: 100%;
     height: 100px;
   }
+
+  .feature_product_slider_area {
+    .swiper {
+      padding-bottom: 10px;
+    }
+  }
 }
 
 //Toggle Sidebar and Dashboard

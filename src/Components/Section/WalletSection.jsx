@@ -2,79 +2,78 @@ import { LineChart, Line, Tooltip, ResponsiveContainer } from "recharts";
 import PageTitle from "../PageTitle";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import walletData from "../../Data/WalletData";
-import SidebarRouterData from "../../Data/SidebarRouteData";
-const dataEarning = [
-  {
-    name: "Point A",
-    pv: 2400,
-  },
-  {
-    name: "Point B",
-    pv: 1398,
-  },
-  {
-    name: "Point C",
-    pv: 3500,
-  },
-  {
-    name: "Point D",
-    pv: 4208,
-  },
-  {
-    name: "Point E",
-    pv: 4500,
-  },
-  {
-    name: "Point F",
-    pv: 3800,
-  },
-  {
-    name: "Point G",
-    pv: 4300,
-  },
-];
-const dataSpedning = [
-  {
-    name: "Point A",
-    pv: 2400,
-  },
-  {
-    name: "Point B",
-    pv: 1398,
-  },
-  {
-    name: "Point C",
-    pv: 3000,
-  },
-  {
-    name: "Point D",
-    pv: 3908,
-  },
-  {
-    name: "Point E",
-    pv: 4800,
-  },
-  {
-    name: "Point F",
-    pv: 3800,
-  },
-  {
-    name: "Point G",
-    pv: 4300,
-  },
-];
 
 function WalletSection() {
   const [change, setChange] = useState({
-    id:1,
-    walletName:"ETH",
-    balance:21.5331,
-    filterWallet:"eth",
-    earningBalance:7.048,
-    spendingBalance:2.013,
-});
+    id: 1,
+    walletName: "ETH",
+    balance: 21.5331,
+    filterWallet: "eth",
+    earningBalance: 7.048,
+    spendingBalance: 2.013,
+    dataEarning: [
+      {
+        name: "Point A",
+        pv: 2400,
+      },
+      {
+        name: "Point B",
+        pv: 1398,
+      },
+      {
+        name: "Point C",
+        pv: 3500,
+      },
+      {
+        name: "Point D",
+        pv: 4208,
+      },
+      {
+        name: "Point E",
+        pv: 4500,
+      },
+      {
+        name: "Point F",
+        pv: 3800,
+      },
+      {
+        name: "Point G",
+        pv: 4300,
+      },
+    ],
+    dataSpedning: [
+      {
+        name: "Point A",
+        pv: 2400,
+      },
+      {
+        name: "Point B",
+        pv: 1398,
+      },
+      {
+        name: "Point C",
+        pv: 3000,
+      },
+      {
+        name: "Point D",
+        pv: 3908,
+      },
+      {
+        name: "Point E",
+        pv: 4800,
+      },
+      {
+        name: "Point F",
+        pv: 3800,
+      },
+      {
+        name: "Point G",
+        pv: 4300,
+      },
+    ],
+  });
 
   const handleChangeWallet = (e) => {
     walletData.filter((item) => {
@@ -83,32 +82,6 @@ function WalletSection() {
       }
     });
   };
-  console.log(change.dataEarning,walletData);
-
-
-  // useEffect(() => {
-  //   console.log("Test from effect 1");
-
-  //   setChange(
-  //     walletData.filter((item) => {
-  //       if (item.filterWallet == "eth") {
-  //         console.log("yes got ite from effect", item);
-  //         setChange(item);
-  //       }
-  //     })
-  //   );
-  //   // return () => {
-  //   //   console.log("Test from effect 2");
-  //   //   setChange(
-  //   //     walletData.filter((item) => {
-  //   //       if (item.filterWallet == "eth") {
-  //   //         console.log("yes got ite from effect", item);
-  //   //         setChange(item);
-  //   //       }
-  //   //     })
-  //   //   );
-  //   // };
-  // }, []);
 
   return (
     <div className="my_wallet_item_area">
@@ -125,7 +98,7 @@ function WalletSection() {
               gap: "10px",
             }}
           >
-           {change.walletName}
+            {change.walletName}
             <VisibilitySensor partialVisibility offset={{ top: 100 }}>
               {({ isVisible }) => (
                 <div
@@ -172,11 +145,11 @@ function WalletSection() {
               <h5>Earnings</h5>
             </div>
             <h4>
-            {change.earningBalance} <span>{change.walletName}</span>
+              {change.earningBalance} <span>{change.walletName}</span>
             </h4>
             <div className="wallet_chart">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart width={300} height={100} data={dataEarning}>
+                <LineChart width={300} height={100} data={change.dataEarning}>
                   <Line
                     type="monotone"
                     dataKey="pv"
@@ -222,11 +195,11 @@ function WalletSection() {
               <h5>Spendings</h5>
             </div>
             <h4>
-            {change.spendingBalance} <span>{change.walletName}</span>
+              {change.spendingBalance} <span>{change.walletName}</span>
             </h4>
             <div className="wallet_chart">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart width={300} height={100} data={dataSpedning}>
+                <LineChart width={300} height={100} data={change.dataSpedning}>
                   <Line
                     type="monotone"
                     dataKey="pv"

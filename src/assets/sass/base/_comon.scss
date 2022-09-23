@@ -197,6 +197,13 @@ input[type="number"] {
 .flex-wrap-wrap {
   flex-wrap: wrap;
 }
+.d-flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 7px 12px;
+}
 .g-sm {
   gap: 8px 12px;
 }
@@ -214,6 +221,9 @@ input[type="number"] {
 }
 .my-1 {
   margin: 15px 0;
+}
+.mt-30 {
+  margin-top: 30px;
 }
 .mm-30 {
   @include max-media-width(767) {
@@ -389,32 +399,93 @@ input[type="number"] {
 }
 
 //Count Down Text
-.countdown_wrapper{
+.countdown_wrapper {
   margin-top: 10px;
-  ul{
-    li{
+  ul {
+    li {
       font-family: $secondery-font;
       font-weight: 600;
-font-size: 20px;
-line-height: 31px;
-color: $white-color;
+      font-size: 20px;
+      line-height: 31px;
+      color: $white-color;
     }
   }
 }
-.expoire_msg{
+.expoire_msg {
   font-family: $secondery-font;
   font-weight: 600 !important;
-font-size: 18px !important;
-line-height: 31px !important;
-color: $white-color;
-margin-top: 10px;
+  font-size: 18px !important;
+  line-height: 31px !important;
+  color: $white-color;
+  margin-top: 10px;
 }
 
-.border_linear{
+.border_linear {
   position: relative;
   border: 1.74px solid;
-border-image: $border-gradient;
-border-image-slice: 1;
-border-radius: 8px;
- 
+  border-image: $border-gradient;
+  border-image-slice: 1;
+  border-radius: 8px;
+}
+
+// Product Item
+.product_item {
+  padding: 20px;
+  .product_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 160px;
+    img {
+      max-height: 100%;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+    }
+  }
+  .product_content_area {
+    margin-top: 18px;
+  }
+  .product_title {
+    font-family: $secondery-font;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: $white-color;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+  .user_info_area {
+    margin-top: 12px;
+    &:hover {
+      opacity: 0.9;
+    }
+    img {
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+    }
+  }
+  .bit_ammount_area {
+    margin-top: 12px;
+    h4 {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      color: rgba($white-color, 0.4);
+    }
+  }
+  .default_btn {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+  }
 }
