@@ -1,9 +1,12 @@
+import { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
-import FeatureNftData from "../../Data/FeatureNftData";
 import { Link } from "react-router-dom";
+import SliderContext from "../../Context/SliderContext";
 
 function FeatureNftSlider() {
+  const { featureSliderData } = useContext(SliderContext);
+
   return (
     <div className="feature_product_slider_area">
       <Swiper
@@ -22,6 +25,11 @@ function FeatureNftSlider() {
             slidesPerGroup: 3,
             spaceBetween: 20,
           },
+          1200: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 20,
+          },
           // when window width is >= 1700px
           1700: {
             slidesPerView: 4,
@@ -34,7 +42,7 @@ function FeatureNftSlider() {
           nextEl: ".features_next_icon",
         }}
       >
-        {FeatureNftData.map((item) => {
+        {featureSliderData.map((item) => {
           return (
             <SwiperSlide key={item.id}>
               <div className="product_item border_linear">

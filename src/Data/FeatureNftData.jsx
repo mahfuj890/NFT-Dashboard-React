@@ -99,7 +99,7 @@ const FeatureNftData = [
     useId: "@Debbie111",
     lastBit: "Last Bid",
     lastBitAmmount: "1.57 ETH",
-    tag: ["popular", "best"],
+    tag: ["top", "best"],
     userProfilePath: "/",
     nftDetailsPath: "/",
   },
