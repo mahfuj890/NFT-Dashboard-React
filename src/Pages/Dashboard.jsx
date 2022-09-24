@@ -2,8 +2,10 @@ import FeaturesProductSection from "../Components/Section/FeaturesProductSection
 import RecentTransactionSection from "../Components/Section/RecentTransactionSection";
 import ToActionSection from "../Components/Section/ToActionSection";
 import WalletSection from "../Components/Section/WalletSection";
+import useDocumentTitle from "../Hooks/useDocumentTitle";
 
 function Dashboard() {
+  useDocumentTitle("Home")
   return (
     <section className="dashboard_content_wrapper">
       <div className="dashboard_outer_grid">
