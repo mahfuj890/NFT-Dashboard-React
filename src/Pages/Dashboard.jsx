@@ -1,4 +1,5 @@
 import FeaturesProductSection from "../Components/Section/FeaturesProductSection";
+import RecentTransactionSection from "../Components/Section/RecentTransactionSection";
 import ToActionSection from "../Components/Section/ToActionSection";
 import WalletSection from "../Components/Section/WalletSection";
 
@@ -12,6 +13,7 @@ function Dashboard() {
         </div>
         <div className="dasbhoard_right_wrapper">
           <WalletSection />
+          <RecentTransactionSection />
         </div>
       </div>
     </section>
