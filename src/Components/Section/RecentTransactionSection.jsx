@@ -26,7 +26,7 @@ function RecentTransactionSection() {
           })
         ) : (
           <h3>
-            <b>No Transction</b>{" "}
+            <b>No Transction</b>
           </h3>
         )}
       </div>

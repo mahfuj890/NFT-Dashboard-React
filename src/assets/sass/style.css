@@ -5,6 +5,10 @@
 /* Custom scroll Bar */
 /* Custom scroll Bar Inner */
 /* Custom scroll Bar Inner */
+.footer_wrapper {
+  margin-top: 60px;
+}
+
 .header_wrapper {
   position: fixed;
   top: 0;
@@ -388,6 +392,8 @@
   grid-template-columns: minmax(0, 1fr) minmax(0, 400px);
   align-items: start;
   gap: 30px 20px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #2C2D33;
 }
 @media all and (max-width: 1199px) {
   .dashboard_wrapper .dashboard_outer_grid {
@@ -412,7 +418,7 @@
     right: -10px;
     top: -20px;
     width: 1px;
-    height: calc(100% + 20px);
+    height: calc(100% + 50px);
     background-color: #2C2D33;
   }
 }

@@ -22,6 +22,8 @@
     grid-template-columns: minmax(0, 1fr) minmax(0, 400px);
     align-items: start;
     gap: 30px 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $black-color-2c;
     @include max-media-width(1199) {
       grid-template-columns: minmax(0, 1fr);
     }
@@ -35,7 +37,7 @@
         right: -10px;
         top: -20px;
         width: 1px;
-        height: calc(100% + 20px);
+        height: calc(100% + 50px);
         background-color: $black-color-2c;
       }
     }
