@@ -13,7 +13,7 @@ function FeaturesProductSection() {
         text="Featured NFTs"
         children={
           <div className="d-flex align-items-center flex-wrap-wrap g-lg">
-            <select name="" id="">
+            <select name="" id="" >
               <option value="popular">Popular</option>
               <option value="best">Best</option>
               <option value="top">Top</option>

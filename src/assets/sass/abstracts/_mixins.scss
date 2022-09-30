@@ -113,8 +113,8 @@ $breakpoints: (
   }
 }
 /* Custom scroll Bar Inner */
-@mixin customScrollbarInner2 {
-  overflow-y: scroll;
+@mixin customScrollbarTable {
+  overflow: auto;
   /* width */
   &::-webkit-scrollbar {
     width: 5px;

@@ -12,12 +12,24 @@ export function SliderContextProvider({ children }) {
 
   const filterProductFun = (tag) => {
     console.log(tag, "from context");
-    const filterProduct = featureSliderData.filter((item) => {
-      return item.tag.includes(tag) ? setFilterSliderData(item) : null;
-    });
-    console.log(filterProduct, typeof filterProduct, "to context inside");
+    //     const filterProduct = featureSliderData.filter((item) => {
+    //       // return item.tag.includes(tag) ? setFilterSliderData(item) : null;
+    //       let mapFilter = item.map((item) => {
+    // return item;
+    //       })
+    //        return mapFilter;
+    //     });
+    //     console.log(filterProduct, typeof filterProduct, "to context inside");
 
-    return filterProduct;
+    let mapFilter = FeatureNftData.map((item) => {
+      console.log(item, "from map");
+
+      let filterData = item.filter((data) => {
+        return data;
+      });
+    });
+    console.log(filterData, typeof mapFilter, "to context inside");
+    return mapFilter;
   };
   console.log("from context data main", filterSliderData);
 
