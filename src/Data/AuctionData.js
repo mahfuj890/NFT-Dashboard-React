@@ -29,6 +29,25 @@ const AuctionData = [
     date: "10-Apr-2022",
     ammout: 100,
     status: "Complete",
+
+  },
+  {
+    id:2 ,
+    userImg: "../../src/assets/images/dashboard/top_actions_user.png",
+    userName: "Johan",
+    date: "10-Apr-2022",
+    ammout: 100,
+    status: "Failed",
+
+  },
+  {
+    id:3 ,
+    userImg: "../../src/assets/images/dashboard/top_actions_user.png",
+    userName: "Johan",
+    date: "10-Apr-2022",
+    ammout: 100,
+    status: "Progress",
+
   },
 ];
 

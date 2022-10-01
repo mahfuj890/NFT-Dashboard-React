@@ -4,6 +4,7 @@
 /* Hover Transistion */
 /* Custom scroll Bar */
 /* Custom scroll Bar Inner */
+/* Custom scroll Bar Inner2 */
 /* Custom scroll Bar Inner */
 .footer_wrapper {
   margin-top: 60px;
@@ -281,7 +282,7 @@
   max-height: 250px;
   padding-left: 15px;
   padding-right: 10px;
-  overflow-y: scroll;
+  overflow: auto;
   /* width */
   /* Track */
   /* Handle */
@@ -988,14 +989,14 @@ select,
 textarea {
   font-weight: 400;
   font-size: 16px;
-  color: #101010;
+  color: #2C2D33;
 }
 
 input:focus,
 select:focus {
   outline: none !important;
   box-shadow: none !important;
-  border: 1px solid #e65581 !important;
+  border: 1px solid #FF0000 !important;
 }
 
 textarea:focus {
@@ -1029,28 +1030,28 @@ button:hover {
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
-  color: rgba(255, 255, 255, 0.75);
+  color: #2C2D33;
 }
 
 *:-ms-input-placeholder {
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
-  color: rgba(255, 255, 255, 0.75);
+  color: #2C2D33;
 }
 
 *::placeholder {
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
-  color: rgba(255, 255, 255, 0.75);
+  color: #2C2D33;
 }
 
 *::-moz-placeholder {
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
-  color: rgba(255, 255, 255, 0.75);
+  color: #2C2D33;
 }
 
 ::-moz-selection {
@@ -1514,7 +1515,7 @@ input[type=number] {
 }
 
 .table_wrapper .tabler_inner_area {
-  overflow-y: scroll;
+  overflow: auto;
   /* width */
   /* Track */
   /* Handle */
@@ -1522,17 +1523,18 @@ input[type=number] {
 }
 .table_wrapper .tabler_inner_area::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 .table_wrapper .tabler_inner_area::-webkit-scrollbar-track {
-  background: rgba(153, 153, 153, 0.2);
+  background: rgba(110, 107, 255, 0.5);
   border-radius: 5px;
 }
 .table_wrapper .tabler_inner_area::-webkit-scrollbar-thumb {
-  background: #999999;
+  background: linear-gradient(65.58deg, rgba(0, 66, 255, 0.5) -11.84%, rgba(235, 0, 27, 0.5) 98.75%);
   border-radius: 5px;
 }
 .table_wrapper .tabler_inner_area::-webkit-scrollbar-thumb:hover {
-  background: #f84f4f;
+  background: #6E6BFF;
   cursor: -webkit-grab;
   cursor: grab;
 }
@@ -1548,6 +1550,15 @@ input[type=number] {
   font-weight: 400;
   color: white;
   text-align: start;
+}
+.table_wrapper h4.complete {
+  color: #0DDB84;
+}
+.table_wrapper h4.failed {
+  color: #FF0000;
+}
+.table_wrapper h4.progress {
+  color: #6E6BFF;
 }
 .table_wrapper th h4 {
   font-weight: 600;
@@ -1585,4 +1596,95 @@ input[type=number] {
 }
 .table_wrapper .actions_list button:hover {
   background-color: #A9A9A9;
+}
+
+.modal_wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.modal_wrapper .modal_content_wrapper {
+  padding: 20px;
+  max-width: 400px;
+  max-height: 80vh;
+  width: 100%;
+  background-color: #131313;
+  box-shadow: 0 5px 5px rgba(104, 104, 104, 0.368627451);
+  overflow: auto;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.modal_wrapper .modal_content_wrapper::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.modal_wrapper .modal_content_wrapper::-webkit-scrollbar-track {
+  background: rgba(110, 107, 255, 0.5);
+  border-radius: 5px;
+}
+.modal_wrapper .modal_content_wrapper::-webkit-scrollbar-thumb {
+  background: linear-gradient(65.58deg, rgba(0, 66, 255, 0.5) -11.84%, rgba(235, 0, 27, 0.5) 98.75%);
+  border-radius: 5px;
+}
+.modal_wrapper .modal_content_wrapper::-webkit-scrollbar-thumb:hover {
+  background: #6E6BFF;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.modal_wrapper .action_table_modal_area h3 {
+  font-family: "Saira", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 32px;
+}
+@media all and (max-width: 767px) {
+  .modal_wrapper .action_table_modal_area h3 {
+    transition: 0.5s;
+    font-size: 18px;
+  }
+}
+.modal_wrapper .action_table_modal_area .close_btn svg:hover path {
+  fill: #FF0000;
+}
+
+.form_area .input_row {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 20px;
+}
+.form_area .input_row label {
+  font-family: "Saira", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+}
+.form_area .input_filed,
+.form_area select {
+  width: 100%;
+  height: 36px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  padding: 0 10px;
+  border: 1px solid #A9A9A9;
+}
+.form_area .submit_btn_row {
+  margin-top: 30px;
+  text-align: center;
+}
+.form_area .submit_btn_row button {
+  margin-left: auto;
+  margin-right: auto;
 }/*# sourceMappingURL=style.css.map */

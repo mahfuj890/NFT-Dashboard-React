@@ -79,13 +79,13 @@ select,
 textarea {
   font-weight: 400;
   font-size: 16px;
-  color: #101010;
+  color: $black-color-2c;
 }
 input:focus,
 select:focus {
   outline: none !important;
   box-shadow: none !important;
-  border: 1px solid #e65581 !important;
+  border: 1px solid $red-color-ff !important;
 }
 
 textarea:focus {
@@ -119,14 +119,14 @@ button:hover {
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
-  color: rgba($white-color, 0.75);
+  color: $black-color-2c;
 }
 
 *::-moz-placeholder {
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
-  color: rgba($white-color, 0.75);
+  color: $black-color-2c;
 }
 ::selection {
   color: rgb(255, 255, 255);
@@ -541,7 +541,7 @@ input[type="number"] {
 
 // Table
 .table_wrapper {
-  .tabler_inner_area{
+  .tabler_inner_area {
     @include customScrollbarTable();
   }
   table {
@@ -556,6 +556,15 @@ input[type="number"] {
     font-weight: 400;
     color: $white-color;
     text-align: start;
+    &.complete {
+      color: $green-color-0d;
+    }
+    &.failed {
+      color: $red-color-ff;
+    }
+    &.progress {
+      color: $blue-color-6e;
+    }
   }
   th {
     h4 {
@@ -570,14 +579,14 @@ input[type="number"] {
     gap: 8px;
   }
 
-  .actions_list{
+  .actions_list {
     display: flex;
     align-items: center;
     justify-content: end;
     flex-wrap: wrap;
     gap: 7px 10px;
-    button{
-       display: flex;
+    button {
+      display: flex;
       align-items: center;
       justify-content: center;
       max-width: 32px;
@@ -589,9 +598,88 @@ input[type="number"] {
       -ms-border-radius: 50%;
       -o-border-radius: 50%;
       @include hover-transition();
-      &:hover{
-   background-color: $gray-color-a9;
+      &:hover {
+        background-color: $gray-color-a9;
       }
+    }
+  }
 }
+
+//Modal
+.modal_wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .modal_content_wrapper {
+    padding: 20px;
+    max-width: 400px;
+    max-height: 80vh;
+    width: 100%;
+    background-color: $black-color-13;
+    box-shadow: $dropdown-shadow;
+    @include customScrollbarInner();
+  }
+  .action_table_modal_area {
+    h3 {
+      font-family: $secondery-font;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 32px;
+      @include max-media-width(767) {
+        font-size: 18px;
+      }
+    }
+
+    .close_btn {
+      svg:hover {
+        path {
+          fill: $red-color-ff;
+        }
+      }
+    }
+  }
+}
+
+.form_area {
+  .input_row {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 20px;
+    label {
+      font-family: $secondery-font;
+      font-size: 18px;
+      font-weight: 500;
+      color: $white-color;
+    }
+  }
+  .input_filed,
+  select {
+    width: 100%;
+    height: 36px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    padding: 0 10px;
+    border: 1px solid $gray-color-a9;
+  }
+
+  .submit_btn_row {
+    margin-top: 30px;
+    text-align: center;
+    button {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }
