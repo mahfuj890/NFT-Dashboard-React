@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import AuctionsTableContenxt from "../../Context/AuctionsTableContenxt";
 import Button from "../Button/Button";
 
-function AuctionsTableModal({ onSubmitCloseModal }) {
+function AuctionsTableModal() {
+  const { hideModal, newAuctionsTable } = useContext(AuctionsTableContenxt);
   const [modalForm, setModalForm] = useState({
     name: "",
     date: "",
@@ -59,14 +61,17 @@ function AuctionsTableModal({ onSubmitCloseModal }) {
   };
   const hanldeForm = (e) => {
     e.preventDefault();
-    const value = e.target.value;
-    console.log(
-      modalForm.name,
-      modalForm.date,
-      modalForm.amount,
-      modalForm.status,
-      modalForm.uploadImage
-    );
+
+    //Get Data
+    const getNewData = {
+      userImg: modalForm.uploadImage,
+      userName: modalForm.name,
+      date: modalForm.date,
+      ammout: modalForm.amount,
+      status: modalForm.status,
+    };
+    newAuctionsTable(getNewData);
+    hideModal();
   };
 
   return (
@@ -84,18 +89,7 @@ function AuctionsTableModal({ onSubmitCloseModal }) {
               value={modalForm.name}
             />
           </div>
-          <div className="input_row">
-            <label htmlFor="">Upload Image</label>
-            <input
-              type="file"
-              placeholder="Enter Name"
-              className="input_filed"
-              name="uploadImage"
-              onChange={handleChange}
-            />
-          </div>
 
-          <img src={modalForm.uploadImage} />
           <div className="input_row">
             <label htmlFor="">Date</label>
             <input
@@ -128,12 +122,24 @@ function AuctionsTableModal({ onSubmitCloseModal }) {
               <option value="progress">Progress</option>
             </select>
           </div>
-          <div className="submit_btn_row">
-            <Button
-              type="submit"
-              children="Add"
-              onHandleClick={onSubmitCloseModal}
+          <div className="input_row">
+            <label htmlFor="">Upload Image</label>
+            <input
+              type="file"
+              placeholder="Enter Name"
+              className="input_filed"
+              name="uploadImage"
+              onChange={handleChange}
             />
+            {modalForm.uploadImage && <div className="preview_img_area">
+            <img src={modalForm.uploadImage} />
+            </div>  }
+
+          </div>
+
+
+          <div className="submit_btn_row">
+            <Button type="submit" children="Add" />
           </div>
         </form>
       </div>

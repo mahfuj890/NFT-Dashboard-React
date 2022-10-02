@@ -1,13 +1,17 @@
+import {useContext } from "react";
 import { FaEdit } from "react-icons/fa";
 import { AiTwotoneDelete } from "react-icons/ai";
-function ActionsTable({ tableHeader, tableBody }) {
+import AuctionsTableContenxt from "../../Context/AuctionsTableContenxt";
+function ActionsTable( ) {
+  const {autionsTableData,AuctionTableHeaderData} = useContext(AuctionsTableContenxt );
+
   return (
     <div className="table_wrapper">
       <div className="tabler_inner_area">
         <table>
           <thead>
             <tr>
-              {tableHeader.map((item) => {
+              {AuctionTableHeaderData.map((item) => {
                 return (
                   <th key={item.id}>
                     <h4 key={item.id}>{item.title}</h4>
@@ -17,7 +21,7 @@ function ActionsTable({ tableHeader, tableBody }) {
             </tr>
           </thead>
           <tbody>
-            {tableBody.map((item) => {
+            {autionsTableData.map((item) => {
               return (
                 <tr key={item.id}>
                   <td>
@@ -51,7 +55,7 @@ function ActionsTable({ tableHeader, tableBody }) {
                   </td>
                   <td>
                     <div className="actions_list">
-                      <button type="button">
+                      <button type="button"  >
                         <FaEdit size={20} />
                       </button>
                       <button type="button">
@@ -65,7 +69,10 @@ function ActionsTable({ tableHeader, tableBody }) {
           </tbody>
         </table>
       </div>
+
+
     </div>
+
   );
 }
 

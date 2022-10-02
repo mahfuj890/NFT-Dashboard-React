@@ -577,6 +577,15 @@ input[type="number"] {
     grid-template-columns: minmax(0, 30px) repeat(1, minmax(0, 1fr));
     align-items: center;
     gap: 8px;
+    img{
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+}
   }
 
   .actions_list {
@@ -677,7 +686,22 @@ input[type="number"] {
       }
   }
 
+.preview_img_area{
+  display: flex;
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ -webkit-border-radius: 50%;
+ -moz-border-radius: 50%;
+ -ms-border-radius: 50%;
+ -o-border-radius: 50%;
+ overflow: hidden;
+ margin-top: 10px;
+ img{
 
+  max-height: 100%;
+}
+}
   .submit_btn_row {
     margin-top: 30px;
     text-align: center;
