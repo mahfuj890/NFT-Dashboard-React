@@ -1,10 +1,6 @@
 import { FaEdit } from "react-icons/fa";
 import { AiTwotoneDelete } from "react-icons/ai";
- ;
-
 function ActionsTable({ tableHeader, tableBody }) {
-
-
   return (
     <div className="table_wrapper">
       <div className="tabler_inner_area">
@@ -68,7 +64,6 @@ function ActionsTable({ tableHeader, tableBody }) {
             })}
           </tbody>
         </table>
-
       </div>
     </div>
   );

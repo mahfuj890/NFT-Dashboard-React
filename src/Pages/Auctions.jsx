@@ -12,7 +12,7 @@ import AuctionsTableModal from "../Components/Modal/AuctionsTableModal";
 
 function Auctions() {
   useDocumentTitle("Auctions");
-  const [isOpenModal, setIsOpenModal] = useState(true);
+  const [isOpenModal, setIsOpenModal] = useState(false);
 
   return (
     <section className="auctions_wrapper">
@@ -41,7 +41,7 @@ function Auctions() {
         onCloseModal={(e) => setIsOpenModal(false)}
         title="Add New Auctions"
       >
-        <AuctionsTableModal />
+        <AuctionsTableModal onSubmitCloseModal={(e) => setIsOpenModal(false)} />
       </Modal>
     </section>
   );

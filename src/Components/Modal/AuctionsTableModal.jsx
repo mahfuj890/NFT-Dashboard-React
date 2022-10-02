@@ -1,25 +1,74 @@
 import { useState } from "react";
 import Button from "../Button/Button";
 
-function AuctionsTableModal() {
+function AuctionsTableModal({ onSubmitCloseModal }) {
   const [modalForm, setModalForm] = useState({
     name: "",
     date: "",
     amount: "",
     status: "",
+    uploadImage: "",
   });
   const handleChange = (e) => {
-    console.log("change");
+    const { value, name, files } = e.target;
 
-    const { value, name } = e.target;
+    setModalForm((prevState) => {
+      switch (name) {
+        case "name":
+          return {
+            name: value,
+            date: prevState.date,
+            amount: prevState.amount,
+            status: prevState.status,
+            uploadImage: prevState.uploadImage,
+          };
+        case "date":
+          return {
+            name: prevState.name,
+            date: value,
+            amount: prevState.amount,
+            status: prevState.status,
+            uploadImage: prevState.uploadImage,
+          };
+        case "amount":
+          return {
+            name: prevState.name,
+            date: prevState.date,
+            amount: value,
+            status: prevState.status,
+            uploadImage: prevState.uploadImage,
+          };
+        case "status":
+          return {
+            name: prevState.name,
+            date: prevState.date,
+            amount: prevState.amount,
+            status: value,
+            uploadImage: prevState.uploadImage,
+          };
+        case "uploadImage":
+          return {
+            name: prevState.name,
+            date: prevState.date,
+            amount: prevState.amount,
+            status: prevState.status,
+            uploadImage: URL.createObjectURL(e.target.files[0]),
+          };
+      }
+    });
   };
   const hanldeForm = (e) => {
     e.preventDefault();
-    console.log("submit");
-
     const value = e.target.value;
-    console.log(value);
+    console.log(
+      modalForm.name,
+      modalForm.date,
+      modalForm.amount,
+      modalForm.status,
+      modalForm.uploadImage
+    );
   };
+
   return (
     <div className="auction_table_modal_area">
       <div className="modal_body_area">
@@ -35,6 +84,18 @@ function AuctionsTableModal() {
               value={modalForm.name}
             />
           </div>
+          <div className="input_row">
+            <label htmlFor="">Upload Image</label>
+            <input
+              type="file"
+              placeholder="Enter Name"
+              className="input_filed"
+              name="uploadImage"
+              onChange={handleChange}
+            />
+          </div>
+
+          <img src={modalForm.uploadImage} />
           <div className="input_row">
             <label htmlFor="">Date</label>
             <input
@@ -61,14 +122,18 @@ function AuctionsTableModal() {
           </div>
           <div className="input_row">
             <label htmlFor="">Status</label>
-            <select name="" id="">
+            <select name="status" id="" onChange={handleChange}>
               <option value="complete">Complete</option>
               <option value="failed">Failed</option>
               <option value="progress">Progress</option>
             </select>
           </div>
           <div className="submit_btn_row">
-            <Button type="submit" children="Add" />
+            <Button
+              type="submit"
+              children="Add"
+              onHandleClick={onSubmitCloseModal}
+            />
           </div>
         </form>
       </div>
