@@ -1,12 +1,39 @@
-import {useContext } from "react";
+import { useContext } from "react";
 import { FaEdit } from "react-icons/fa";
 import { AiTwotoneDelete } from "react-icons/ai";
 import AuctionsTableContenxt from "../../Context/AuctionsTableContenxt";
-function ActionsTable( ) {
-  const {autionsTableData,AuctionTableHeaderData} = useContext(AuctionsTableContenxt );
+import Modal from "../Modal/Modal";
+import AuctionsTableModal from "../Modal/AuctionsTableModal";
+function ActionsTable() {
+  const {
+    autionsTableData,
+    AuctionTableHeaderData,
+    editAuctionsTable,
+    showModal,
+    isOpenModal,
+    hideModal,
+    showEditModal,
+    hideEditModal,
+    isEditOpenModal,
+    editAutionsTableData,
+  } = useContext(AuctionsTableContenxt);
+  const handleEditItem = (item) => {
+    showEditModal();
+    editAuctionsTable(item);
+  };
+ 
 
   return (
     <div className="table_wrapper">
+      {isEditOpenModal && (
+        <Modal
+          isOpen={isEditOpenModal}
+          onCloseModal={hideEditModal}
+          title={`Edit Auctions Of ${editAutionsTableData.editData.userName}`}
+        >
+         <AuctionsTableModal btnText="Update" />
+        </Modal>
+      )}
       <div className="tabler_inner_area">
         <table>
           <thead>
@@ -55,7 +82,10 @@ function ActionsTable( ) {
                   </td>
                   <td>
                     <div className="actions_list">
-                      <button type="button"  >
+                      <button
+                        type="button"
+                        onClick={() => handleEditItem(item)}
+                      >
                         <FaEdit size={20} />
                       </button>
                       <button type="button">
@@ -69,10 +99,7 @@ function ActionsTable( ) {
           </tbody>
         </table>
       </div>
-
-
     </div>
-
   );
 }
 

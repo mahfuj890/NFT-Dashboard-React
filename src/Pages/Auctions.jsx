@@ -11,7 +11,9 @@ import AuctionsTableContenxt from "../Context/AuctionsTableContenxt";
 
 function Auctions() {
   useDocumentTitle("Auctions");
-  const { isOpenModal, showModal,hideModal } = useContext(AuctionsTableContenxt);
+  const { isOpenModal, showModal, hideModal } = useContext(
+    AuctionsTableContenxt
+  );
 
   return (
     <section className="auctions_wrapper">
@@ -30,16 +32,14 @@ function Auctions() {
         />
       </div>
       <div className="auctions_table_wrapper">
-        <ActionsTable
-
-        />
+        <ActionsTable />
       </div>
       <Modal
         isOpen={isOpenModal}
         onCloseModal={hideModal}
         title="Add New Auctions"
       >
-        <AuctionsTableModal   />
+        <AuctionsTableModal btnText="Add" />
       </Modal>
     </section>
   );

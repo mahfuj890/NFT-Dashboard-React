@@ -1,9 +1,7 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import AuctionsTableContenxt from "../../Context/AuctionsTableContenxt";
 import Button from "../Button/Button";
-
-function AuctionsTableModal() {
-  const { hideModal, newAuctionsTable } = useContext(AuctionsTableContenxt);
+function AuctionsTableModal({ btnText }) {
   const [modalForm, setModalForm] = useState({
     name: "",
     date: "",
@@ -11,8 +9,11 @@ function AuctionsTableModal() {
     status: "",
     uploadImage: "",
   });
+  const { hideModal, newAuctionsTable, editAutionsTableData, hideEditModal } =
+    useContext(AuctionsTableContenxt);
+
   const handleChange = (e) => {
-    const { value, name, files } = e.target;
+    const { value, name } = e.target;
 
     setModalForm((prevState) => {
       switch (name) {
@@ -70,9 +71,22 @@ function AuctionsTableModal() {
       ammout: modalForm.amount,
       status: modalForm.status,
     };
-    newAuctionsTable(getNewData);
-    hideModal();
+
+    if (editAutionsTableData.editMood == true) {
+      hideEditModal();
+    } else {
+      newAuctionsTable(getNewData);
+      hideModal();
+    }
   };
+  useEffect(
+    (e) => {
+      if (editAutionsTableData.editMood == true) {
+        // modalForm.name = editAutionsTableData.editData.userName;
+      }
+    },
+    [editAutionsTableData]
+  );
 
   return (
     <div className="auction_table_modal_area">
@@ -116,7 +130,15 @@ function AuctionsTableModal() {
           </div>
           <div className="input_row">
             <label htmlFor="">Status</label>
-            <select name="status" id="" onChange={handleChange}>
+            <select
+              name="status"
+              id=""
+              defaultValue={"DEFAULT"}
+              onChange={handleChange}
+            >
+              <option value="DEFAULT" disabled>
+                Select Status
+              </option>
               <option value="complete">Complete</option>
               <option value="failed">Failed</option>
               <option value="progress">Progress</option>
@@ -131,15 +153,15 @@ function AuctionsTableModal() {
               name="uploadImage"
               onChange={handleChange}
             />
-            {modalForm.uploadImage && <div className="preview_img_area">
-            <img src={modalForm.uploadImage} />
-            </div>  }
-
+            {modalForm.uploadImage && (
+              <div className="preview_img_area">
+                <img src={modalForm.uploadImage} />
+              </div>
+            )}
           </div>
 
-
           <div className="submit_btn_row">
-            <Button type="submit" children="Add" />
+            <Button type="submit" children={btnText} />
           </div>
         </form>
       </div>

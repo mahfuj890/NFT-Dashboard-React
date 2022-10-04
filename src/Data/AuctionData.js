@@ -25,9 +25,9 @@ const AuctionData = [
   {
     id: 1,
     userImg: "../../src/assets/images/dashboard/top_actions_user.png",
-    userName: "Johan",
-    date: "10-Apr-2022",
-    ammout: 100,
+    userName: "Mohammad",
+    date: "2022-07-10",
+    ammout: 180,
     status: "Complete",
 
   },
@@ -35,7 +35,7 @@ const AuctionData = [
     id:2 ,
     userImg: "../../src/assets/images/dashboard/top_actions_user.png",
     userName: "Johan",
-    date: "10-Apr-2022",
+    date: "2022-04-10",
     ammout: 100,
     status: "Failed",
 
@@ -43,9 +43,9 @@ const AuctionData = [
   {
     id:3 ,
     userImg: "../../src/assets/images/dashboard/top_actions_user.png",
-    userName: "Johan",
-    date: "10-Apr-2022",
-    ammout: 100,
+    userName: "Jon Due",
+    date: "2022-05-10",
+    ammout: 450,
     status: "Progress",
 
   },
