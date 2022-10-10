@@ -3,7 +3,6 @@ import { createContext, useState } from "react";
 import AuctionData, { AuctionTableHeaderData } from "../Data/AuctionData";
 const AuctionsTableContenxt = createContext();
 export function AuctionsTableContenxtProvider({ children }) {
-
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isEditOpenModal, setIsEditOpenModal] = useState(false);
   const [autionsTableData, setAutionsTableData] = useState(AuctionData);
@@ -41,7 +40,13 @@ export function AuctionsTableContenxtProvider({ children }) {
       editMood: true,
     });
   };
-
+  //Delete Auctions Table Item
+  const deleteAuctionsTable = (deleteData) => {
+    console.log(deleteData, "from data delete");
+    setAutionsTableData( autionsTableData.filter((item) => {
+return item.id !== deleteData.id;
+    }) )
+  };
   //Blank if the user does not submit the form
 
   return (
@@ -58,6 +63,7 @@ export function AuctionsTableContenxtProvider({ children }) {
         editAuctionsTable,
         showEditModal,
         hideEditModal,
+        deleteAuctionsTable
       }}
     >
       {children}
