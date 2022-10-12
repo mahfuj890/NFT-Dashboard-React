@@ -1,0 +1,150 @@
+.inbox_wrapper {
+  .inbox_grid {
+    display: grid;
+    grid-template-columns: minmax(0, 300px) repeat(1, minmax(0, 1fr));
+    align-items: start;
+    gap: 30px 0px;
+    height: calc(100vh - 110px);
+  }
+  .inbox_user_name_area {
+    padding: 20px;
+    height: 100%;
+    background-color: $black-color-13;
+    @include customScrollbarInner2();
+  }
+  .user_list_area {
+    margin-top: 20px;
+  }
+  .user_list_grid {
+    display: grid;
+    grid-template-columns: minmax(0, 50px) repeat(1, minmax(0, 1fr));
+    align-items: center;
+    gap: 10px;
+    padding: 10px 5px;
+    margin-top: 5px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-bottom: 1px solid $black-color-2c;
+    @include hover-transition();
+    &:hover {
+      background-color: $black-color-2c;
+    }
+    h4 {
+      font-size: 15px;
+      color: $white-color;
+    }
+    h5 {
+      font-size: 12px;
+      color: $gray-color-a2;
+      margin-top: 4px;
+    }
+    .status {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      margin-right: 5px;
+      background-color: $green-color-0d;
+      &.offline_user {
+        background-color: rgba($red-color-ff, 0.7);
+      }
+    }
+  }
+  .user_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    img {
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+    }
+  }
+  .inbox_message_chat_wrapper {
+    .user_list_grid {
+      border: none;
+      @include hover-transition();
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+  .user_header_area {
+    background-color: $black-color-13;
+    border-bottom: 1px solid $black-color-2c;
+  }
+  .chat_btn_area {
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      @include hover-transition();
+      &:hover {
+        background-color: $gray-color-a2;
+      }
+    }
+  }
+  .message_body_area {
+    padding: 20px;
+  }
+  .message_item_inner {
+    display: grid;
+    grid-template-columns: minmax(0, 30px) repeat(1, minmax(0, 1fr));
+    align-items: center;
+    gap: 10px;
+  }
+  .sender_user_img_area {
+    width: 100%;
+    height: 30px;
+    overflow: hidden;
+    img {
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+    }
+  }
+  .message_item {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 10px;
+    p {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+  .message_item_right {
+    .message_item_inner {
+      grid-template-columns: repeat(1, minmax(0, 1fr)) minmax(0, 30px);
+      grid-column: 2;
+    }
+    .sender_user_img_area {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    p {
+      text-align: end;
+    }
+  }
+}

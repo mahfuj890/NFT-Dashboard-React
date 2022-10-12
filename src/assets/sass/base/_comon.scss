@@ -31,7 +31,7 @@ p {
   font-weight: 400;
   font-size: 16px;
   line-height: 27px;
-  color: #000000;
+  color: $white-color;
 }
 
 h1,
@@ -577,7 +577,7 @@ input[type="number"] {
     grid-template-columns: minmax(0, 30px) repeat(1, minmax(0, 1fr));
     align-items: center;
     gap: 8px;
-    img{
+    img {
       width: 30px;
       height: 30px;
       border-radius: 50%;
@@ -585,7 +585,7 @@ input[type="number"] {
       -moz-border-radius: 50%;
       -ms-border-radius: 50%;
       -o-border-radius: 50%;
-}
+    }
   }
 
   .actions_list {
@@ -681,27 +681,26 @@ input[type="number"] {
     -o-border-radius: 4px;
     padding: 0 10px;
     border: 1px solid $gray-color-a9;
-    &[type="file"]{
+    &[type="file"] {
       padding-top: 5px;
-      }
+    }
   }
 
-.preview_img_area{
-  display: flex;
- width: 50px;
- height: 50px;
- border-radius: 50%;
- -webkit-border-radius: 50%;
- -moz-border-radius: 50%;
- -ms-border-radius: 50%;
- -o-border-radius: 50%;
- overflow: hidden;
- margin-top: 10px;
- img{
-
-  max-height: 100%;
-}
-}
+  .preview_img_area {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    overflow: hidden;
+    margin-top: 10px;
+    img {
+      max-height: 100%;
+    }
+  }
   .submit_btn_row {
     margin-top: 30px;
     text-align: center;

@@ -14,6 +14,7 @@ import { SidebarContextProvider } from "./Context/SidebarContext";
 import { SliderContextProvider } from "./Context/SliderContext";
 import { AuctionsTableContenxtProvider } from "./Context/AuctionsTableContenxt";
 import { FormContextProvider } from "./Context/FormContext";
+import Inbox from "./Pages/Inbox";
 function App() {
   return (
     <div
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/" element={<Layout />}>
                   <Route index element={<Dashboard />} />
                   <Route path="auctions" element={<Auctions />} />
+                  <Route path="inbox" element={<Inbox /> } />
                   <Route path="*" element={<NotFound />} />
                 </Route>
               </Routes>

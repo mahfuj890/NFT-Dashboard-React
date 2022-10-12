@@ -20,7 +20,7 @@ function SearchBox({
       <input
         type={inputType}
         onChange={handleChangle}
-        placeholder="hi"
+        placeholder={placeholderText}
         value={searchBox}
       />
       {searchBtn && (
