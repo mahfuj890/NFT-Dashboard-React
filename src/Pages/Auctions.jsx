@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import SearchBox from "../Components/Form/SearchBox";
 import PageTitle from "../Components/PageTitle";
 import ActionsTable from "../Components/Table/ActionsTable";
@@ -14,6 +14,13 @@ function Auctions() {
   const { isOpenModal, showModal, hideModal } = useContext(
     AuctionsTableContenxt
   );
+
+  const handleChange = (e) => {
+    setSearchBox(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <section className="auctions_wrapper">

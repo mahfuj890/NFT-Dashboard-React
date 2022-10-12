@@ -13,6 +13,7 @@ import NotFound from "./Pages/NotFound";
 import { SidebarContextProvider } from "./Context/SidebarContext";
 import { SliderContextProvider } from "./Context/SliderContext";
 import { AuctionsTableContenxtProvider } from "./Context/AuctionsTableContenxt";
+import { FormContextProvider } from "./Context/FormContext";
 function App() {
   return (
     <div
@@ -22,14 +23,16 @@ function App() {
       <SidebarContextProvider>
         <SliderContextProvider>
           <AuctionsTableContenxtProvider>
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route index element={<Dashboard />} />
-              <Route path="auctions" element={<Auctions />} />
-              <Route path="*" element={<NotFound />} />
-            </Route>
-          </Routes>
-          <ToastContainer limit={3} transition={Slide} />
+            <FormContextProvider>
+              <Routes>
+                <Route path="/" element={<Layout />}>
+                  <Route index element={<Dashboard />} />
+                  <Route path="auctions" element={<Auctions />} />
+                  <Route path="*" element={<NotFound />} />
+                </Route>
+              </Routes>
+              <ToastContainer limit={3} transition={Slide} />
+            </FormContextProvider>
           </AuctionsTableContenxtProvider>
         </SliderContextProvider>
       </SidebarContextProvider>

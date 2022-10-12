@@ -43,9 +43,11 @@ export function AuctionsTableContenxtProvider({ children }) {
   //Delete Auctions Table Item
   const deleteAuctionsTable = (deleteData) => {
     console.log(deleteData, "from data delete");
-    setAutionsTableData( autionsTableData.filter((item) => {
-return item.id !== deleteData.id;
-    }) )
+    setAutionsTableData(
+      autionsTableData.filter((item) => {
+        return item.id !== deleteData.id;
+      })
+    );
   };
   //Blank if the user does not submit the form
 
@@ -63,7 +65,7 @@ return item.id !== deleteData.id;
         editAuctionsTable,
         showEditModal,
         hideEditModal,
-        deleteAuctionsTable
+        deleteAuctionsTable,
       }}
     >
       {children}
