@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import SearchBox from "../Components/Form/SearchBox";
-import MessageData from "../Data/MessageData";
+import MessageData, { MessageTextData } from "../Data/MessageData";
 import { IoIosCall } from "react-icons/io";
 import { RiSendPlaneFill, RiMenu3Line } from "react-icons/ri";
 import { BsFillInfoCircleFill } from "react-icons/bs";
@@ -42,6 +42,25 @@ function Inbox() {
     ],
   });
   const [message, setMessage] = useState(false);
+  console.log("from top", messageText, typeof messageText);
+
+  const handleShowMessage = (item) => {
+    {
+      let filterData = MessageTextData.filter((data) => {
+        return data.id == item;
+      });
+      if (filterData.length > 0) {
+        setMessageText(filterData[0]);
+      } else {
+        setMessageText(
+          <h4>
+            {" "}
+            <b>Not Found The User Data</b>{" "}
+          </h4>
+        );
+      }
+    }
+  };
   return (
     <section className="inbox_wrapper">
       <div className="inbox_grid">
@@ -56,7 +75,11 @@ function Inbox() {
               <div className="user_list_area">
                 {MessageData.map((item) => {
                   return (
-                    <Link to={"/"} className="user_list_grid" key={item.id}>
+                    <div
+                      className="user_list_grid"
+                      key={item.id}
+                      onClick={() => handleShowMessage(item.id)}
+                    >
                       <div className="user_img">
                         <img src={item.userImage} alt="user image" />
                       </div>
@@ -73,7 +96,7 @@ function Inbox() {
                           {item.stausText}
                         </h5>
                       </div>
-                    </Link>
+                    </div>
                   );
                 })}
               </div>
@@ -81,62 +104,75 @@ function Inbox() {
           </OutSideDetectHook>
         }
         <div className="inbox_message_chat_wrapper">
-          <div className="user_header_area d-flex-between g-sm">
-            <div className="user_list_grid">
-              <div className="user_img">
-                <img src={messageText.userImage} alt="user image" />
-              </div>
-              <div>
-                <h4>{messageText.userName}</h4>
-                <h5>
-                  <span
-                    className={`status ${
-                      messageText.onlineStatus ? "online_user" : "offline_user"
-                    }`}
-                  ></span>
-                  {messageText.stausText}
-                </h5>
-              </div>
-            </div>
-            <div className="chat_btn_area d-flex align-items-center flex-wrap-wrap g-sm">
-              <button type="button">{<IoIosCall size={18} />}</button>
-              <button type="button">
-                {<BsFillInfoCircleFill size={18} />}
-              </button>
-              {window.innerWidth <= 767 && (
-                <button type="button" onClick={() => setMessage(true)}>
-                  {<RiMenu3Line size={18} />}
-                </button>
-              )}
-            </div>
-          </div>
-          <div className="message_body_area">
-            {messageText.messageText.map((item) => {
-              return (
-                <div
-                  className={`message_item ${
-                    item.gridStatus ? "" : "message_item_right"
-                  }`}
-                  key={item.id}
-                >
-                  <div className="message_item_inner">
-                    <div className="sender_user_img_area">
-                      <img src={item.userImage} alt="user img" />
-                    </div>
-                    <div>
-                      <p>{item.text}</p>
-                    </div>
+          {messageText.id ? (
+            <>
+              <div className="user_header_area d-flex-between g-sm">
+                <div className="user_list_grid">
+                  <div className="user_img">
+                    <img src={messageText.userImage} alt="user image" />
+                  </div>
+                  <div>
+                    <h4>{messageText.userName}</h4>
+                    <h5>
+                      <span
+                        className={`status ${
+                          messageText.onlineStatus
+                            ? "online_user"
+                            : "offline_user"
+                        }`}
+                      ></span>
+                      {messageText.stausText}
+                    </h5>
                   </div>
                 </div>
-              );
-            })}
-          </div>
-          <div className="message_type_area">
-            <SearchBox
-              submitIcon={<RiSendPlaneFill size={18} />}
-              placeholderText="Write Your Message..."
-            />
-          </div>
+                <div className="chat_btn_area d-flex align-items-center flex-wrap-wrap g-sm">
+                  <button type="button">{<IoIosCall size={18} />}</button>
+                  <button type="button">
+                    {<BsFillInfoCircleFill size={18} />}
+                  </button>
+                  {window.innerWidth <= 767 && (
+                    <button type="button" onClick={() => setMessage(true)}>
+                      {<RiMenu3Line size={18} />}
+                    </button>
+                  )}
+                </div>{" "}
+              </div>
+              <div className="message_body_area">
+                {messageText.messageText.map((item) => {
+                  return (
+                    <div
+                      className={`message_item ${
+                        item.gridStatus ? "" : "message_item_right"
+                      }`}
+                      key={item.id}
+                    >
+                      <div className="message_item_inner">
+                        <div className="sender_user_img_area">
+                          <img src={item.userImage} alt="user img" />
+                        </div>
+                        <div>
+                          <p>{item.text}</p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              <div className="message_type_area">
+                <SearchBox
+                  submitIcon={<RiSendPlaneFill size={18} />}
+                  placeholderText="Write Your Message..."
+                />
+              </div>
+            </>
+          ) : (
+            <div className="not_data_wrapper">
+              <h4>
+                {" "}
+                <b>Not Found The User Data</b>{" "}
+              </h4>
+            </div>
+          )}
         </div>
       </div>
     </section>
