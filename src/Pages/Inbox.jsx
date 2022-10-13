@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import useDocumentTitle from "../Hooks/useDocumentTitle";
 import SearchBox from "../Components/Form/SearchBox";
 import MessageData, { MessageTextData } from "../Data/MessageData";
 import { IoIosCall } from "react-icons/io";
@@ -9,6 +9,7 @@ import OutSideDetectHook from "../Hooks/OutSideDetectHook";
 import PageTitle from "../Components/PageTitle";
 
 function Inbox() {
+  useDocumentTitle("Inbox");
   const [messageText, setMessageText] = useState({
     id: 1,
     userImage: "../../src/assets/images/dashboard/top_actions_user.png",

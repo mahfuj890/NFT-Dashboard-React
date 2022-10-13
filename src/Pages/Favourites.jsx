@@ -1,3 +1,4 @@
+import useDocumentTitle from "../Hooks/useDocumentTitle";
 import SearchBox from "../Components/Form/SearchBox";
 import PageTitle from "../Components/PageTitle";
 import FavouriteUserData, {
@@ -6,6 +7,7 @@ import FavouriteUserData, {
 import { HiLink } from "react-icons/hi";
 import { Link } from "react-router-dom";
 function Favourites() {
+  useDocumentTitle("Favourites");
   return (
     <section className="favourite_wrapper">
       <div className="d-flex-between">

@@ -16,6 +16,9 @@ import { AuctionsTableContenxtProvider } from "./Context/AuctionsTableContenxt";
 import { FormContextProvider } from "./Context/FormContext";
 import Inbox from "./Pages/Inbox";
 import Favourites from "./Pages/Favourites";
+import Bitcoin from "./Pages/Bitcoin";
+import Ethereum from "./Pages/Ethereum";
+import UsdCoin from "./Pages/UsdCoin";
 function App() {
   return (
     <div
@@ -30,8 +33,11 @@ function App() {
                 <Route path="/" element={<Layout />}>
                   <Route index element={<Dashboard />} />
                   <Route path="auctions" element={<Auctions />} />
-                  <Route path="inbox" element={<Inbox /> } />
-                  <Route path="favourites" element={<Favourites /> } />
+                  <Route path="inbox" element={<Inbox />} />
+                  <Route path="favourites" element={<Favourites />} />
+                  <Route path="bitcoin" element={<Bitcoin />} />
+                  <Route path="ethereum" element={<Ethereum />} />
+                  <Route path="usdCoin" element={<UsdCoin />} />
                   <Route path="*" element={<NotFound />} />
                 </Route>
               </Routes>

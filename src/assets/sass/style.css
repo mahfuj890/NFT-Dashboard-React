@@ -901,6 +901,25 @@
   max-width: 300px;
 }
 
+.bitcoin_wrapper .bitcoing_grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr)) minmax(0, 0.7fr);
+  align-items: start;
+  gap: 30px;
+}
+@media all and (max-width: 991px) {
+  .bitcoin_wrapper .bitcoing_grid {
+    transition: 0.5s;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+.bitcoin_wrapper .bar_chart_area {
+  width: 100%;
+  height: 500px;
+  padding: 15px;
+  background-color: #131313;
+}
+
 .auctions_wrapper .add_btn_area {
   margin: 20px 0;
 }
