@@ -19,7 +19,7 @@ function OutSideDetectHook({ outsideHooks, children }) {
   if (!children) {
     return null;
   }
-  return <div ref={innerAreaRef}>{children}</div>;
+  return <div ref={innerAreaRef} style={{height:"100%"}}>{children}</div>;
 }
 
 export default OutSideDetectHook;

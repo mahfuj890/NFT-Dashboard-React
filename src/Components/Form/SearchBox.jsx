@@ -7,6 +7,7 @@ function SearchBox({
   inputType,
   placeholderText,
   searchBtn,
+  submitIcon,
   handleChange,
   handleSubmit,
   inputValue,
@@ -25,7 +26,8 @@ function SearchBox({
       />
       {searchBtn && (
         <button type="submit" className="search_btn">
-          <img src={searchIcon} alt="search" />
+        {submitIcon ? submitIcon :   <img src={searchIcon} alt="search" />}
+
         </button>
       )}
     </form>
@@ -35,6 +37,7 @@ SearchBox.defaultProps = {
   inputType: "text",
   placeholderText: "search",
   searchBtn: true,
+  submitIcon: false,
 };
 SearchBox.propTypes = {
   inputType: PropTypes.string,

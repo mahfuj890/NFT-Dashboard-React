@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import SearchBox from "../Components/Form/SearchBox";
 import MessageData from "../Data/MessageData";
 import { IoIosCall } from "react-icons/io";
+import { RiSendPlaneFill, RiMenu3Line } from "react-icons/ri";
 import { BsFillInfoCircleFill } from "react-icons/bs";
+import OutSideDetectHook from "../Hooks/OutSideDetectHook";
 
 function Inbox() {
   const [messageText, setMessageText] = useState({
@@ -39,36 +41,45 @@ function Inbox() {
       },
     ],
   });
+  const [message, setMessage] = useState(false);
   return (
     <section className="inbox_wrapper">
       <div className="inbox_grid">
-        <div className="inbox_user_name_area">
-          <SearchBox />
-          <div className="user_list_area">
-            {MessageData.map((item) => {
-              return (
-                <Link to={"/"} className="user_list_grid" key={item.id}>
-                  <div className="user_img">
-                    <img src={item.userImage} alt="user image" />
-                  </div>
-                  <div>
-                    <h4>{item.userName}</h4>
-                    <h5>
-                      <span
-                        className={`status ${
-                          item.onlineStatus ? "online_user" : "offline_user"
-                        }`}
-                      >
-                        {" "}
-                      </span>{" "}
-                      {item.stausText}
-                    </h5>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
+        {
+          <OutSideDetectHook outsideHooks={() => setMessage(false)}>
+            <div
+              className={`inbox_user_name_area ${
+                message ? "message_active" : ""
+              }`}
+            >
+              <SearchBox />
+              <div className="user_list_area">
+                {MessageData.map((item) => {
+                  return (
+                    <Link to={"/"} className="user_list_grid" key={item.id}>
+                      <div className="user_img">
+                        <img src={item.userImage} alt="user image" />
+                      </div>
+                      <div>
+                        <h4>{item.userName}</h4>
+                        <h5>
+                          <span
+                            className={`status ${
+                              item.onlineStatus ? "online_user" : "offline_user"
+                            }`}
+                          >
+                            {" "}
+                          </span>{" "}
+                          {item.stausText}
+                        </h5>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          </OutSideDetectHook>
+        }
         <div className="inbox_message_chat_wrapper">
           <div className="user_header_area d-flex-between g-sm">
             <div className="user_list_grid">
@@ -92,6 +103,11 @@ function Inbox() {
               <button type="button">
                 {<BsFillInfoCircleFill size={18} />}
               </button>
+              {window.innerWidth <= 767 && (
+                <button type="button" onClick={() => setMessage(true)}>
+                  {<RiMenu3Line size={18} />}
+                </button>
+              )}
             </div>
           </div>
           <div className="message_body_area">
@@ -114,6 +130,12 @@ function Inbox() {
                 </div>
               );
             })}
+          </div>
+          <div className="message_type_area">
+            <SearchBox
+              submitIcon={<RiSendPlaneFill size={18} />}
+              placeholderText="Write Your Message..."
+            />
           </div>
         </div>
       </div>
