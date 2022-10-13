@@ -897,6 +897,10 @@
   max-width: 300px;
 }
 
+.favourite_wrapper .search_form_area {
+  max-width: 300px;
+}
+
 .auctions_wrapper .add_btn_area {
   margin: 20px 0;
 }
@@ -1819,7 +1823,7 @@ input[type=number] {
   flex-wrap: wrap;
   gap: 7px 10px;
 }
-.table_wrapper .actions_list button {
+.table_wrapper .actions_list button, .table_wrapper .actions_list a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1837,7 +1841,7 @@ input[type=number] {
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
 }
-.table_wrapper .actions_list button:hover {
+.table_wrapper .actions_list button:hover, .table_wrapper .actions_list a:hover {
   background-color: #A9A9A9;
 }
 

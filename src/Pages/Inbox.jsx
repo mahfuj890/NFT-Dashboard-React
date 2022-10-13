@@ -6,6 +6,7 @@ import { IoIosCall } from "react-icons/io";
 import { RiSendPlaneFill, RiMenu3Line } from "react-icons/ri";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import OutSideDetectHook from "../Hooks/OutSideDetectHook";
+import PageTitle from "../Components/PageTitle";
 
 function Inbox() {
   const [messageText, setMessageText] = useState({
@@ -42,8 +43,6 @@ function Inbox() {
     ],
   });
   const [message, setMessage] = useState(false);
-  console.log("from top", messageText, typeof messageText);
-
   const handleShowMessage = (item) => {
     {
       let filterData = MessageTextData.filter((data) => {
@@ -63,6 +62,7 @@ function Inbox() {
   };
   return (
     <section className="inbox_wrapper">
+      <PageTitle text={"Inbox"} />
       <div className="inbox_grid">
         {
           <OutSideDetectHook outsideHooks={() => setMessage(false)}>

@@ -15,6 +15,7 @@ import { SliderContextProvider } from "./Context/SliderContext";
 import { AuctionsTableContenxtProvider } from "./Context/AuctionsTableContenxt";
 import { FormContextProvider } from "./Context/FormContext";
 import Inbox from "./Pages/Inbox";
+import Favourites from "./Pages/Favourites";
 function App() {
   return (
     <div
@@ -30,6 +31,7 @@ function App() {
                   <Route index element={<Dashboard />} />
                   <Route path="auctions" element={<Auctions />} />
                   <Route path="inbox" element={<Inbox /> } />
+                  <Route path="favourites" element={<Favourites /> } />
                   <Route path="*" element={<NotFound />} />
                 </Route>
               </Routes>
