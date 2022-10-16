@@ -19,6 +19,7 @@ import Favourites from "./Pages/Favourites";
 import Bitcoin from "./Pages/Bitcoin";
 import Ethereum from "./Pages/Ethereum";
 import UsdCoin from "./Pages/UsdCoin";
+
 function App() {
   return (
     <div
