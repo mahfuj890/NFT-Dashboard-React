@@ -8,36 +8,12 @@ $white-color: white;
 $gray-color-a2: #a2a3a4;
 $gray-color-a9: #a9a9a9;
 $black-color: black;
-/* $black-color-13: #131313; */
+$black-color-13: #131313;
 $black-color-2c: #2c2d33;
 $blue-color-6e: #6e6bff;
 $green-color-0d: #0ddb84;
 $green-color-34: #34d178;
 $red-color-ff: #ff0000;
-:root {
-  --test-color: rgb(231, 125, 125);
-  --test-color2: rgb(70, 253, 42);
-  --black-color-13: #131313;
-  --primary-color: #302ae6;
-  --secondary-color: #536390;
-  --font-color: #424242;
-  --bg-color: #fff;
-  --heading-color: #292922;
-  $black-color-13: red;
-}
-$white-color: var(--test-color);
-
-$black-color-13: var(--test-color);
-
-[data-theme="dark"] {
-  $black-color-13: var(--test-color2);
-  /* $black-color-13:var(--primary-color); */
-  --primary-color: #9a97f3;
-  --test-color: #292922;
-  .change_btn {
-    color: var(--test-color2);
-  }
-}
 
 //Gradient
 $menu-gradient: linear-gradient(

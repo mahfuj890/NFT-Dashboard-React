@@ -1,37 +1,12 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import logo from "../../../src/assets/images/dashboard/logo.png";
 import { Link, NavLink } from "react-router-dom";
 import SidebarContext from "../../Context/SidebarContext";
 import SidebarData from "../../Data/SidebarRouteData";
+import ThemeContext from "../../Context/ThemeContext";
 function Sidebar() {
   const { mobileSidebar, onMobileSidebar } = useContext(SidebarContext);
-  const [switchbox, setSwitchbox] = useState(true);
-
-  const handleChangeSWitch = () => {
-    if (switchbox) {
-      setSwitchbox(false);
-      localStorage.setItem("data-theme", "light");
-      document.documentElement.setAttribute("data-theme", "light");
-    } else {
-      setSwitchbox(true);
-      localStorage.setItem("data-theme", "dark");
-      document.documentElement.setAttribute("data-theme", "dark");
-    }
-  };
-
-  useEffect(() => {
-    const getThemeColor = localStorage.getItem("data-theme");
-
-    if (getThemeColor == "light") {
-      localStorage.setItem("data-theme", "light");
-      document.documentElement.setAttribute("data-theme", "light");
-      setSwitchbox(false);
-    } else {
-      localStorage.setItem("data-theme", "dark");
-      document.documentElement.setAttribute("data-theme", "dark");
-      setSwitchbox(true);
-    }
-  }, [switchbox]);
+  const { switchbox, handleChangeSWitch } = useContext(ThemeContext);
 
   return (
     <>
@@ -43,6 +18,9 @@ function Sidebar() {
             <img src={logo} alt="logo" />
           </Link>
         </div>
+        <h4 className="myClass" data="red">
+          Thiis is
+        </h4>
         <div className="sidebar_menu_area">
           <h4 style={{ color: "white" }}>{switchbox ? "yes" : "no"} </h4>
           <ul className="top_menu_list">
