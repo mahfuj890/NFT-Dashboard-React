@@ -10,9 +10,11 @@
   padding: 0;
 }
 body {
-  font-family: $body-font-family;
-  font-size: $font-size-base;
-  color: $white-color;
+  @include themify($themes) {
+    font-family: $body-font-family;
+    font-size: $font-size-base;
+    color: themed("white-color");
+  }
 }
 html,
 body {
@@ -29,14 +31,11 @@ h6 {
 }
 p {
   @include themify($themes) {
-
-
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 27px;
-  color:   themed("white-color");
-
-}
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 27px;
+    color: themed("white-color");
+  }
 }
 
 h1,
@@ -85,16 +84,15 @@ textarea {
   @include themify($themes) {
     font-weight: 400;
     font-size: 16px;
-    color:  themed("black-color-2c");
+    color: themed("black-color-2c");
   }
 }
 input:focus,
 select:focus {
   @include themify($themes) {
-
     outline: none !important;
     box-shadow: none !important;
-    border: 1px solid   themed("red-color-ff")  !important;
+    border: 1px solid themed("red-color-ff") !important;
   }
 }
 
@@ -115,9 +113,8 @@ button:focus {
 
 button {
   @include themify($themes) {
-
     cursor: pointer;
-    color:   themed("white-color");
+    color: themed("white-color");
     border: none !important;
     background-color: transparent;
   }
@@ -130,21 +127,19 @@ button:hover {
 
 *::placeholder {
   @include themify($themes) {
-
     font-weight: normal;
     font-size: 16px;
     line-height: 22px;
-      color:  themed("black-color-2c");
+    color: themed("black-color-2c");
   }
 }
 
 *::-moz-placeholder {
   @include themify($themes) {
-
     font-weight: normal;
     font-size: 16px;
     line-height: 22px;
-      color:  themed("black-color-2c");
+    color: themed("black-color-2c");
   }
 }
 ::selection {
@@ -173,7 +168,6 @@ input[type="number"] {
 /* Common Class */
 .AppWrapper {
   @include themify($themes) {
-
     position: relative;
     width: 100%;
     min-height: 100vh;
@@ -268,7 +262,6 @@ input[type="number"] {
 }
 .default_btn {
   @include themify($themes) {
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -277,7 +270,7 @@ input[type="number"] {
     border-radius: 5px;
     font-size: 15px;
     font-weight: 500;
-    background:   themed("menu-gradient");
+    background: themed("menu-gradient");
     &:hover {
       background: themed("menu-gradient-hover");
     }
@@ -296,12 +289,11 @@ input[type="number"] {
 
 .page_title {
   @include themify($themes) {
-
     font-family: $secondery-font;
     font-weight: 600;
     font-size: 24px;
     line-height: 38px;
-    color:   themed("white-color");
+    color: themed("white-color");
     @include max-media-width(767) {
       font-size: 20px;
     }
@@ -399,14 +391,13 @@ input[type="number"] {
 //Overlay
 .overlay {
   @include themify($themes) {
-
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 20;
-    background-color: rgba( themed("black-color-13"), 0.75);
+    background-color: rgba(themed("black-color-13"), 0.75);
     display: none;
     &.search_overlay_active {
       @include max-media-width(991) {
@@ -420,23 +411,22 @@ input[type="number"] {
 .slider_arrow_area {
   .slider_arrow {
     @include themify($themes) {
-
       display: flex;
       align-items: center;
       justify-content: center;
       width: 36px;
       height: 36px;
-      border: 1.10938px solid rgba( themed("black-color-2c") , 0.9) !important;
+      border: 1.10938px solid rgba(themed("black-color-2c"), 0.9) !important;
       border-radius: 12px;
       @include hover-transition();
       &:hover {
-        background-color:  themed("black-color-2c");
+        background-color: themed("black-color-2c");
         path {
-          fill:     themed("white-color");
+          fill: themed("white-color");
         }
       }
     }
-    }
+  }
 }
 
 //Count Down Text
@@ -445,31 +435,28 @@ input[type="number"] {
   ul {
     li {
       @include themify($themes) {
-
         font-family: $secondery-font;
         font-weight: 600;
         font-size: 20px;
         line-height: 31px;
-        color:   themed("white-color");
+        color: themed("white-color");
       }
     }
   }
 }
 .expoire_msg {
   @include themify($themes) {
-
     font-family: $secondery-font;
     font-weight: 600 !important;
     font-size: 18px !important;
     line-height: 31px !important;
-    color:   themed("white-color");
+    color: themed("white-color");
     margin-top: 10px;
   }
 }
 
 .border_linear {
   @include themify($themes) {
-
     position: relative;
     border: 1.74px solid;
     border-image: themed("border-gradient");
@@ -500,13 +487,15 @@ input[type="number"] {
     margin-top: 18px;
   }
   .product_title {
-    font-family: $secondery-font;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 28px;
-    color: $white-color;
-    &:hover {
-      opacity: 0.9;
+    @include themify($themes) {
+      font-family: $secondery-font;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 28px;
+      color: themed("white-color");
+      &:hover {
+        opacity: 0.9;
+      }
     }
   }
   .user_info_area {
@@ -527,10 +516,12 @@ input[type="number"] {
   .bit_ammount_area {
     margin-top: 12px;
     h4 {
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 18px;
-      color: rgba($white-color, 0.4);
+      @include themify($themes) {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        color: rgba(themed("white-color"), 0.4);
+      }
     }
   }
   .default_btn {
@@ -542,43 +533,45 @@ input[type="number"] {
 
 //Search Box
 .search_form_area {
-  position: relative;
-  width: 100%;
-  height: 44px;
-  background-color: rgba($white-color, 0.1);
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-
-  &.search_form_grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 45px);
-    align-items: center;
-    gap: 5px;
-    input {
-      padding-right: 0;
-    }
-  }
-  input {
+  @include themify($themes) {
+    position: relative;
     width: 100%;
-    height: 100%;
-    padding: 0 20px;
-    color: $white-color;
-    border: none !important;
-    background-color: transparent;
-  }
-  .search_btn {
-    width: 95%;
-    height: 95%;
-    border-radius: 50%;
-    &:hover {
-      background-color: $black-color-13;
+    height: 44px;
+    background-color: rgba(themed("white-color"), 0.1);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+
+    &.search_form_grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 45px);
+      align-items: center;
+      gap: 5px;
+      input {
+        padding-right: 0;
+      }
     }
-  }
-  ::placeholder {
-    font-size: 14px;
+    input {
+      width: 100%;
+      height: 100%;
+      padding: 0 20px;
+      color: themed("white-color");
+      border: none !important;
+      background-color: transparent;
+    }
+    .search_btn {
+      width: 95%;
+      height: 95%;
+      border-radius: 50%;
+      &:hover {
+        background-color: themed("black-color-13");
+      }
+    }
+    ::placeholder {
+      font-size: 14px;
+    }
   }
 }
 
@@ -595,18 +588,20 @@ input[type="number"] {
     padding: 10px 12px;
   }
   h4 {
-    font-size: 16px;
-    font-weight: 400;
-    color: $white-color;
-    text-align: start;
-    &.complete {
-      color: $green-color-0d;
-    }
-    &.failed {
-      color: $red-color-ff;
-    }
-    &.progress {
-      color: $blue-color-6e;
+    @include themify($themes) {
+      font-size: 16px;
+      font-weight: 400;
+      color: themed("white-color");
+      text-align: start;
+      &.complete {
+        color: themed("green-color-0d");
+      }
+      &.failed {
+        color: themed("red-color-ff");
+      }
+      &.progress {
+        color: themed("blue-color-6e");
+      }
     }
   }
   th {
@@ -639,20 +634,22 @@ input[type="number"] {
     gap: 7px 10px;
     button,
     a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      max-width: 32px;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      -ms-border-radius: 50%;
-      -o-border-radius: 50%;
-      @include hover-transition();
-      &:hover {
-        background-color: $gray-color-a9;
+      @include themify($themes) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 32px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        @include hover-transition();
+        &:hover {
+          background-color: themed("gray-color-a9");
+        }
       }
     }
   }
@@ -672,29 +669,33 @@ input[type="number"] {
   justify-content: center;
 
   .modal_content_wrapper {
-    padding: 20px;
-    max-width: 400px;
-    max-height: 80vh;
-    width: 100%;
-    background-color: $black-color-13;
-    box-shadow: $dropdown-shadow;
-    @include customScrollbarInner();
+    @include themify($themes) {
+      padding: 20px;
+      max-width: 400px;
+      max-height: 80vh;
+      width: 100%;
+      background-color: $black-color-13;
+      box-shadow: themed("dropdown-shadow");
+      @include customScrollbarInner();
+    }
   }
   .action_table_modal_area {
-    h3 {
-      font-family: $secondery-font;
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 32px;
-      @include max-media-width(767) {
-        font-size: 18px;
+    @include themify($themes) {
+      h3 {
+        font-family: $secondery-font;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 32px;
+        @include max-media-width(767) {
+          font-size: 18px;
+        }
       }
-    }
 
-    .close_btn {
-      svg:hover {
-        path {
-          fill: $red-color-ff;
+      .close_btn {
+        svg:hover {
+          path {
+            fill: themed("red-color-ff");
+          }
         }
       }
     }
@@ -702,120 +703,122 @@ input[type="number"] {
 }
 
 .form_area {
-  .input_row {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-    margin-top: 20px;
-    label {
-      font-family: $secondery-font;
-      font-size: 18px;
-      font-weight: 500;
-      color: $white-color;
+  @include themify($themes) {
+    .input_row {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-top: 20px;
+      label {
+        font-family: $secondery-font;
+        font-size: 18px;
+        font-weight: 500;
+        color: themed("white-color");
+      }
     }
-  }
-  .input_filed,
-  select {
-    width: 100%;
-    height: 36px;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
-    padding: 0 10px;
-    border: 1px solid $gray-color-a9;
-    &[type="file"] {
-      padding-top: 5px;
+    .input_filed,
+    select {
+      width: 100%;
+      height: 36px;
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -o-border-radius: 4px;
+      padding: 0 10px;
+      border: 1px solid themed("gray-color-a9");
+      &[type="file"] {
+        padding-top: 5px;
+      }
     }
-  }
 
-  .preview_img_area {
-    display: flex;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    overflow: hidden;
-    margin-top: 10px;
-    img {
-      max-height: 100%;
+    .preview_img_area {
+      display: flex;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      overflow: hidden;
+      margin-top: 10px;
+      img {
+        max-height: 100%;
+      }
     }
-  }
-  .submit_btn_row {
-    margin-top: 30px;
-    text-align: center;
-    button {
-      margin-left: auto;
-      margin-right: auto;
+    .submit_btn_row {
+      margin-top: 30px;
+      text-align: center;
+      button {
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
   }
 }
 
 //Switch Box
 .custom_switchbox_area {
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
+  @include themify($themes) {
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
 
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
 
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-  }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: themed("gray-color-cc");
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
 
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-  }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: themed("white-color");
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
 
-  input:checked + .slider {
-    background-color: #2196f3;
-  }
+    input:checked + .slider {
+      background-color: themed(" blue-color-21");
+    }
 
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196f3;
-  }
+    input:focus + .slider {
+      box-shadow: 0 0 1px themed("white-color");
+    }
 
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
 
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
 
-  .slider.round:before {
-    border-radius: 50%;
+    .slider.round:before {
+      border-radius: 50%;
+    }
   }
 }
-
-

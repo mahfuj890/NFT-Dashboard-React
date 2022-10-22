@@ -24,10 +24,12 @@ $themes: (
     white-color: white,
     gray-color-a2: #a2a3a4,
     gray-color-a9: #a9a9a9,
+    gray-color-cc: #ccc,
     black-color: black,
     black-color-13: #131313,
     black-color-2c: #2c2d33,
     blue-color-6e: #6e6bff,
+    blue-color-21: #2196f3,
     green-color-0d: #0ddb84,
     green-color-34: #34d178,
     red-color-ff: #ff0000,
@@ -97,7 +99,7 @@ $themes: (
 }
  */
 
- @include themify($themes) {
+//  @include themify($themes) {
 
- }
- themed("")
+//  }
+//  themed("")
