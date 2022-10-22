@@ -4,19 +4,61 @@ $dark-text-color: black;
 $my-class-bg-light: white;
 $my-class-bg-dark: black;
 
-// @import "../sass/theme.scss";
-// theme-config.scss
+// theme-config
 $themes: (
   light: (
-    my-class-bg: blue,
-    text-color: $dark-text-color,
+    body-color: white,
+    white-color: white,
+    gray-color-a2: #a2a3a4,
+    gray-color-a9: #a9a9a9,
+    black-color: black,
+    black-color-13: #131313,
+    black-color-2c: #2c2d33,
+    blue-color-6e: #6e6bff,
+    green-color-0d: #0ddb84,
+    green-color-34: #34d178,
+    red-color-ff: #ff0000,
   ),
   dark: (
-    my-class-bg: red,
-    text-color: $light-text-color,
+    body-color: white,
+    white-color: white,
+    gray-color-a2: #a2a3a4,
+    gray-color-a9: #a9a9a9,
+    black-color: black,
+    black-color-13: #131313,
+    black-color-2c: #2c2d33,
+    blue-color-6e: #6e6bff,
+    green-color-0d: #0ddb84,
+    green-color-34: #34d178,
+    red-color-ff: #ff0000,
+
+    //Gradient
+    menu-gradient:
+      linear-gradient(
+        65.58deg,
+        rgba(0, 66, 255, 0.5) -11.84%,
+        rgba(235, 0, 27, 0.5) 98.75%
+      ),
+    menu-gradient-hover:
+      linear-gradient(
+        45.58deg,
+        rgba(0, 66, 255, 0.7) -15.84%,
+        rgba(205, 0, 27, 0.5) 98.75%
+      ),
+    border-gradient:
+      linear-gradient(
+        142.65deg,
+        #822946 12.89%,
+        rgba(41, 42, 184, 0.9) 21.4%,
+        #6a69c2 36.15%,
+        rgba(138, 123, 128, 0.85) 70.29%,
+        #000000 120.25%
+      ),
+    //Shadow
+    dropdown-shadow: 0 5px 5px #6868685e,
   ),
 );
-// mixin.scss
+// mixin
 @mixin themify($themes) {
   @each $theme, $map in $themes {
     .theme-#{$theme} & {
@@ -39,3 +81,23 @@ $themes: (
 @function themed($key) {
   @return map-get($theme-map, $key);
 }
+/* @import "Your Path/theme.scss";  */
+// usage
+/* .myClass {
+  @include themify($themes) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(themed("my-class-bg"),0.2);
+    color: themed("text-color");
+     display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+ */
+
+ @include themify($themes) {
+
+ }
+ themed("")

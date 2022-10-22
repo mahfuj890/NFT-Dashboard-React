@@ -1,7 +1,7 @@
 /*
 !Utilities Or Helper CSS
 */
-
+@import "../theme.scss";
 *,
 ::before,
 ::after {
@@ -28,10 +28,15 @@ h6 {
   font-family: $primary-font;
 }
 p {
+  @include themify($themes) {
+
+
   font-weight: 400;
   font-size: 16px;
   line-height: 27px;
-  color: $white-color;
+  color:   themed("white-color");
+
+}
 }
 
 h1,
@@ -77,15 +82,20 @@ li {
 input,
 select,
 textarea {
-  font-weight: 400;
-  font-size: 16px;
-  color: $black-color-2c;
+  @include themify($themes) {
+    font-weight: 400;
+    font-size: 16px;
+    color:  themed("black-color-2c");
+  }
 }
 input:focus,
 select:focus {
-  outline: none !important;
-  box-shadow: none !important;
-  border: 1px solid $red-color-ff !important;
+  @include themify($themes) {
+
+    outline: none !important;
+    box-shadow: none !important;
+    border: 1px solid   themed("red-color-ff")  !important;
+  }
 }
 
 textarea:focus {
@@ -104,10 +114,13 @@ button:focus {
 }
 
 button {
-  cursor: pointer;
-  color: $white-color;
-  border: none !important;
-  background-color: transparent;
+  @include themify($themes) {
+
+    cursor: pointer;
+    color:   themed("white-color");
+    border: none !important;
+    background-color: transparent;
+  }
 }
 
 button:hover {
@@ -116,17 +129,23 @@ button:hover {
 }
 
 *::placeholder {
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 22px;
-  color: $black-color-2c;
+  @include themify($themes) {
+
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+      color:  themed("black-color-2c");
+  }
 }
 
 *::-moz-placeholder {
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 22px;
-  color: $black-color-2c;
+  @include themify($themes) {
+
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+      color:  themed("black-color-2c");
+  }
 }
 ::selection {
   color: rgb(255, 255, 255);
@@ -153,18 +172,21 @@ input[type="number"] {
 
 /* Common Class */
 .AppWrapper {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  @include Background-Image();
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+  @include themify($themes) {
+
+    position: relative;
     width: 100%;
-    height: 100%;
-    background-color: rgba($black-color-13, 0.75);
+    min-height: 100vh;
+    @include Background-Image();
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(themed("black-color-13"), 0.75);
+    }
   }
 }
 .container {
@@ -245,17 +267,20 @@ input[type="number"] {
   }
 }
 .default_btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  padding: 10px 24px;
-  border-radius: 5px;
-  font-size: 15px;
-  font-weight: 500;
-  background: $menu-gradient;
-  &:hover {
-    background: $menu-gradient-hover;
+  @include themify($themes) {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px 24px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    background:   themed("menu-gradient");
+    &:hover {
+      background: themed("menu-gradient-hover");
+    }
   }
 }
 .header_area {
@@ -270,13 +295,16 @@ input[type="number"] {
 }
 
 .page_title {
-  font-family: $secondery-font;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 38px;
-  color: #ffffff;
-  @include max-media-width(767) {
-    font-size: 20px;
+  @include themify($themes) {
+
+    font-family: $secondery-font;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 38px;
+    color:   themed("white-color");
+    @include max-media-width(767) {
+      font-size: 20px;
+    }
   }
 }
 
@@ -370,17 +398,20 @@ input[type="number"] {
 
 //Overlay
 .overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 20;
-  background-color: rgba($black-color-13, 0.75);
-  display: none;
-  &.search_overlay_active {
-    @include max-media-width(991) {
-      display: block;
+  @include themify($themes) {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    background-color: rgba( themed("black-color-13"), 0.75);
+    display: none;
+    &.search_overlay_active {
+      @include max-media-width(991) {
+        display: block;
+      }
     }
   }
 }
@@ -388,21 +419,24 @@ input[type="number"] {
 //Slider Arrow
 .slider_arrow_area {
   .slider_arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border: 1.10938px solid rgba($black-color-2c, 0.9) !important;
-    border-radius: 12px;
-    @include hover-transition();
-    &:hover {
-      background-color: $black-color-2c;
-      path {
-        fill: $white-color;
+    @include themify($themes) {
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border: 1.10938px solid rgba( themed("black-color-2c") , 0.9) !important;
+      border-radius: 12px;
+      @include hover-transition();
+      &:hover {
+        background-color:  themed("black-color-2c");
+        path {
+          fill:     themed("white-color");
+        }
       }
     }
-  }
+    }
 }
 
 //Count Down Text
@@ -410,29 +444,38 @@ input[type="number"] {
   margin-top: 10px;
   ul {
     li {
-      font-family: $secondery-font;
-      font-weight: 600;
-      font-size: 20px;
-      line-height: 31px;
-      color: $white-color;
+      @include themify($themes) {
+
+        font-family: $secondery-font;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 31px;
+        color:   themed("white-color");
+      }
     }
   }
 }
 .expoire_msg {
-  font-family: $secondery-font;
-  font-weight: 600 !important;
-  font-size: 18px !important;
-  line-height: 31px !important;
-  color: $white-color;
-  margin-top: 10px;
+  @include themify($themes) {
+
+    font-family: $secondery-font;
+    font-weight: 600 !important;
+    font-size: 18px !important;
+    line-height: 31px !important;
+    color:   themed("white-color");
+    margin-top: 10px;
+  }
 }
 
 .border_linear {
-  position: relative;
-  border: 1.74px solid;
-  border-image: $border-gradient;
-  border-image-slice: 1;
-  border-radius: 8px;
+  @include themify($themes) {
+
+    position: relative;
+    border: 1.74px solid;
+    border-image: themed("border-gradient");
+    border-image-slice: 1;
+    border-radius: 8px;
+  }
 }
 
 // Product Item
@@ -775,17 +818,4 @@ input[type="number"] {
   }
 }
 
-@import "../theme.scss";
-// usage
-.myClass {
-  @include themify($themes) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(themed("my-class-bg"),0.2);
-    color: themed("text-color");
-     display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
+

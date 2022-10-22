@@ -1,1 +1,14 @@
-/*# sourceMappingURL=theme.css.map */
+/* @import "Your Path/theme.scss";  */
+/* .myClass {
+  @include themify($themes) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(themed("my-class-bg"),0.2);
+    color: themed("text-color");
+     display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+ *//*# sourceMappingURL=theme.css.map */
