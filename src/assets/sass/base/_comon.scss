@@ -2,6 +2,7 @@
 !Utilities Or Helper CSS
 */
 @import "../theme.scss";
+
 *,
 ::before,
 ::after {
@@ -674,7 +675,7 @@ input[type="number"] {
       max-width: 400px;
       max-height: 80vh;
       width: 100%;
-      background-color: $black-color-13;
+      background-color: themed("black-color-13");
       box-shadow: themed("dropdown-shadow");
       @include customScrollbarInner();
     }

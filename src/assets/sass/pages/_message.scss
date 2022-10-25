@@ -1,3 +1,4 @@
+@import "../theme.scss";
 .inbox_wrapper {
   .inbox_grid {
     display: grid;
@@ -9,10 +10,14 @@
       display: inline;
     }
   }
+
   .inbox_user_name_area {
     padding: 20px;
     height: 90%;
-    background-color: $black-color-13;
+    @include themify($themes) {
+      background-color: themed("black-color-13");
+    }
+
     @include customScrollbarInner2();
     @include max-media-width(767) {
       position: fixed;
@@ -30,45 +35,47 @@
     margin-top: 20px;
   }
   .user_list_grid {
-    display: grid;
-    grid-template-columns: minmax(0, 50px) repeat(1, minmax(0, 1fr));
-    align-items: center;
-    gap: 10px;
-    padding: 10px 5px;
-    margin-top: 5px;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
-    border-bottom: 1px solid $black-color-2c;
-    cursor: pointer;
-    @include hover-transition();
-    &:hover {
-      background-color: $black-color-2c;
-    }
-    h4 {
-      font-size: 15px;
-      color: $white-color;
-    }
-    h5 {
-      font-size: 12px;
-      color: $gray-color-a2;
-      margin-top: 4px;
-    }
-    .status {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      -ms-border-radius: 50%;
-      -o-border-radius: 50%;
-      margin-right: 5px;
-      background-color: $green-color-0d;
-      &.offline_user {
-        background-color: rgba($red-color-ff, 0.7);
+    @include themify($themes) {
+      display: grid;
+      grid-template-columns: minmax(0, 50px) repeat(1, minmax(0, 1fr));
+      align-items: center;
+      gap: 10px;
+      padding: 10px 5px;
+      margin-top: 5px;
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -o-border-radius: 4px;
+      border-bottom: 1px solid themed("black-color-2c");
+      cursor: pointer;
+      @include hover-transition();
+      &:hover {
+        background-color: themed("black-color-2c");
+      }
+      h4 {
+        font-size: 15px;
+        color: themed("white-color");
+      }
+      h5 {
+        font-size: 12px;
+        color: themed("gray-color-a2");
+        margin-top: 4px;
+      }
+      .status {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        margin-right: 5px;
+        background-color: themed("green-color-0d");
+        &.offline_user {
+          background-color: rgba(themed("red-color-ff"), 0.7);
+        }
       }
     }
   }
@@ -79,7 +86,6 @@
     width: 100%;
     height: 50px;
     overflow: hidden;
-
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -96,24 +102,28 @@
     }
   }
   .user_header_area {
-    background-color: $black-color-13;
-    border-bottom: 1px solid $black-color-2c;
+    @include themify($themes) {
+      background-color: themed("black-color-13");
+      border-bottom: 1px solid themed("black-color-2c");
+    }
   }
   .chat_btn_area {
-    button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      -ms-border-radius: 50%;
-      -o-border-radius: 50%;
-      @include hover-transition();
-      &:hover {
-        background-color: $gray-color-a2;
+    @include themify($themes) {
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        @include hover-transition();
+        &:hover {
+          background-color: themed("gray-color-a2");
+        }
       }
     }
   }

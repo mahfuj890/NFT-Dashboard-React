@@ -1,4 +1,6 @@
 import "../src/assets/sass/style.css";
+import "../src/assets/sass/theme.scss";
+// import "./assets/sass/theme.css";
 import "react-toastify/dist/ReactToastify.css";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -20,7 +22,6 @@ import Bitcoin from "./Pages/Bitcoin";
 import Ethereum from "./Pages/Ethereum";
 import UsdCoin from "./Pages/UsdCoin";
 import ThemeContext from "./Context/ThemeContext";
-import "../src/assets/sass/theme.scss";
 import { useContext } from "react";
 
 function App() {

@@ -1,13 +1,15 @@
 .sidebar_wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 256px;
-  height: 100vh;
-  z-index: 1000;
-  padding: 24px 12px 24px 24px;
-  border-right: 1.33px solid $black-color-2c;
-  background-color: $black-color-13;
+  @include themify($themes) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 256px;
+    height: 100vh;
+    z-index: 1000;
+    padding: 24px 12px 24px 24px;
+    border-right: 1.33px solid themed("black-color-2c");
+    background-color: themed("black-color-13");
+  }
   @include customScrollbarInner();
   overflow: auto;
   @include max-media-width(991) {
@@ -26,29 +28,31 @@
     margin-top: 40px;
   }
   .menu_link {
-    display: grid;
-    grid-template-columns: minmax(0, 26px) repeat(1, minmax(0, 1fr));
-    align-items: center;
-    gap: 10px 14px;
-    padding: 13px 18px;
-    border-radius: 16.6406px;
-    @include max-media-width(767) {
-      grid-template-columns: minmax(0, 20px) repeat(1, minmax(0, 1fr));
-      gap:  10px;
-      padding: 8px 12px;
-    }
-    &:hover {
-      background-color: $black-color;
-    }
-    &.active {
-      background: $menu-gradient;
-      svg {
-        path {
-          fill: $white-color;
-        }
+    @include themify($themes) {
+      display: grid;
+      grid-template-columns: minmax(0, 26px) repeat(1, minmax(0, 1fr));
+      align-items: center;
+      gap: 10px 14px;
+      padding: 13px 18px;
+      border-radius: 16.6406px;
+      @include max-media-width(767) {
+        grid-template-columns: minmax(0, 20px) repeat(1, minmax(0, 1fr));
+        gap: 10px;
+        padding: 8px 12px;
       }
-      .menu_label {
-        color: $white-color;
+      &:hover {
+        background-color: themed("black-color");
+      }
+      &.active {
+        background: themed("menu-gradient");
+        svg {
+          path {
+            fill: themed("white-color");
+          }
+        }
+        .menu_label {
+          color: themed("white-color");
+        }
       }
     }
   }
@@ -64,19 +68,22 @@
     margin-top: 5px;
   }
   .menu_label {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 21px;
-    color: $gray-color-a2;
-    @include max-media-width(767) {
-      font-size: 15px;
+    @include themify($themes) {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 21px;
+      color: themed("gray-color-a2");
+      @include max-media-width(767) {
+        font-size: 15px;
+      }
     }
   }
   .add_border {
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-
-    border-bottom: 1.10938px solid #b3b3b3;
+    @include themify($themes) {
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1.10938px solid themed("gray-color-b3");
+    }
   }
 }
 .sidebar_active {

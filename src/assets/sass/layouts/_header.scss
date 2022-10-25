@@ -1,236 +1,240 @@
+@import "../theme.scss";
+
 .header_wrapper {
-  position: fixed;
-  top: 0;
-  left: 0px;
-  z-index: 100;
-  width: 100%;
-  height: 80px;
-  padding: 20px 25px;
-  background-color: $black-color-13;
-  border-bottom: 1.33333px solid $black-color-2c;
-  @include hover-transition();
-  @include min-media-width(992) {
-    padding-left: 275px;
+  @include themify($themes) {
+    position: fixed;
+    top: 0;
+    left: 0px;
+    z-index: 100;
     width: 100%;
-  }
-  @include media-break-width(768, 991) {
-    padding: 15px 20px;
-    height: 70px;
-  }
-  @include max-media-width(767) {
-    padding: 15px 16px;
-    height: 60px;
-  }
-  .sidebar_icon {
-    button {
-      &:hover {
-        opacity: 0.9;
-      }
-    }
-    svg {
-      path {
-        stroke: $white-color;
-      }
-    }
-  }
-  .header_search_area {
-    display: grid;
-    grid-template-columns: minmax(0, 20px) minmax(0, 20px);
-    align-items: center;
-    gap: 10px 15px;
+    height: 80px;
+    padding: 20px 25px;
+    background-color: themed("black-color-13");
+    border-bottom: 1.33333px solid themed("black-color-2c");
+    @include hover-transition();
     @include min-media-width(992) {
-      grid-template-columns: minmax(0, 25px) minmax(0, 290px);
-    }
-  }
-  .search_form_area {
-    position: relative;
-    width: 100%;
-    height: 44px;
-    background: #{'rgba(var(--white-color), 0.1)'};
-    border-radius: 8px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
-    @include max-media-width(991) {
-      position: fixed;
-      top: 55%;
-      max-width: 400px;
-      width: 90%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 100;
-      opacity: 0;
-      visibility: hidden;
-    }
-    &.search_form_grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 45px);
-      align-items: center;
-      gap: 5px;
-      input {
-        padding-right: 0;
-      }
-    }
-    input {
+      padding-left: 275px;
       width: 100%;
-      height: 100%;
-      padding: 0 20px;
-      color: $white-color;
-      border: none !important;
-      background-color: transparent;
     }
-    .search_btn {
-      width: 95%;
-      height: 95%;
-      border-radius: 50%;
-      &:hover {
-        background-color: $black-color-13;
+    @include media-break-width(768, 991) {
+      padding: 15px 20px;
+      height: 70px;
+    }
+    @include max-media-width(767) {
+      padding: 15px 16px;
+      height: 60px;
+    }
+    .sidebar_icon {
+      button {
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+      svg {
+        path {
+          stroke: themed("white-color");
+        }
       }
     }
-    ::placeholder {
-      font-size: 14px;
-    }
-  }
-  .header_active {
-    .search_form_area {
-      @include max-media-width(991) {
-        top: 50%;
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-    .overlay {
-      display: block;
-    }
-  }
-  .header_info_list {
-    li {
-      position: relative;
-    }
-    .icon_btn {
-      position: relative;
-      display: flex;
+    .header_search_area {
+      display: grid;
+      grid-template-columns: minmax(0, 20px) minmax(0, 20px);
       align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      -ms-border-radius: 50%;
-      -o-border-radius: 50%;
-      @include hover-transition();
-      &:hover {
-        background-color: $white-color-rgba;
-      }
-      @include max-media-width(767) {
-        width: 30px;
-        height: 30px;
+      gap: 10px 15px;
+      @include min-media-width(992) {
+        grid-template-columns: minmax(0, 25px) minmax(0, 290px);
       }
     }
-    .user_btn {
+    .search_form_area {
+      position: relative;
+      width: 100%;
+      height: 44px;
+      background: rgba(themed("white-color"), 0.1);
       border-radius: 8px;
       -webkit-border-radius: 8px;
       -moz-border-radius: 8px;
       -ms-border-radius: 8px;
       -o-border-radius: 8px;
-      &:hover {
-        opacity: 0.8;
+      @include max-media-width(991) {
+        position: fixed;
+        top: 55%;
+        max-width: 400px;
+        width: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+      }
+      &.search_form_grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 45px);
+        align-items: center;
+        gap: 5px;
+        input {
+          padding-right: 0;
+        }
+      }
+      input {
+        width: 100%;
+        height: 100%;
+        padding: 0 20px;
+        color: themed("white-color");
+        border: none !important;
         background-color: transparent;
       }
+      .search_btn {
+        width: 95%;
+        height: 95%;
+        border-radius: 50%;
+        &:hover {
+          background-color: themed("black-color-13");
+        }
+      }
+      ::placeholder {
+        font-size: 14px;
+      }
     }
-  }
-  .dropdwon_area {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    z-index: 100;
-    background: $black-color-13;
-    padding: 20px 25px;
-    min-width: 200px;
-    box-shadow: $dropdown-shadow;
-    opacity: 0;
-    visibility: hidden;
-    @include hover-transition();
-    li {
-      margin-bottom: 14px;
+    .header_active {
+      .search_form_area {
+        @include max-media-width(991) {
+          top: 50%;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      .overlay {
+        display: block;
+      }
     }
-  }
-  .dropdownActive {
-    top: 50px;
-    opacity: 1;
-    visibility: visible;
-  }
-  .profile_link {
-    display: grid;
-    grid-template-columns: minmax(0, 16px) repeat(1, minmax(0, 1fr));
-    align-items: center;
-    gap: 10px;
-    &:hover {
-      opacity: 0.8;
-    }
-    h6 {
-      font-size: 15px;
-      font-weight: 600;
-      color: $white-color;
-    }
-    svg {
-      color: $white-color;
-    }
-  }
-  .user_dropdown_area {
-    h4 {
-      font-size: 12px;
-      font-weight: 400;
-      width: 100%;
-      height: 15px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    h5 {
-      font-size: 18px;
-      font-weight: 600;
-      margin-top: 4px;
-      width: 100%;
-      height: 23px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      margin-bottom: 15px;
-    }
-  }
-  .notifi_dropdown_area {
-    min-width: 300px;
-  }
-  .notification_header {
-    h3 {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 18px;
-      font-weight: 400;
-      span {
+    .header_info_list {
+      li {
+        position: relative;
+      }
+      .icon_btn {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 12px;
-        font-weight: 600;
-        color: $black-color-13;
-        background: $white-color;
-        padding: 4px;
+        width: 44px;
+        height: 44px;
         border-radius: 50%;
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
         -ms-border-radius: 50%;
         -o-border-radius: 50%;
-        min-width: 20px;
-        height: 20px;
+        @include hover-transition();
+        &:hover {
+          background-color: rgba(themed("white-color"), 0.7);
+        }
+        @include max-media-width(767) {
+          width: 30px;
+          height: 30px;
+        }
       }
-      .highlighted {
-        color: $white-color;
-        background: $menu-gradient;
+      .user_btn {
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+        &:hover {
+          opacity: 0.8;
+          background-color: transparent;
+        }
+      }
+    }
+    .dropdwon_area {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      z-index: 100;
+      background: themed("black-color-13");
+      padding: 20px 25px;
+      min-width: 200px;
+      box-shadow: themed("dropdown-shadow");
+      opacity: 0;
+      visibility: hidden;
+      @include hover-transition();
+      li {
+        margin-bottom: 14px;
+      }
+    }
+    .dropdownActive {
+      top: 50px;
+      opacity: 1;
+      visibility: visible;
+    }
+    .profile_link {
+      display: grid;
+      grid-template-columns: minmax(0, 16px) repeat(1, minmax(0, 1fr));
+      align-items: center;
+      gap: 10px;
+      &:hover {
+        opacity: 0.8;
+      }
+      h6 {
+        font-size: 15px;
+        font-weight: 600;
+        color: themed("white-color");
+      }
+      svg {
+        color: themed("white-color");
+      }
+    }
+    .user_dropdown_area {
+      h4 {
+        font-size: 12px;
+        font-weight: 400;
+        width: 100%;
+        height: 15px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      h5 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 4px;
+        width: 100%;
+        height: 23px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-bottom: 15px;
+      }
+    }
+    .notifi_dropdown_area {
+      min-width: 300px;
+    }
+    .notification_header {
+      h3 {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 18px;
+        font-weight: 400;
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 12px;
+          font-weight: 600;
+          color: themed("black-color-13");
+          background: themed("white-color");
+          padding: 4px;
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+          min-width: 20px;
+          height: 20px;
+        }
+        .highlighted {
+          color: themed("white-color");
+          background: themed("menu-gradient");
+        }
       }
     }
   }
@@ -241,51 +245,57 @@
     @include customScrollbarInner2();
 
     li {
-      position: relative;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 25px);
-      align-items: center;
-      gap: 10px 10px;
-      margin-top: 10px;
-      &:before {
-        content: "";
-        position: absolute;
-        top: 6px;
-        left: -14px;
-        width: 7px;
-        height: 7px;
-        background-color: $white-color;
-        border-radius: 50%;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        -o-border-radius: 50%;
-      }
+      @include themify($themes) {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 25px);
+        align-items: center;
+        gap: 10px 10px;
+        margin-top: 10px;
+        &:before {
+          content: "";
+          position: absolute;
+          top: 6px;
+          left: -14px;
+          width: 7px;
+          height: 7px;
+          background-color: themed("white-color");
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+        }
 
-      a {
-        font-size: 14px;
-        line-height: 20px;
-        height: 44px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        &:hover {
-          opacity: 0.9;
+        a {
+          font-size: 14px;
+          line-height: 20px;
+          height: 44px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          &:hover {
+            opacity: 0.9;
+          }
         }
       }
     }
     .received {
       span {
-        color: $green-color-0d;
-        font-weight: 700;
+        @include themify($themes) {
+          color: themed("green-color-0d");
+          font-weight: 700;
+        }
       }
     }
     .transfer {
       span {
-        color: $red-color-ff;
-        font-weight: 700;
+        @include themify($themes) {
+          color: themed("red-color-ff");
+          font-weight: 700;
+        }
       }
     }
   }
@@ -295,5 +305,3 @@
     }
   }
 }
-
-// outsideHooks={handleNotifiClose}

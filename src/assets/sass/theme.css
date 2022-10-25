@@ -1,4 +1,4 @@
-/* @import "Your Path/theme.scss";  */
+/* @import "./theme.scss"; */
 /* .myClass {
   @include themify($themes) {
     display: flex;
@@ -11,4 +11,9 @@
     justify-content: center;
   }
 }
- *//*# sourceMappingURL=theme.css.map */
+ */
+/*   @include themify($themes) {
+
+  }
+
+  themed("") *//*# sourceMappingURL=theme.css.map */

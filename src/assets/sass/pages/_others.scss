@@ -1,3 +1,4 @@
+@import "../theme.scss";
 .auctions_wrapper {
   .search_form_area {
     max-width: 300px;
@@ -10,19 +11,21 @@
 }
 
 .bitcoin_wrapper {
-  .bitcoing_grid {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr)) minmax(0, 0.7fr);
-    align-items: start;
-    gap: 30px;
-    @include max-media-width(991) {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
+  @include themify($themes) {
+    .bitcoing_grid {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr)) minmax(0, 0.7fr);
+      align-items: start;
+      gap: 30px;
+      @include max-media-width(991) {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
     }
-  }
-  .bar_chart_area {
-    width: 100%;
-    height: 500px;
-    padding: 15px;
-    background-color: $black-color-13;
+    .bar_chart_area {
+      width: 100%;
+      height: 500px;
+      padding: 15px;
+      background-color: themed("black-color-13");
+    }
   }
 }
