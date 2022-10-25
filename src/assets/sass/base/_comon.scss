@@ -11,12 +11,14 @@
   padding: 0;
 }
 body {
-  @include themify($themes) {
-    font-family: $body-font-family;
-    font-size: $font-size-base;
-    color: themed("white-color");
+  font-family: $body-font-family;
+  font-size: $font-size-base;
+  color: white;
+  &.theme-light {
+    color: black;
   }
 }
+
 html,
 body {
   overflow-x: hidden;

@@ -19,9 +19,13 @@ export const ThemeContextProvider = ({ children }) => {
 
     if (getThemeColor == "light") {
       localStorage.setItem("data-theme", "light");
+      document.body.classList.remove("theme-dark");
+      document.body.classList.add("theme-light");
       setSwitchbox(false);
     } else {
       localStorage.setItem("data-theme", "dark");
+      document.body.classList.remove("theme-light");
+      document.body.classList.add("theme-dark");
       setSwitchbox(true);
     }
   }, [switchbox]);

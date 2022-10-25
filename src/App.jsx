@@ -21,14 +21,11 @@ import Favourites from "./Pages/Favourites";
 import Bitcoin from "./Pages/Bitcoin";
 import Ethereum from "./Pages/Ethereum";
 import UsdCoin from "./Pages/UsdCoin";
-import ThemeContext from "./Context/ThemeContext";
-import { useContext } from "react";
 
 function App() {
-  const { switchbox } = useContext(ThemeContext);
   return (
     <div
-      className={`AppWrapper theme-${switchbox ? "dark" : "light"}`}
+      className="AppWrapper"
       style={{ background: `url(${bodyBG}), #0C0C0C` }}
     >
       <SidebarContextProvider>
