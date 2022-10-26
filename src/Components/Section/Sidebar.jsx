@@ -18,24 +18,10 @@ function Sidebar() {
             <img src={logo} alt="logo" />
           </Link>
         </div>
-        <h4 className="myClass" data="red">
-          Thiis is
-        </h4>
+        
         <div className="sidebar_menu_area">
-          <h4 style={{ color: "white" }}>{switchbox ? "yes" : "no"} </h4>
           <ul className="top_menu_list">
-            <li>
-              <div className="custom_switchbox_area">
-                <label className="switch">
-                  <input
-                    type="checkbox"
-                    checked={switchbox}
-                    onChange={handleChangeSWitch}
-                  />
-                  <span className="slider round"></span>
-                </label>
-              </div>
-            </li>
+         
             {SidebarData.map((item) => {
               return (
                 <li
@@ -51,6 +37,19 @@ function Sidebar() {
                 </li>
               );
             })}
+            <li className="dark_light_list menu_link d-flex align-items-center justify-content-between">
+              <div className="mood_label"><b>{switchbox? "Dark" : "Light"}  mode</b></div>
+              <div className="custom_switchbox_area">
+                <label className="switch ">
+                  <input
+                    type="checkbox"
+                    checked={switchbox}
+                    onChange={handleChangeSWitch}
+                  />
+                  <span className="slider round"></span>
+                </label>
+              </div>
+            </li>
           </ul>
         </div>
       </div>

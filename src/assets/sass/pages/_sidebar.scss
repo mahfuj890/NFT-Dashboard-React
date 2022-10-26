@@ -85,6 +85,13 @@
       border-bottom: 1.10938px solid themed("gray-color-b3");
     }
   }
+  .dark_light_list {
+    display: flex !important;
+    &:hover {
+      opacity: 0.9;
+      background-color: transparent !important;
+    }
+  }
 }
 .sidebar_active {
   left: 0;

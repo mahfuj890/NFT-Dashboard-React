@@ -89,8 +89,8 @@ $dropdown-shadow: 0 5px 5px #6868685e
   width: 100%;
   height: 80px;
   padding: 20px 25px;
-  background-color: red;
-  border-bottom: 1.33333px solid blue;
+  background-color: #e1e1e1;
+  border-bottom: 1.33333px solid rgb(1, 1, 1);
   transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -126,7 +126,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   opacity: 0.9;
 }
 .theme-light .header_wrapper .sidebar_icon svg path {
-  stroke: white;
+  stroke: #131313;
 }
 .theme-light .header_wrapper .header_search_area {
   display: grid;
@@ -148,7 +148,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   position: relative;
   width: 100%;
   height: 44px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(19, 19, 19, 0.1);
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -182,7 +182,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   width: 100%;
   height: 100%;
   padding: 0 20px;
-  color: white;
+  color: #131313;
   border: none !important;
   background-color: transparent;
 }
@@ -192,7 +192,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   border-radius: 50%;
 }
 .theme-light .header_wrapper .search_form_area .search_btn:hover {
-  background-color: red;
+  background-color: #e1e1e1;
 }
 .theme-light .header_wrapper .search_form_area ::-moz-placeholder {
   font-size: 14px;
@@ -229,6 +229,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+  background-color: #7f7f7f;
   transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -236,7 +237,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   -o-transition: all 0.5s ease-in-out;
 }
 .theme-light .header_wrapper .header_info_list .icon_btn:hover {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(19, 19, 19, 0.7);
 }
 @media all and (max-width: 767px) {
   .theme-light .header_wrapper .header_info_list .icon_btn {
@@ -261,7 +262,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   top: 60px;
   right: 0;
   z-index: 100;
-  background: red;
+  background: #e1e1e1;
   padding: 20px 25px;
   min-width: 200px;
   box-shadow: 0 5px 5px rgba(104, 104, 104, 0.368627451);
@@ -293,17 +294,17 @@ $dropdown-shadow: 0 5px 5px #6868685e
 .theme-light .header_wrapper .profile_link h6 {
   font-size: 15px;
   font-weight: 600;
-  color: white;
+  color: #131313;
 }
 .theme-light .header_wrapper .profile_link svg {
-  color: white;
+  color: #131313;
 }
 .theme-light .header_wrapper .user_dropdown_area h4 {
   font-size: 12px;
   font-weight: 400;
   width: 100%;
   height: 15px;
-  color: white;
+  color: #131313;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -311,7 +312,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
 .theme-light .header_wrapper .user_dropdown_area h5 {
   font-size: 18px;
   font-weight: 600;
-  color: white;
+  color: #131313;
   margin-top: 4px;
   width: 100%;
   height: 23px;
@@ -329,7 +330,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   gap: 5px;
   font-size: 18px;
   font-weight: 400;
-  color: white;
+  color: #131313;
 }
 .theme-light .header_wrapper .notification_header h3 span {
   display: flex;
@@ -337,8 +338,8 @@ $dropdown-shadow: 0 5px 5px #6868685e
   justify-content: center;
   font-size: 12px;
   font-weight: 600;
-  color: red;
-  background: white;
+  color: #e1e1e1;
+  background: #131313;
   padding: 4px;
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -349,7 +350,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   height: 20px;
 }
 .theme-light .header_wrapper .notification_header h3 .highlighted {
-  color: white;
+  color: #131313;
   background: linear-gradient(65.58deg, rgba(0, 66, 255, 0.5) -11.84%, rgba(235, 0, 27, 0.5) 98.75%);
 }
 .theme-dark .header_wrapper {
@@ -691,7 +692,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   left: -14px;
   width: 7px;
   height: 7px;
-  background-color: white;
+  background-color: #131313;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -702,7 +703,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   font-size: 14px;
   line-height: 20px;
   height: 44px;
-  color: white;
+  color: #131313;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -757,7 +758,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   font-weight: 700;
 }
 .theme-light .header_wrapper .notification_list .transfer span {
-  color: #001aff;
+  color: #f21e1e;
   font-weight: 700;
 }
 .theme-dark .header_wrapper .notification_list .transfer span {
@@ -829,7 +830,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   align-items: start;
   gap: 30px 20px;
   padding-bottom: 30px;
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid rgb(1, 1, 1);
 }
 @media all and (max-width: 1199px) {
   .theme-light .dashboard_wrapper .dashboard_outer_grid {
@@ -855,7 +856,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
     top: -20px;
     width: 1px;
     height: calc(100% + 50px);
-    background-color: blue;
+    background-color: rgb(1, 1, 1);
   }
 }
 .theme-light .dashboard_wrapper .slider_grid {
@@ -919,7 +920,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   font-weight: 600;
   font-size: 32px;
   line-height: 50px;
-  color: white;
+  color: #131313;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .theme-light .dashboard_wrapper .slider_header h4 {
@@ -960,13 +961,13 @@ $dropdown-shadow: 0 5px 5px #6868685e
   font-weight: 600;
   font-size: 14px;
   line-height: 21px;
-  color: white;
+  color: #131313;
 }
 .theme-light .dashboard_wrapper .slider_user_grid h5 {
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(19, 19, 19, 0.7);
 }
 .theme-light .dashboard_wrapper .user_price_grid {
   display: grid;
@@ -979,7 +980,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
-  color: white;
+  color: #131313;
 }
 .theme-light .dashboard_wrapper .price_item h4 {
   display: flex;
@@ -989,7 +990,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   font-weight: 600;
   font-size: 20px;
   line-height: 31px;
-  color: white;
+  color: #131313;
   margin-top: 10px;
 }
 @media all and (max-width: 767px) {
@@ -1020,10 +1021,10 @@ $dropdown-shadow: 0 5px 5px #6868685e
   font-family: "Saira", sans-serif;
   font-weight: 600;
   font-size: 16px;
-  color: white;
+  color: #131313;
   min-width: 159px;
   height: 50px;
-  border: 1px solid white;
+  border: 1px solid #131313;
   border-radius: 8px;
 }
 @media all and (max-width: 767px) {
@@ -1037,9 +1038,9 @@ $dropdown-shadow: 0 5px 5px #6868685e
   opacity: 0.8;
 }
 .theme-light .dashboard_wrapper .slider_btn_area .slider_btn:nth-child(1) {
-  color: black;
-  border-color: rgba(255, 255, 255, 0.7);
-  background-color: rgba(255, 255, 255, 0.7);
+  color: rgb(182, 161, 161);
+  border-color: rgba(19, 19, 19, 0.7);
+  background-color: rgba(19, 19, 19, 0.7);
 }
 .theme-light .dashboard_wrapper .my_wallet_item {
   padding: 16px;
@@ -1058,7 +1059,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   font-weight: 600;
   font-size: 16px;
   line-height: 25px;
-  color: white;
+  color: #131313;
 }
 .theme-light .dashboard_wrapper .wallet_title_area h4 span {
   font-size: 36px;
@@ -1094,16 +1095,16 @@ $dropdown-shadow: 0 5px 5px #6868685e
 }
 .theme-light .dashboard_wrapper .wallet_chart_item h4 span {
   font-size: 12px;
-  color: white;
+  color: #131313;
 }
 .theme-light .dashboard_wrapper .wallet_chart_item:nth-child(2) {
-  color: rgba(0, 26, 255, 0.581);
+  color: rgba(242, 30, 30, 0.581);
 }
 .theme-light .dashboard_wrapper .wallet_chart_item:nth-child(2) .chart_icon {
-  background: rgba(0, 26, 255, 0.12);
+  background: rgba(242, 30, 30, 0.12);
 }
 .theme-light .dashboard_wrapper .wallet_chart_item:nth-child(2) h4 {
-  color: #001aff;
+  color: #f21e1e;
 }
 .theme-light .dashboard_wrapper .chart_icon {
   display: flex;
@@ -1519,7 +1520,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   font-weight: 600;
   font-size: 16.3798px;
   line-height: 20px;
-  color: white;
+  color: #131313;
 }
 .theme-dark .dashboard_wrapper .recent_transaction_inner_area h3 {
   font-weight: 600;
@@ -1529,7 +1530,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
 }
 .theme-light .dashboard_wrapper .transaction_item {
   padding: 15px 12px;
-  border-bottom: 0.818991px solid #a2a3a4;
+  border-bottom: 0.818991px solid #121212;
 }
 .theme-light .dashboard_wrapper .transaction_item .current_grid {
   display: grid;
@@ -1621,8 +1622,8 @@ $dropdown-shadow: 0 5px 5px #6868685e
   height: 100vh;
   z-index: 1000;
   padding: 24px 12px 24px 24px;
-  border-right: 1.33px solid blue;
-  background-color: red;
+  border-right: 1.33px solid rgb(1, 1, 1);
+  background-color: #e1e1e1;
 }
 .theme-dark .sidebar_wrapper {
   position: fixed;
@@ -1719,16 +1720,16 @@ $dropdown-shadow: 0 5px 5px #6868685e
   }
 }
 .theme-light .sidebar_wrapper .menu_link:hover {
-  background-color: black;
+  background-color: rgb(182, 161, 161);
 }
 .theme-light .sidebar_wrapper .menu_link.active {
   background: linear-gradient(65.58deg, rgba(0, 66, 255, 0.5) -11.84%, rgba(235, 0, 27, 0.5) 98.75%);
 }
 .theme-light .sidebar_wrapper .menu_link.active svg path {
-  fill: white;
+  fill: #131313;
 }
 .theme-light .sidebar_wrapper .menu_link.active .menu_label {
-  color: white;
+  color: #131313;
 }
 .theme-dark .sidebar_wrapper .menu_link {
   display: grid;
@@ -1776,7 +1777,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   font-weight: 400;
   font-size: 16px;
   line-height: 21px;
-  color: #a2a3a4;
+  color: #121212;
 }
 @media all and (max-width: 767px) {
   .theme-light .sidebar_wrapper .menu_label {
@@ -1805,6 +1806,13 @@ $dropdown-shadow: 0 5px 5px #6868685e
   padding-bottom: 10px;
   margin-bottom: 10px;
   border-bottom: 1.10938px solid #b3b3b3;
+}
+.sidebar_wrapper .dark_light_list {
+  display: flex !important;
+}
+.sidebar_wrapper .dark_light_list:hover {
+  opacity: 0.9;
+  background-color: transparent !important;
 }
 
 .sidebar_active {
@@ -1854,7 +1862,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   width: 100%;
   height: 500px;
   padding: 15px;
-  background-color: red;
+  background-color: #e1e1e1;
 }
 .theme-dark .bitcoin_wrapper .bitcoing_grid {
   display: grid;
@@ -1919,7 +1927,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   height: 90%;
 }
 .theme-light .inbox_wrapper .inbox_user_name_area {
-  background-color: red;
+  background-color: #e1e1e1;
 }
 .theme-dark .inbox_wrapper .inbox_user_name_area {
   background-color: #131313;
@@ -2001,7 +2009,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid rgb(1, 1, 1);
   cursor: pointer;
   transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
@@ -2010,15 +2018,15 @@ $dropdown-shadow: 0 5px 5px #6868685e
   -o-transition: all 0.5s ease-in-out;
 }
 .theme-light .inbox_wrapper .user_list_grid:hover {
-  background-color: blue;
+  background-color: rgb(1, 1, 1);
 }
 .theme-light .inbox_wrapper .user_list_grid h4 {
   font-size: 15px;
-  color: white;
+  color: #131313;
 }
 .theme-light .inbox_wrapper .user_list_grid h5 {
   font-size: 12px;
-  color: #a2a3a4;
+  color: #121212;
   margin-top: 4px;
 }
 .theme-light .inbox_wrapper .user_list_grid .status {
@@ -2034,7 +2042,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   background-color: #0ddb84;
 }
 .theme-light .inbox_wrapper .user_list_grid .status.offline_user {
-  background-color: rgba(0, 26, 255, 0.7);
+  background-color: rgba(242, 30, 30, 0.7);
 }
 .theme-dark .inbox_wrapper .user_list_grid {
   display: grid;
@@ -2108,8 +2116,8 @@ $dropdown-shadow: 0 5px 5px #6868685e
   background-color: transparent;
 }
 .theme-light .inbox_wrapper .user_header_area {
-  background-color: red;
-  border-bottom: 1px solid blue;
+  background-color: #e1e1e1;
+  border-bottom: 1px solid rgb(1, 1, 1);
 }
 .theme-dark .inbox_wrapper .user_header_area {
   background-color: #131313;
@@ -2133,7 +2141,7 @@ $dropdown-shadow: 0 5px 5px #6868685e
   -o-transition: all 0.5s ease-in-out;
 }
 .theme-light .inbox_wrapper .chat_btn_area button:hover {
-  background-color: #a2a3a4;
+  background-color: #121212;
 }
 .theme-dark .inbox_wrapper .chat_btn_area button {
   display: flex;
@@ -2320,7 +2328,7 @@ h6 {
   font-weight: 400;
   font-size: 16px;
   line-height: 27px;
-  color: white;
+  color: #131313;
 }
 .theme-dark p {
   font-weight: 400;
@@ -2376,7 +2384,7 @@ li {
 .theme-light textarea {
   font-weight: 400;
   font-size: 16px;
-  color: blue;
+  color: rgb(1, 1, 1);
 }
 .theme-dark input,
 .theme-dark select,
@@ -2390,7 +2398,7 @@ li {
 .theme-light select:focus {
   outline: none !important;
   box-shadow: none !important;
-  border: 1px solid #001aff !important;
+  border: 1px solid #f21e1e !important;
 }
 .theme-dark input:focus,
 .theme-dark select:focus {
@@ -2416,7 +2424,7 @@ button:focus {
 
 .theme-light button {
   cursor: pointer;
-  color: white;
+  color: #131313;
   border: none !important;
   background-color: transparent;
 }
@@ -2436,21 +2444,21 @@ button:hover {
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
-  color: blue;
+  color: rgb(1, 1, 1);
 }
 
 .theme-light *:-ms-input-placeholder {
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
-  color: blue;
+  color: rgb(1, 1, 1);
 }
 
 .theme-light *::placeholder {
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
-  color: blue;
+  color: rgb(1, 1, 1);
 }
 .theme-dark *::-moz-placeholder {
   font-weight: normal;
@@ -2475,7 +2483,7 @@ button:hover {
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
-  color: blue;
+  color: rgb(1, 1, 1);
 }
 .theme-dark *::-moz-placeholder {
   font-weight: normal;
@@ -2527,7 +2535,7 @@ input[type=number] {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 0, 0, 0.75);
+  background-color: rgba(225, 225, 225, 0.75);
 }
 .theme-dark .AppWrapper {
   position: relative;
@@ -2695,7 +2703,7 @@ input[type=number] {
   font-weight: 600;
   font-size: 24px;
   line-height: 38px;
-  color: white;
+  color: #131313;
 }
 @media all and (max-width: 767px) {
   .theme-light .page_title {
@@ -2821,7 +2829,7 @@ input[type=number] {
   width: 100%;
   height: 100%;
   z-index: 20;
-  background-color: rgba(255, 0, 0, 0.75);
+  background-color: rgba(225, 225, 225, 0.75);
   display: none;
 }
 @media all and (max-width: 991px) {
@@ -2853,7 +2861,7 @@ input[type=number] {
   justify-content: center;
   width: 36px;
   height: 36px;
-  border: 1.10938px solid rgba(0, 0, 255, 0.9) !important;
+  border: 1.10938px solid rgba(1, 1, 1, 0.9) !important;
   border-radius: 12px;
   transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
@@ -2862,10 +2870,10 @@ input[type=number] {
   -o-transition: all 0.5s ease-in-out;
 }
 .theme-light .slider_arrow_area .slider_arrow:hover {
-  background-color: blue;
+  background-color: rgb(1, 1, 1);
 }
 .theme-light .slider_arrow_area .slider_arrow:hover path {
-  fill: white;
+  fill: #131313;
 }
 .theme-dark .slider_arrow_area .slider_arrow {
   display: flex;
@@ -2896,7 +2904,7 @@ input[type=number] {
   font-weight: 600;
   font-size: 20px;
   line-height: 31px;
-  color: white;
+  color: #131313;
 }
 .theme-dark .countdown_wrapper ul li {
   font-family: "Saira", sans-serif;
@@ -2911,7 +2919,7 @@ input[type=number] {
   font-weight: 600 !important;
   font-size: 18px !important;
   line-height: 31px !important;
-  color: white;
+  color: #131313;
   margin-top: 10px;
 }
 .theme-dark .expoire_msg {
@@ -2966,7 +2974,7 @@ input[type=number] {
   font-weight: 600;
   font-size: 18px;
   line-height: 28px;
-  color: white;
+  color: #131313;
 }
 .theme-light .product_item .product_title:hover {
   opacity: 0.9;
@@ -3003,7 +3011,7 @@ input[type=number] {
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(19, 19, 19, 0.4);
 }
 .theme-dark .product_item .bit_ammount_area h4 {
   font-weight: 500;
@@ -3021,7 +3029,7 @@ input[type=number] {
   position: relative;
   width: 100%;
   height: 44px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(19, 19, 19, 0.1);
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -3041,7 +3049,7 @@ input[type=number] {
   width: 100%;
   height: 100%;
   padding: 0 20px;
-  color: white;
+  color: #131313;
   border: none !important;
   background-color: transparent;
 }
@@ -3051,7 +3059,7 @@ input[type=number] {
   border-radius: 50%;
 }
 .theme-light .search_form_area .search_btn:hover {
-  background-color: red;
+  background-color: #e1e1e1;
 }
 .theme-light .search_form_area ::-moz-placeholder {
   font-size: 14px;
@@ -3166,14 +3174,14 @@ input[type=number] {
 .theme-light .table_wrapper h4 {
   font-size: 16px;
   font-weight: 400;
-  color: white;
+  color: #131313;
   text-align: start;
 }
 .theme-light .table_wrapper h4.complete {
   color: #0ddb84;
 }
 .theme-light .table_wrapper h4.failed {
-  color: #001aff;
+  color: #f21e1e;
 }
 .theme-light .table_wrapper h4.progress {
   color: #6e6bff;
@@ -3282,7 +3290,7 @@ input[type=number] {
   max-width: 400px;
   max-height: 80vh;
   width: 100%;
-  background-color: red;
+  background-color: #e1e1e1;
   box-shadow: 0 5px 5px rgba(104, 104, 104, 0.368627451);
 }
 .theme-light .theme-light .modal_wrapper .modal_content_wrapper {
@@ -3402,7 +3410,7 @@ input[type=number] {
   }
 }
 .theme-light .modal_wrapper .action_table_modal_area .close_btn svg:hover path {
-  fill: #001aff;
+  fill: #f21e1e;
 }
 .theme-dark .modal_wrapper .action_table_modal_area h3 {
   font-family: "Saira", sans-serif;
@@ -3430,7 +3438,7 @@ input[type=number] {
   font-family: "Saira", sans-serif;
   font-size: 18px;
   font-weight: 500;
-  color: white;
+  color: #131313;
 }
 .theme-light .form_area .input_filed,
 .theme-light .form_area select {
@@ -3544,7 +3552,7 @@ input[type=number] {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: rgb(235, 48, 48);
   transition: 0.4s;
 }
 .theme-light .custom_switchbox_area .slider:before {
@@ -3554,11 +3562,14 @@ input[type=number] {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: #131313;
   transition: 0.4s;
 }
+.theme-light .custom_switchbox_area input:checked + .slider {
+  background-color: #2196f3;
+}
 .theme-light .custom_switchbox_area input:focus + .slider {
-  box-shadow: 0 0 1px white;
+  box-shadow: 0 0 1px #131313;
 }
 .theme-light .custom_switchbox_area input:checked + .slider:before {
   transform: translateX(26px);
@@ -3590,7 +3601,7 @@ input[type=number] {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #6e6bff;
   transition: 0.4s;
 }
 .theme-dark .custom_switchbox_area .slider:before {
@@ -3602,6 +3613,9 @@ input[type=number] {
   bottom: 4px;
   background-color: white;
   transition: 0.4s;
+}
+.theme-dark .custom_switchbox_area input:checked + .slider {
+  background-color: #2196f3;
 }
 .theme-dark .custom_switchbox_area input:focus + .slider {
   box-shadow: 0 0 1px white;

@@ -2,20 +2,21 @@
 $themes: (
   light: (
     body-color: white,
-    white-color: white,
-    gray-color-a2: #a2a3a4,
+    white-color: #131313,
+    gray-color-a2: #121212,
     gray-color-a9: #a9a9a9,
     gray-color-b3: #b3b3b3,
-    gray-color-cc: #ccc,
+    gray-color-cc: rgb(235, 48, 48),
     gray-color-4a: #4a4f5b,
-    black-color: black,
-    black-color-13: red,
-    black-color-2c: blue,
+    black-color: rgb(182, 161, 161),
+    black-color-13: #e1e1e1,
+    black-color-47: #7f7f7f,
+    black-color-2c: rgb(1, 1, 1),
     blue-color-6e: #6e6bff,
     blue-color-21: #2196f3,
     green-color-0d: #0ddb84,
     green-color-34: #34d178,
-    red-color-ff: #001aff,
+    red-color-ff: #f21e1e,
 
     //Gradient
     menu-gradient:
@@ -48,7 +49,7 @@ $themes: (
     gray-color-a2: #a2a3a4,
     gray-color-a9: #a9a9a9,
     gray-color-b3: #b3b3b3,
-    gray-color-cc: #ccc,
+    gray-color-cc: #6e6bff,
     gray-color-4a: #4a4f5b,
     black-color: black,
     black-color-13: #131313,

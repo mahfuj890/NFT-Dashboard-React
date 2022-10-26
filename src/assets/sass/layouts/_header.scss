@@ -123,6 +123,7 @@
         -moz-border-radius: 50%;
         -ms-border-radius: 50%;
         -o-border-radius: 50%;
+        background-color: themed("black-color-47");
         @include hover-transition();
         &:hover {
           background-color: rgba(themed("white-color"), 0.7);
