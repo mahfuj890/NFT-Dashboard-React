@@ -12,17 +12,18 @@ function SearchBox({
   handleSubmit,
   inputValue,
 }) {
-  const { searchBox, setSearchBox, handleChangle } = useContext(FormContext);
+  // const { searchBox, setSearchBox, handleChangle } = useContext(FormContext);
   return (
     <form
       action=""
       className={`search_form_area ${searchBtn ? "search_form_grid" : ""}`}
+      onSubmit={handleSubmit}
     >
       <input
         type={inputType}
-        onChange={handleChangle}
+        onChange={handleChange}
         placeholder={placeholderText}
-        value={searchBox}
+        value={inputValue}
       />
       {searchBtn && (
         <button type="submit" className="search_btn">

@@ -10,7 +10,8 @@ export function AuctionsTableContenxtProvider({ children }) {
     editData: {},
     editMood: false,
   });
-
+  const [auctionForm, setAuctionForm] = useState("");
+  const [favourites, setFavouritesForm] = useState("");
   //Show Modal
   const showModal = () => {
     setIsOpenModal(true);
@@ -51,6 +52,24 @@ export function AuctionsTableContenxtProvider({ children }) {
   };
   //Blank if the user does not submit the form
 
+  //Set Form Value
+  const handleChange = (e) => {
+    setAuctionForm(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setAuctionForm(auctionForm);
+  };
+  //Set Form Value For Favourites
+  const handleChangeFavourites = (e) => {
+    setFavouritesForm(e.target.value);
+  };
+  const handleSubmitFavourites = (e) => {
+    e.preventDefault();
+    setFavouritesForm(auctionForm);
+  };
+
+
   return (
     <AuctionsTableContenxt.Provider
       value={{
@@ -59,6 +78,8 @@ export function AuctionsTableContenxtProvider({ children }) {
         isOpenModal,
         isEditOpenModal,
         editAutionsTableData,
+        auctionForm,
+        favourites,
         showModal,
         hideModal,
         newAuctionsTable,
@@ -66,6 +87,10 @@ export function AuctionsTableContenxtProvider({ children }) {
         showEditModal,
         hideEditModal,
         deleteAuctionsTable,
+        handleChange,
+        handleSubmit,
+        handleChangeFavourites,
+        handleSubmitFavourites
       }}
     >
       {children}

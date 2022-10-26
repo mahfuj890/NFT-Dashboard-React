@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import useDocumentTitle from "../Hooks/useDocumentTitle";
 import SearchBox from "../Components/Form/SearchBox";
 import PageTitle from "../Components/PageTitle";
@@ -6,13 +7,26 @@ import FavouriteUserData, {
 } from "../Data/FavouriteUserData";
 import { HiLink } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import AuctionsTableContenxt from "../Context/AuctionsTableContenxt";
+
 function Favourites() {
   useDocumentTitle("Favourites");
+  const { favourites, handleChangeFavourites, handleSubmitFavourites } =
+    useContext(AuctionsTableContenxt);
+
+  //Search Functions
+  const searchFucntionlity = FavouriteUserData.filter((item) => {
+    return item.userName.toLowerCase().includes(favourites);
+  });
   return (
     <section className="favourite_wrapper">
       <div className="d-flex-between">
-        <PageTitle text="Favourite"  />
-        <SearchBox />
+        <PageTitle text="Favourite" />
+        <SearchBox
+          handleChange={handleChangeFavourites}
+          handleSubmit={handleSubmitFavourites}
+          inputValue={favourites}
+        />
       </div>
       <div className="table_wrapper">
         <div className="tabler_inner_area">
@@ -29,52 +43,66 @@ function Favourites() {
                   })}
                 </tr>
               </thead>
-              <tbody>
-                {FavouriteUserData.map((item) => {
-                  return (
-                    <tr key={item.id}>
-                      <td>
-                        <div className="user_img_grid">
-                          <img src={item.userImg} alt="user img" />
-                          <h4>{item.userName} </h4>
-                        </div>
-                      </td>
-                      <td>
-                        <h4>{item.date} </h4>
-                      </td>
-                      <td>
-                        <h4>{item.ammout} </h4>
-                      </td>
-                      <td>
-                        <h4
-                          className={`${
-                            item.status.toLowerCase() == "complete"
-                              ? "complete"
-                              : ""
-                          } ${
-                            item.status.toLowerCase() == "failed"
-                              ? "failed"
-                              : ""
-                          } ${
-                            item.status.toLowerCase() == "progress"
-                              ? "progress"
-                              : ""
-                          }`}
-                        >
-                          {item.status}
+              {searchFucntionlity.length > 0 ? (
+                <tbody>
+                  {searchFucntionlity.map((item) => {
+                    return (
+                      <tr key={item.id}>
+                        <td>
+                          <div className="user_img_grid">
+                            <img src={item.userImg} alt="user img" />
+                            <h4>{item.userName} </h4>
+                          </div>
+                        </td>
+                        <td>
+                          <h4>{item.date} </h4>
+                        </td>
+                        <td>
+                          <h4>{item.ammout} </h4>
+                        </td>
+                        <td>
+                          <h4
+                            className={`${
+                              item.status.toLowerCase() == "complete"
+                                ? "complete"
+                                : ""
+                            } ${
+                              item.status.toLowerCase() == "failed"
+                                ? "failed"
+                                : ""
+                            } ${
+                              item.status.toLowerCase() == "progress"
+                                ? "progress"
+                                : ""
+                            }`}
+                          >
+                            {item.status}
+                          </h4>
+                        </td>
+                        <td>
+                          <div className="actions_list">
+                            <Link to={"/"}>
+                              <HiLink size={20} />
+                            </Link>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              ) : (
+                <tbody>
+                  <tr>
+                    <td>
+                      <div>
+                        <h4 style={{ marginTop: "20px", textAlign: "center" }}>
+                          <b>No Search Result</b>
                         </h4>
-                      </td>
-                      <td>
-                        <div className="actions_list">
-                          <Link to={"/"}>
-                            <HiLink size={20} />
-                          </Link>
-                        </div>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              )}
             </table>
           ) : (
             <h4>There is no data</h4>

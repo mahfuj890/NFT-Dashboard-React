@@ -18,6 +18,7 @@ function Header() {
   const [userDropdown, setUserDropdown] = useState(false);
   const { onSidebarToggle, onMobileSidebar } = useContext(SidebarContext);
   const [headerSearch, setHeaderSearch] = useState(false);
+  const [headerForm, setHeaderForm] = useState("");
   //Gettings Message
   let date = new Date();
   let getHours = date.getHours();
@@ -80,7 +81,12 @@ function Header() {
       }
     });
   };
-
+  const handleChange = (e) => {
+    setHeaderForm(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <header className="header_wrapper">
       <div className="header_search_user_area d-flex align-items-center justify-content-between flex-wrap-wrap g-lg">
@@ -104,7 +110,11 @@ function Header() {
               </button>
             </>
           )}
-          <SearchBox />
+          <SearchBox
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+            inputValue={headerForm}
+          />
           <div
             className="overlay"
             onClick={() => setHeaderSearch(!headerSearch)}

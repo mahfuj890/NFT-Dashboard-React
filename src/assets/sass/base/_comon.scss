@@ -679,8 +679,9 @@ input[type="number"] {
       width: 100%;
       background-color: themed("black-color-13");
       box-shadow: themed("dropdown-shadow");
-      @include customScrollbarInner();
+      
     }
+    @include customScrollbarInner();
   }
   .action_table_modal_area {
     @include themify($themes) {

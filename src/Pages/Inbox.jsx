@@ -44,6 +44,7 @@ function Inbox() {
     ],
   });
   const [message, setMessage] = useState(false);
+  const [inboxForm, setInboxFormForm] = useState("");
   const handleShowMessage = (item) => {
     {
       let filterData = MessageTextData.filter((data) => {
@@ -61,6 +62,17 @@ function Inbox() {
       }
     }
   };
+  //Search Functions
+  const handleChange = (e) => {
+    setInboxFormForm(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setInboxFormForm(inboxForm);
+  };
+  const searchFucntionlity = MessageData.filter((item) => {
+    return item.userName.toLowerCase().includes(inboxForm);
+  });
   return (
     <section className="inbox_wrapper">
       <PageTitle text={"Inbox"} />
@@ -72,34 +84,48 @@ function Inbox() {
                 message ? "message_active" : ""
               }`}
             >
-              <SearchBox />
+              <SearchBox
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+                inputValue={inboxForm}
+              />
               <div className="user_list_area">
-                {MessageData.map((item) => {
-                  return (
-                    <div
-                      className="user_list_grid"
-                      key={item.id}
-                      onClick={() => handleShowMessage(item.id)}
-                    >
-                      <div className="user_img">
-                        <img src={item.userImage} alt="user image" />
+                {searchFucntionlity.length > 0 ? (
+                  searchFucntionlity.map((item) => {
+                    return (
+                      <div
+                        className="user_list_grid"
+                        key={item.id}
+                        onClick={() => handleShowMessage(item.id)}
+                      >
+                        <div className="user_img">
+                          <img src={item.userImage} alt="user image" />
+                        </div>
+                        <div>
+                          <h4>{item.userName}</h4>
+                          <h5>
+                            <span
+                              className={`status ${
+                                item.onlineStatus
+                                  ? "online_user"
+                                  : "offline_user"
+                              }`}
+                            >
+                              {" "}
+                            </span>{" "}
+                            {item.stausText}
+                          </h5>
+                        </div>
                       </div>
-                      <div>
-                        <h4>{item.userName}</h4>
-                        <h5>
-                          <span
-                            className={`status ${
-                              item.onlineStatus ? "online_user" : "offline_user"
-                            }`}
-                          >
-                            {" "}
-                          </span>{" "}
-                          {item.stausText}
-                        </h5>
-                      </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })
+                ) : (
+                  <div>
+                    <h4 style={{ marginTop: "20px", textAlign: "center" }}>
+                      <b>No Search Result</b>
+                    </h4>
+                  </div>
+                )}
               </div>
             </div>
           </OutSideDetectHook>
