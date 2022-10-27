@@ -36,6 +36,8 @@ export function AuctionsTableContenxtProvider({ children }) {
 
   //Edit Auctions Table
   const editAuctionsTable = (editData) => {
+    console.log(editData);
+    
     setEditAutionsTableData({
       editData,
       editMood: true,
