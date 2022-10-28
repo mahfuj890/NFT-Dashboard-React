@@ -3,84 +3,20 @@ import AuctionsTableContenxt from "../../Context/AuctionsTableContenxt";
 import Button from "../Button/Button";
 import { useForm } from "react-hook-form";
 function AuctionsTableModal({ btnText }) {
-  const [modalForm, setModalForm] = useState();
   const [showUploadImage, setShowUploadImage] = useState("");
-  const { hideModal, newAuctionsTable, editAutionsTableData, hideEditModal } =
-    useContext(AuctionsTableContenxt);
+  const {
+    hideModal,
+    newAuctionsTable,
+    editAutionsTableData,
+    updateEditAuctionsTable,
+    hideEditModal,
+  } = useContext(AuctionsTableContenxt);
   const {
     register,
     handleSubmit,
-    watch,
     setValue,
     formState: { errors },
   } = useForm();
-  const handleChange = (e) => {
-    const { value, name } = e.target;
-
-    setModalForm((prevState) => {
-      switch (name) {
-        case "name":
-          return {
-            name: value,
-            date: prevState.date,
-            amount: prevState.amount,
-            status: prevState.status,
-            uploadImage: prevState.uploadImage,
-          };
-        case "date":
-          return {
-            name: prevState.name,
-            date: value,
-            amount: prevState.amount,
-            status: prevState.status,
-            uploadImage: prevState.uploadImage,
-          };
-        case "amount":
-          return {
-            name: prevState.name,
-            date: prevState.date,
-            amount: value,
-            status: prevState.status,
-            uploadImage: prevState.uploadImage,
-          };
-        case "status":
-          return {
-            name: prevState.name,
-            date: prevState.date,
-            amount: prevState.amount,
-            status: value,
-            uploadImage: prevState.uploadImage,
-          };
-        case "uploadImage":
-          return {
-            name: prevState.name,
-            date: prevState.date,
-            amount: prevState.amount,
-            status: prevState.status,
-            uploadImage: URL.createObjectURL(e.target.files[0]),
-          };
-      }
-    });
-  };
-  const hanldeForm = (e) => {
-    e.preventDefault();
-
-    //Get Data
-    const getNewData = {
-      userImg: modalForm.uploadImage,
-      userName: modalForm.name,
-      date: modalForm.date,
-      ammout: modalForm.amount,
-      status: modalForm.status,
-    };
-
-    if (editAutionsTableData.editMood == true) {
-      hideEditModal();
-    } else {
-      newAuctionsTable(getNewData);
-      hideModal();
-    }
-  };
 
   const handleChangeImage = (e) => {
     setShowUploadImage(URL.createObjectURL(e.target.files[0]));
@@ -88,11 +24,10 @@ function AuctionsTableModal({ btnText }) {
 
   const onSubmit = (data) => {
     if (editAutionsTableData.editMood == true) {
-      console.log(data);
-
+      const { id } = editAutionsTableData.editData;
+      updateEditAuctionsTable(id, data.modalForm);
       hideEditModal();
     } else {
-      console.log(data.modalForm);
       newAuctionsTable(data.modalForm);
       hideModal();
     }
@@ -102,14 +37,12 @@ function AuctionsTableModal({ btnText }) {
   useEffect(
     (e) => {
       if (editAutionsTableData.editMood == true) {
-        console.log(editAutionsTableData);
         const { userName, userImg, date, status, ammout } =
           editAutionsTableData.editData;
-
         setValue("modalForm", {
-          userNameInput: userName,
+          userName: userName,
           date: date,
-          amount: ammout,
+          ammout: ammout,
           status: status,
           uploadImage: userImg,
         });
@@ -129,7 +62,7 @@ function AuctionsTableModal({ btnText }) {
               type="text"
               placeholder="Enter Name"
               className="input_filed"
-              {...register("modalForm.userNameInput")}
+              {...register("modalForm.userName")}
             />
           </div>
 
@@ -150,7 +83,7 @@ function AuctionsTableModal({ btnText }) {
               type="number"
               placeholder="Enter Amount"
               className="input_filed"
-              {...register("modalForm.amount")}
+              {...register("modalForm.ammout")}
             />
           </div>
           <div className="input_row">

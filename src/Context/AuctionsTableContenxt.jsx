@@ -36,12 +36,18 @@ export function AuctionsTableContenxtProvider({ children }) {
 
   //Edit Auctions Table
   const editAuctionsTable = (editData) => {
-    console.log(editData);
-    
     setEditAutionsTableData({
       editData,
       editMood: true,
     });
+  };
+  //Update Auctions Table
+  const updateEditAuctionsTable = (id, updateData) => {
+    setAutionsTableData(
+      autionsTableData.map((item) => {
+        return item.id == id ? { ...item, ...updateData } : item;
+      })
+    );
   };
   //Delete Auctions Table Item
   const deleteAuctionsTable = (deleteData) => {
@@ -71,7 +77,6 @@ export function AuctionsTableContenxtProvider({ children }) {
     setFavouritesForm(auctionForm);
   };
 
-
   return (
     <AuctionsTableContenxt.Provider
       value={{
@@ -92,7 +97,8 @@ export function AuctionsTableContenxtProvider({ children }) {
         handleChange,
         handleSubmit,
         handleChangeFavourites,
-        handleSubmitFavourites
+        handleSubmitFavourites,
+        updateEditAuctionsTable,
       }}
     >
       {children}
