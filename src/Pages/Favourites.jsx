@@ -15,8 +15,12 @@ function Favourites() {
     useContext(AuctionsTableContenxt);
 
   //Search Functions
+  const searchKeys = ["userName", "date", "status"];
   const searchFucntionlity = FavouriteUserData.filter((item) => {
-    return item.userName.toLowerCase().includes(favourites);
+    return (
+      searchKeys.some((key) => item[key].toLowerCase().includes(favourites)) ||
+      item.ammout.toString().includes(favourites)
+    );
   });
   return (
     <section className="favourite_wrapper">

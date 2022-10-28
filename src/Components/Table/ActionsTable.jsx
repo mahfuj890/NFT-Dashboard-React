@@ -23,10 +23,19 @@ function ActionsTable() {
     showEditModal();
     editAuctionsTable(item);
   };
+  console.log(
+    autionsTableData.filter((item) => {
+      return item.ammout.toString().includes(1);
+    })
+  );
 
   //Search Functions
+  const searchKeys = ["userName", "date", "status"];
   const searchFucntionlity = autionsTableData.filter((item) => {
-    return item.userName.toLowerCase().includes(auctionForm);
+    return (
+      searchKeys.some((key) => item[key].toLowerCase().includes(auctionForm)) ||
+      item.ammout.toString().includes(auctionForm)
+    );
   });
 
   return (
