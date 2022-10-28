@@ -91,6 +91,7 @@ export function AuctionsTableContenxtProvider({ children }) {
         hideModal,
         newAuctionsTable,
         editAuctionsTable,
+        setEditAutionsTableData,
         showEditModal,
         hideEditModal,
         deleteAuctionsTable,

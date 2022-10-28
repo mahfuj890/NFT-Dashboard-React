@@ -8,6 +8,7 @@ function AuctionsTableModal({ btnText }) {
     hideModal,
     newAuctionsTable,
     editAutionsTableData,
+    setEditAutionsTableData,
     updateEditAuctionsTable,
     hideEditModal,
   } = useContext(AuctionsTableContenxt);
@@ -15,6 +16,7 @@ function AuctionsTableModal({ btnText }) {
     register,
     handleSubmit,
     setValue,
+    watch,
     formState: { errors },
   } = useForm();
 
@@ -27,13 +29,13 @@ function AuctionsTableModal({ btnText }) {
       const { id } = editAutionsTableData.editData;
       updateEditAuctionsTable(id, data.modalForm);
       hideEditModal();
+      setEditAutionsTableData({ editMood: false });
     } else {
       newAuctionsTable(data.modalForm);
       hideModal();
     }
   };
 
-  // console.log(watch("example"));
   useEffect(
     (e) => {
       if (editAutionsTableData.editMood == true) {
@@ -62,7 +64,7 @@ function AuctionsTableModal({ btnText }) {
               type="text"
               placeholder="Enter Name"
               className="input_filed"
-              {...register("modalForm.userName")}
+              {...register("modalForm.userName", { required: "this" })}
             />
           </div>
 
