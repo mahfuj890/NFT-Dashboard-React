@@ -1,6 +1,10 @@
 import { useContext, useState } from "react";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
-import { FaUserAlt } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
+import { FaUserAlt, FaMoneyBillWave } from "react-icons/fa";
+import { FiMessageSquare } from "react-icons/fi";
+import { FcMoneyTransfer } from "react-icons/fc";
+import { IoIosLogOut } from "react-icons/io";
 import SearchBox from "../Components/Form/SearchBox";
 import messageIcon from "../assets/images/icon/message_icon.svg";
 import notificationIcon from "../assets/images/icon/notification_icon.svg";
@@ -186,7 +190,7 @@ function Header() {
                               className="delete_btn"
                               onClick={() => deleteNotification(item.id)}
                             >
-                              <HiOutlineMenuAlt2 size={20} />
+                              <FaTimes size={20} />
                             </button>
                           </li>
                         );
@@ -241,7 +245,7 @@ function Header() {
                   <li>
                     <Link to="#" className="profile_link">
                       <div className="profile_icon">
-                        <FaUserAlt size={14} />
+                        <FiMessageSquare size={14} />
                       </div>
                       <h6>Inbox</h6>
                     </Link>
@@ -249,7 +253,7 @@ function Header() {
                   <li>
                     <Link to="#" className="profile_link">
                       <div className="profile_icon">
-                        <FaUserAlt size={14} />
+                        <FcMoneyTransfer size={14} />
                       </div>
                       <h6>Transitions</h6>
                     </Link>
@@ -257,7 +261,7 @@ function Header() {
                   <li>
                     <Link to="#" className="profile_link">
                       <div className="profile_icon">
-                        <FaUserAlt size={14} />
+                        <FaMoneyBillWave size={14} />
                       </div>
                       <h6>Payment History</h6>
                     </Link>
@@ -265,7 +269,7 @@ function Header() {
                   <li>
                     <button type="button" className="profile_link">
                       <div className="profile_icon">
-                        <FaUserAlt size={14} />
+                        <IoIosLogOut size={14} />
                       </div>
                       <h6>Log Out</h6>
                     </button>
