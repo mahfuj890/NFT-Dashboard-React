@@ -679,7 +679,6 @@ input[type="number"] {
       width: 100%;
       background-color: themed("black-color-13");
       box-shadow: themed("dropdown-shadow");
-      
     }
     @include customScrollbarInner();
   }
@@ -823,6 +822,45 @@ input[type="number"] {
 
     .slider.round:before {
       border-radius: 50%;
+    }
+  }
+}
+
+//Pagination
+.pagination_area {
+  margin-top: 30px;
+  @include themify($themes) {
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      flex-wrap: wrap;
+      gap: 8px;
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        cursor: pointer;
+        background: themed("menu-gradient");
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+      .selected {
+        background-color: themed("green-color-0d");
+      }
+      .disabled {
+        opacity: 0.5;
+        pointer-events: none;
+        cursor: no-drop;
+      }
     }
   }
 }
