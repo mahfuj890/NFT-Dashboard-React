@@ -60,10 +60,12 @@ export function AuctionsTableContenxtProvider({ children }) {
   };
   //Blank if the user does not submit the form
 
-  //Set Form Value
+  //Set Form Value  AuctionForm
   const handleChange = (e) => {
     setAuctionForm(e.target.value);
   };
+
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     setAuctionForm(auctionForm);

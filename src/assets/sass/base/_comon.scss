@@ -836,7 +836,7 @@ input[type="number"] {
       justify-content: end;
       flex-wrap: wrap;
       gap: 8px;
-      li {
+      li a {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -853,7 +853,7 @@ input[type="number"] {
           opacity: 0.9;
         }
       }
-      .selected {
+      .selected a {
         background-color: themed("green-color-0d");
       }
       .disabled {
