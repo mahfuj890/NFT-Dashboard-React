@@ -8,19 +8,8 @@ import Modal from "../Modal/Modal";
 import AuctionsTableModal from "../Modal/AuctionsTableModal";
 import Pagination from "../Pagination";
 import AuctionData from "../../Data/AuctionData";
+import usePaginationHook from "../../Hooks/usePaginationHook";
 
-function Items({ currentItems }) {
-  return (
-    <>
-      {currentItems &&
-        currentItems.map((item, index) => (
-          <div key={index}>
-            <h3>Item #{item.userName + " " + item.id}</h3>
-          </div>
-        ))}
-    </>
-  );
-}
 function ActionsTable() {
   const {
     autionsTableData,
@@ -40,11 +29,6 @@ function ActionsTable() {
     showEditModal();
     editAuctionsTable(item);
   };
-
-  const [currentItems, setCurrentItems] = useState(null);
-  const [pageCount, setPageCount] = useState(0);
-  const [itemOffset, setItemOffset] = useState(0);
-  const itemsPerPage = 6;
   //Search Functions
   const searchKeys = ["userName", "date", "status"];
   const searchFucntionlity = autionsTableData.filter((item) => {
@@ -53,19 +37,10 @@ function ActionsTable() {
       item.ammout.toString().includes(auctionForm)
     );
   });
-
-
-  useEffect(() => {
-    const endOffset = itemOffset + itemsPerPage;
-    setCurrentItems(searchFucntionlity.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(searchFucntionlity.length / itemsPerPage));
-  }, [itemOffset, itemsPerPage, auctionForm]);
-
-  const handlePageClick = (event) => {
-    const newOffset =
-      (event.selected * itemsPerPage) % searchFucntionlity.length;
-    setItemOffset(newOffset);
-  };
+  const [currentItems, handlePageClick, pageCount] = usePaginationHook(
+    searchFucntionlity,
+    auctionForm
+  );
 
   return (
     <div className="table_wrapper">
