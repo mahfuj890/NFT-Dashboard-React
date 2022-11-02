@@ -11,19 +11,24 @@ import AuctionsTableContenxt from "../Context/AuctionsTableContenxt";
 
 function Auctions() {
   useDocumentTitle("Auctions");
-  const { isOpenModal, showModal, hideModal ,auctionForm,handleChange,handleSubmit} = useContext(
-    AuctionsTableContenxt
-  );
-
-
+  const {
+    isOpenModal,
+    showModal,
+    hideModal,
+    auctionForm,
+    handleChange,
+    handleSubmit,
+  } = useContext(AuctionsTableContenxt);
 
   return (
     <section className="auctions_wrapper">
       <div className="d-flex-between">
         <PageTitle text="Auctions" bottomSpace={false} />
-        <SearchBox    handleChange={handleChange}
-            handleSubmit={handleSubmit}
-            inputValue={auctionForm} />
+        <SearchBox
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+          inputValue={auctionForm}
+        />
       </div>
       <div className="add_btn_area ">
         <Button

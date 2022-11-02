@@ -5,7 +5,6 @@ import WalletSection from "../Components/Section/WalletSection";
 import useDocumentTitle from "../Hooks/useDocumentTitle";
 import { useForm } from "react-hook-form";
 
-
 function Dashboard() {
   useDocumentTitle("Home");
 
@@ -22,7 +21,6 @@ function Dashboard() {
     <section className="dashboard_content_wrapper">
       <div className="dashboard_outer_grid">
         <div className="dasbhoard_left_wrapper">
-
           <ToActionSection />
           <FeaturesProductSection />
         </div>
