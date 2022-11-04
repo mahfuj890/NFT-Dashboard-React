@@ -43,6 +43,8 @@ export function AuctionsTableContenxtProvider({ children }) {
   };
   //Update Auctions Table
   const updateEditAuctionsTable = (id, updateData) => {
+    console.log(id, updateData, "edit form context");
+
     setAutionsTableData(
       autionsTableData.map((item) => {
         return item.id == id ? { ...item, ...updateData } : item;
@@ -51,7 +53,7 @@ export function AuctionsTableContenxtProvider({ children }) {
   };
   //Delete Auctions Table Item
   const deleteAuctionsTable = (deleteData) => {
-    console.log(deleteData, "from data delete");
+    console.log(deleteData.id, "from data delete");
     setAutionsTableData(
       autionsTableData.filter((item) => {
         return item.id !== deleteData.id;
@@ -65,7 +67,6 @@ export function AuctionsTableContenxtProvider({ children }) {
     setAuctionForm(e.target.value);
   };
 
-  
   const handleSubmit = (e) => {
     e.preventDefault();
     setAuctionForm(auctionForm);

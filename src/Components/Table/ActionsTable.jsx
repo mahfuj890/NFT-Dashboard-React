@@ -39,7 +39,8 @@ function ActionsTable() {
   });
   const [currentItems, handlePageClick, pageCount] = usePaginationHook(
     searchFucntionlity,
-    auctionForm
+    auctionForm,
+    autionsTableData
   );
 
   return (

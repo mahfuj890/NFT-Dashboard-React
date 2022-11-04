@@ -3,6 +3,7 @@ import React, { useEffect, useState, useContext } from "react";
 function usePaginationHook(
   searchFucntionlity,
   inputFormValue,
+  dependState = undefined,
   itemPerPage = 10
 ) {
   const [currentItems, setCurrentItems] = useState(null);
@@ -14,14 +15,15 @@ function usePaginationHook(
     const endOffset = itemOffset + itemsPerPage;
     setCurrentItems(searchFucntionlity.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(searchFucntionlity.length / itemsPerPage));
-  }, [itemOffset, itemsPerPage, inputFormValue]);
+  }, [itemOffset, itemsPerPage, inputFormValue, dependState]);
 
   const handlePageClick = (event) => {
     const newOffset =
       (event.selected * itemsPerPage) % searchFucntionlity.length;
     setItemOffset(newOffset);
   };
-  return [currentItems, handlePageClick, pageCount];
+
+  return [currentItems, handlePageClick, pageCount, setCurrentItems];
 }
 
 export default usePaginationHook;
