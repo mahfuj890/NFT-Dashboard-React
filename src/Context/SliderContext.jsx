@@ -5,36 +5,30 @@ const SliderContext = createContext();
 export function SliderContextProvider({ children }) {
   const [featureSliderData, setFeatureSliderData] = useState(FeatureNftData);
   const [filterSliderData, setFilterSliderData] = useState([]);
-  //Feature Product Filter
-  // const filterProduct = featureSliderData.filter((item) => {
-  //   return item.tag.includes("popular");
-  // });
 
   const filterProductFun = (tag) => {
     console.log(tag, "from context");
-    //     const filterProduct = featureSliderData.filter((item) => {
-    //       // return item.tag.includes(tag) ? setFilterSliderData(item) : null;
-    //       let mapFilter = item.map((item) => {
-    // return item;
-    //       })
-    //        return mapFilter;
-    //     });
-    //     console.log(filterProduct, typeof filterProduct, "to context inside");
 
-    let mapFilter = FeatureNftData.map((item) => {
-      console.log(item, "from map");
-
-      let filterData = item.filter((data) => {
-        return data;
-      });
-    });
-    console.log(filterData, typeof mapFilter, "to context inside");
-    return mapFilter;
+    if (tag.toLowerCase() == "all") {
+      setFeatureSliderData(FeatureNftData);
+    } else {
+      setFeatureSliderData(
+        FeatureNftData.filter((item) => {
+          return item.tag.includes(tag.toLowerCase());
+        })
+      );
+    }
   };
-  console.log("from context data main", filterSliderData);
 
   return (
-    <SliderContext.Provider value={{ featureSliderData, filterProductFun }}>
+    <SliderContext.Provider
+      value={{
+        featureSliderData,
+        setFeatureSliderData,
+        filterProductFun,
+        FeatureNftData,
+      }}
+    >
       {children}
     </SliderContext.Provider>
   );

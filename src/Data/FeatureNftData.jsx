@@ -17,7 +17,7 @@ const FeatureNftData = [
         />
       </svg>
     ),
-    title: "Ready Players",
+    title: "Ready Players1",
     useId: "@Debbie111",
     lastBit: "Last Bid",
     lastBitAmmount: "1.57 ETH",
@@ -43,7 +43,7 @@ const FeatureNftData = [
         />
       </svg>
     ),
-    title: "Dragon’s Den",
+    title: "Dragon’s Den2",
     useId: "@alic_cila",
     lastBit: "Last Bid",
     lastBitAmmount: "1.57 ETH",
@@ -69,7 +69,7 @@ const FeatureNftData = [
         />
       </svg>
     ),
-    title: "Crippled World",
+    title: "Crippled World1",
     useId: "@Jenzi.oli",
     lastBit: "Last Bid",
     lastBitAmmount: "1.57 ETH",
@@ -151,7 +151,7 @@ const FeatureNftData = [
     useId: "@Jenzi.oli",
     lastBit: "Last Bid",
     lastBitAmmount: "1.57 ETH",
-    tag: ["best"],
+    tag: ["top"],
     userProfilePath: "/",
     nftDetailsPath: "/",
   },

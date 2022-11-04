@@ -6,15 +6,22 @@ import { useContext } from "react";
 function FeaturesProductSection() {
   const { filterProductFun } = useContext(SliderContext);
 
-  // onChange={(e)=>filterProductFun(e.target.value)}
   return (
     <div className="features_prodcut_area mt-30">
       <PageTitle
         text="Featured NFTs"
         children={
           <div className="d-flex align-items-center flex-wrap-wrap g-lg">
-            <select name="" id="" >
-              <option value="popular">Popular</option>
+            <select
+              name=""
+              id=""
+              onChange={(e) => filterProductFun(e.target.value)}
+              defaultValue="DEFAULT"
+            >
+              <option value="all">All</option>
+              <option value="popular" selected={true}>
+                Popular
+              </option>
               <option value="best">Best</option>
               <option value="top">Top</option>
             </select>

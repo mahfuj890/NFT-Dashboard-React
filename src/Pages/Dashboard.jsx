@@ -3,20 +3,10 @@ import RecentTransactionSection from "../Components/Section/RecentTransactionSec
 import ToActionSection from "../Components/Section/ToActionSection";
 import WalletSection from "../Components/Section/WalletSection";
 import useDocumentTitle from "../Hooks/useDocumentTitle";
-import { useForm } from "react-hook-form";
 
 function Dashboard() {
   useDocumentTitle("Home");
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => console.log(data);
-
-  console.log(watch("example"));
   return (
     <section className="dashboard_content_wrapper">
       <div className="dashboard_outer_grid">
