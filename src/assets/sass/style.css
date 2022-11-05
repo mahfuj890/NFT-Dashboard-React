@@ -3671,6 +3671,12 @@ input[type=number] {
   cursor: no-drop;
 }
 
+.select_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .theme-light .single_select_area {
   z-index: 40;
   min-width: 150px;
@@ -3679,7 +3685,8 @@ input[type=number] {
   border-color: rgb(1, 1, 1);
   background-color: #e1e1e1;
 }
-.theme-light .single_select_area .select__placeholder, .theme-light .single_select_area .select__single-value {
+.theme-light .single_select_area .select__placeholder,
+.theme-light .single_select_area .select__single-value {
   color: #131313;
 }
 .theme-light .single_select_area .select__menu {
@@ -3702,7 +3709,8 @@ input[type=number] {
   border-color: #2c2d33;
   background-color: #131313;
 }
-.theme-dark .single_select_area .select__placeholder, .theme-dark .single_select_area .select__single-value {
+.theme-dark .single_select_area .select__placeholder,
+.theme-dark .single_select_area .select__single-value {
   color: white;
 }
 .theme-dark .single_select_area .select__menu {

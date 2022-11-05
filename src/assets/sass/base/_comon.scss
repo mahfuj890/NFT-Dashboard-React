@@ -864,6 +864,11 @@ input[type="number"] {
     }
   }
 }
+.select_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .single_select_area {
   @include themify($themes) {
     z-index: 40;
@@ -872,7 +877,8 @@ input[type="number"] {
       border-color: themed("black-color-2c");
       background-color: themed("black-color-13");
     }
-    .select__placeholder,.select__single-value {
+    .select__placeholder,
+    .select__single-value {
       color: themed("white-color");
     }
     .select__menu {

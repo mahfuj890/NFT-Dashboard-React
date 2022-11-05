@@ -24,7 +24,7 @@ function FeaturesProductSection() {
         text="Featured NFTs"
         children={
           <div className="d-flex align-items-center flex-wrap-wrap g-lg">
-            <SelectComponent options={options} handleChange={handleChange} />
+            <SelectComponent options={options} handleChange={handleChange} defaultValueIndex={0} />
             <SliderArrow
               sliderNextIcon={"features_next_icon"}
               sliderPreviousIcon={"features_prev_icon"}

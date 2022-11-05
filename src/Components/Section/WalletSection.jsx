@@ -4,6 +4,7 @@ import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 import { useState } from "react";
 import walletData from "../../Data/WalletData";
+import SelectComponent from "../SelectComponent";
 
 function WalletSection() {
   const [change, setChange] = useState({
@@ -75,9 +76,14 @@ function WalletSection() {
     ],
   });
 
+  const options = [
+    { value: "eth", label: "ETH" },
+    { value: "btc", label: "BTC" },
+  ];
+
   const handleChangeWallet = (e) => {
     walletData.filter((item) => {
-      if (item.filterWallet == e.target.value) {
+      if (item.filterWallet == e.value) {
         setChange(item);
       }
     });
@@ -120,10 +126,11 @@ function WalletSection() {
           </h4>
         </div>
         <div className="text-center">
-          <select name="" id="" onChange={(e) => handleChangeWallet(e)}>
-            <option value="eth">ETH</option>
-            <option value="btc">BTC</option>
-          </select>
+          <SelectComponent
+            options={options}
+            handleChange={handleChangeWallet}
+            defaultValueIndex={0}
+          />
         </div>
         <div className="wallet_chart_grid">
           <div className="wallet_chart_item">
