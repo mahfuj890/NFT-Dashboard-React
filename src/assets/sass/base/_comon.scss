@@ -864,3 +864,30 @@ input[type="number"] {
     }
   }
 }
+.single_select_area {
+  @include themify($themes) {
+    z-index: 40;
+    min-width: 150px;
+    .select__control {
+      border-color: themed("black-color-2c");
+      background-color: themed("black-color-13");
+    }
+    .select__placeholder,.select__single-value {
+      color: themed("white-color");
+    }
+    .select__menu {
+      background-color: themed("black-color-13");
+    }
+    .select__option {
+      &:hover {
+        background-color: themed("black-color-2c");
+      }
+    }
+    .select__option--is-focused {
+      background-color: themed("black-color-2c");
+    }
+    .select__option--is-selected {
+      background: themed("menu-gradient");
+    }
+  }
+}
