@@ -684,6 +684,7 @@ input[type="number"] {
   }
   .action_table_modal_area {
     @include themify($themes) {
+      flex-wrap: nowrap;
       h3 {
         font-family: $secondery-font;
         font-weight: 500;
@@ -903,4 +904,15 @@ input[type="number"] {
       background: themed("menu-gradient");
     }
   }
+}
+
+//Tooltip 
+.tooltip_area{
+    @include themify($themes) {
+      font-size: 14px;
+      font-weight: 500;
+
+  }
+
+   
 }

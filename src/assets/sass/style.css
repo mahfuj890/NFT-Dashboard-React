@@ -3370,6 +3370,9 @@ input[type=number] {
   cursor: -webkit-grab;
   cursor: grab;
 }
+.theme-light .modal_wrapper .action_table_modal_area {
+  flex-wrap: nowrap;
+}
 .theme-light .modal_wrapper .action_table_modal_area h3 {
   font-family: "Saira", sans-serif;
   font-weight: 500;
@@ -3384,6 +3387,9 @@ input[type=number] {
 }
 .theme-light .modal_wrapper .action_table_modal_area .close_btn svg:hover path {
   fill: #f21e1e;
+}
+.theme-dark .modal_wrapper .action_table_modal_area {
+  flex-wrap: nowrap;
 }
 .theme-dark .modal_wrapper .action_table_modal_area h3 {
   font-family: "Saira", sans-serif;
@@ -3727,4 +3733,13 @@ input[type=number] {
 }
 .theme-dark .single_select_area .select__option--is-selected {
   background: linear-gradient(65.58deg, rgba(0, 66, 255, 0.5) -11.84%, rgba(235, 0, 27, 0.5) 98.75%);
+}
+
+.theme-light .tooltip_area {
+  font-size: 14px;
+  font-weight: 500;
+}
+.theme-dark .tooltip_area {
+  font-size: 14px;
+  font-weight: 500;
 }/*# sourceMappingURL=style.css.map */

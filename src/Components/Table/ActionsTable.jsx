@@ -9,7 +9,7 @@ import AuctionsTableModal from "../Modal/AuctionsTableModal";
 import Pagination from "../Pagination";
 import AuctionData from "../../Data/AuctionData";
 import usePaginationHook from "../../Hooks/usePaginationHook";
-
+import ReactTooltip from "react-tooltip";
 function ActionsTable() {
   const {
     autionsTableData,
@@ -42,7 +42,9 @@ function ActionsTable() {
     auctionForm,
     autionsTableData
   );
-
+  useEffect(() => {
+    ReactTooltip.rebuild();
+  });
   return (
     <div className="table_wrapper">
       {isEditOpenModal && (
@@ -54,7 +56,6 @@ function ActionsTable() {
           <AuctionsTableModal btnText="Update" />
         </Modal>
       )}
-
       <div className="tabler_inner_area">
         {autionsTableData.length > 0 ? (
           <>
@@ -112,12 +113,14 @@ function ActionsTable() {
                             <button
                               type="button"
                               onClick={() => handleEditItem(item)}
+                              data-tip="Edit"
                             >
                               <FaEdit size={20} />
                             </button>
                             <button
                               type="button"
                               onClick={() => deleteAuctionsTable(item)}
+                              data-tip="Delete"
                             >
                               <AiTwotoneDelete size={20} />
                             </button>

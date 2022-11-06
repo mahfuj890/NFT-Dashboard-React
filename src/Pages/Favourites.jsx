@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useEffect, useContext } from "react";
 import useDocumentTitle from "../Hooks/useDocumentTitle";
 import SearchBox from "../Components/Form/SearchBox";
 import PageTitle from "../Components/PageTitle";
@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import AuctionsTableContenxt from "../Context/AuctionsTableContenxt";
 import usePaginationHook from "../Hooks/usePaginationHook";
 import Pagination from "../Components/Pagination";
+import ReactTooltip from "react-tooltip";
 function Favourites() {
   useDocumentTitle("Favourites");
   const { favourites, handleChangeFavourites, handleSubmitFavourites } =
@@ -27,6 +28,9 @@ function Favourites() {
     searchFucntionlity,
     favourites
   );
+  useEffect(() => {
+    ReactTooltip.rebuild();
+  });
   return (
     <section className="favourite_wrapper">
       <div className="d-flex-between">
@@ -92,7 +96,7 @@ function Favourites() {
                           </td>
                           <td>
                             <div className="actions_list">
-                              <Link to={"/"}>
+                              <Link to={"/"} data-tip="Visit">
                                 <HiLink size={20} />
                               </Link>
                             </div>
