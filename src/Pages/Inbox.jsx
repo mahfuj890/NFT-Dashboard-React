@@ -7,37 +7,37 @@ import { RiSendPlaneFill, RiMenu3Line } from "react-icons/ri";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import OutSideDetectHook from "../Hooks/OutSideDetectHook";
 import PageTitle from "../Components/PageTitle";
-
+import userImage from "../../src/assets/images/dashboard/top_actions_user.png";
 function Inbox() {
   useDocumentTitle("Inbox");
   const [messageText, setMessageText] = useState({
     id: 1,
-    userImage: "../../src/assets/images/dashboard/top_actions_user.png",
+    userImage: userImage,
     userName: "Mohammad",
     onlineStatus: true,
     stausText: "Online",
     messageText: [
       {
         id: 1,
-        userImage: "../../src/assets/images/dashboard/top_actions_user.png",
+        userImage: userImage,
         text: "Lorem ipsum dolor sit amet.",
         gridStatus: true,
       },
       {
         id: 2,
-        userImage: "../../src/assets/images/dashboard/top_actions_user.png",
+        userImage: userImage,
         text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, quis.",
         gridStatus: false,
       },
       {
         id: 3,
-        userImage: "../../src/assets/images/dashboard/top_actions_user.png",
+        userImage: userImage,
         text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, quis.",
         gridStatus: true,
       },
       {
         id: 4,
-        userImage: "../../src/assets/images/dashboard/top_actions_user.png",
+        userImage: userImage,
         text: "Lorem ipsum dolor sit amet.",
         gridStatus: false,
       },

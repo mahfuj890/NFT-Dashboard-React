@@ -1,8 +1,11 @@
+import productImg from "../../src/assets/images/product/feature_nft_img_1.png";
+import useImg from "../../src/assets/images/others/features_nft_user_img_1.png";
+
 const FeatureNftData = [
   {
     id: 1,
-    productImg: "../../src/assets/images/product/feature_nft_img_1.png",
-    useImg: "../../src/assets/images/others/features_nft_user_img_1.png",
+    productImg: productImg,
+    useImg: useImg,
     heartIcon: (
       <svg
         width="16"
@@ -27,8 +30,8 @@ const FeatureNftData = [
   },
   {
     id: 2,
-    productImg: "../../src/assets/images/product/feature_nft_img_2.png",
-    useImg: "../../src/assets/images/others/features_nft_user_img_2.png",
+    productImg: productImg,
+    useImg: useImg,
     heartIcon: (
       <svg
         width="16"
@@ -53,8 +56,8 @@ const FeatureNftData = [
   },
   {
     id: 3,
-    productImg: "../../src/assets/images/product/feature_nft_img_3.png",
-    useImg: "../../src/assets/images/others/features_nft_user_img_3.png",
+    productImg: productImg,
+    useImg: useImg,
     heartIcon: (
       <svg
         width="16"
@@ -79,8 +82,8 @@ const FeatureNftData = [
   },
   {
     id: 4,
-    productImg: "../../src/assets/images/product/feature_nft_img_1.png",
-    useImg: "../../src/assets/images/others/features_nft_user_img_1.png",
+    productImg: productImg,
+    useImg: useImg,
     heartIcon: (
       <svg
         width="16"
@@ -105,8 +108,8 @@ const FeatureNftData = [
   },
   {
     id: 5,
-    productImg: "../../src/assets/images/product/feature_nft_img_2.png",
-    useImg: "../../src/assets/images/others/features_nft_user_img_2.png",
+    productImg: productImg,
+    useImg: useImg,
     heartIcon: (
       <svg
         width="16"
@@ -131,8 +134,8 @@ const FeatureNftData = [
   },
   {
     id: 6,
-    productImg: "../../src/assets/images/product/feature_nft_img_3.png",
-    useImg: "../../src/assets/images/others/features_nft_user_img_3.png",
+    productImg: productImg,
+    useImg: useImg,
     heartIcon: (
       <svg
         width="16"
