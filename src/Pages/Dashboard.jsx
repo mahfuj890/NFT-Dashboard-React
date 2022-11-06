@@ -5,7 +5,7 @@ import WalletSection from "../Components/Section/WalletSection";
 import useDocumentTitle from "../Hooks/useDocumentTitle";
 
 function Dashboard() {
-  useDocumentTitle("Home");
+  useDocumentTitle("Dashboard");
 
   return (
     <section className="dashboard_content_wrapper">
