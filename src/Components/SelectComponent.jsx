@@ -7,6 +7,7 @@ function SelectComponent({ options, handleChange, defaultValueIndex }) {
   const [isDisabled, setIsDisabled] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isRtl, setIsRtl] = useState(false);
+
   return (
     <div className="select_wrapper">
       <Select
@@ -21,6 +22,7 @@ function SelectComponent({ options, handleChange, defaultValueIndex }) {
         name="color"
         options={options}
         onChange={handleChange}
+   
       />
     </div>
   );

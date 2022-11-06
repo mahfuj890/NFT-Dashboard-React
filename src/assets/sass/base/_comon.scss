@@ -868,6 +868,13 @@ input[type="number"] {
   display: flex;
   align-items: center;
   justify-content: center;
+  .select__input-container{
+    .select__input{
+       &:focus{
+        border: none !important;
+       }
+    }
+  }
 }
 .single_select_area {
   @include themify($themes) {

@@ -3676,6 +3676,9 @@ input[type=number] {
   align-items: center;
   justify-content: center;
 }
+.select_wrapper .select__input-container .select__input:focus {
+  border: none !important;
+}
 
 .theme-light .single_select_area {
   z-index: 40;
