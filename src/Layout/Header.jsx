@@ -16,9 +16,11 @@ import Button from "../Components/Button/Button";
 import { toast } from "react-toastify";
 import SidebarContext from "../Context/SidebarContext";
 import searchIcon from "../assets/images/icon/search_icon.svg";
+import AlertConfirm from "../Components/AlertConfirm";
 function Header() {
   const [notificationData, setNotificationData] = useState(Notification);
   const [userNotification, setUserNotification] = useState(false);
+  const [alertNotification, setAlertNotification] = useState(false);
   const [userDropdown, setUserDropdown] = useState(false);
   const { onSidebarToggle, onMobileSidebar } = useContext(SidebarContext);
   const [headerSearch, setHeaderSearch] = useState(false);
@@ -48,10 +50,14 @@ function Header() {
     toast.clearWaitingQueue();
   };
   //Delete All Notification
-  const deleteAllNotification = () => {
-    if (window.confirm("Are you sure you want to delete")) {
-      setNotificationData([]);
-    }
+  const handleActionAlert = () => {
+    setNotificationData([]);
+    toast.warning("Success All Notification Delete !", {
+      position: toast.POSITION.BOTTOM_RIGHT,
+      autoClose: 1500,
+      theme: "dark",
+    });
+    setAlertNotification(false);
   };
   //Delete Notification
   const deleteNotification = (id) => {
@@ -91,8 +97,12 @@ function Header() {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
- 
-  
+
+  //Alert Confirm
+  const handleAlert = () => {
+    setAlertNotification(false);
+  };
+
   return (
     <header className="header_wrapper">
       <div className="header_search_user_area d-flex align-items-center justify-content-between flex-wrap-wrap g-lg">
@@ -167,7 +177,7 @@ function Header() {
                       <button
                         type="button"
                         className="all_delete_btn"
-                        onClick={deleteAllNotification}
+                        onClick={() => setAlertNotification(!alertNotification)}
                       >
                         Delete All
                       </button>
@@ -222,7 +232,7 @@ function Header() {
             >
               <img src={userImage} alt="userImage" />
             </button>
-            <OutSideDetectHook outsideHooks={handleUserClose} >
+            <OutSideDetectHook outsideHooks={handleUserClose}>
               <div
                 className={`dropdwon_area user_dropdown_area ${
                   userDropdown ? "dropdownActive" : ""
@@ -282,6 +292,16 @@ function Header() {
           </li>
         </ul>
       </div>
+      <OutSideDetectHook
+        outsideHooks={handleAlert}
+        handleOverlay={alertNotification && true}
+      >
+        <AlertConfirm
+          alertActiveClass={alertNotification && "alertActive"}
+          alertNoAction={() => setAlertNotification(false)}
+          alertYesAction={handleActionAlert}
+        />
+      </OutSideDetectHook>
     </header>
   );
 }

@@ -1,3 +1,4 @@
+import AlertConfirm from "../Components/AlertConfirm";
 import FeaturesProductSection from "../Components/Section/FeaturesProductSection";
 import RecentTransactionSection from "../Components/Section/RecentTransactionSection";
 import ToActionSection from "../Components/Section/ToActionSection";

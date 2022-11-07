@@ -34,6 +34,9 @@ function OutSideDetectHook({ outsideHooks, children, handleOverlay }) {
   );
 }
 
+//Pass Props For Overlay
+// handleOverlay={alertNotification && true }
+
 OutSideDetectHook.defaultProps = {
   handleOverlay: false,
 };
