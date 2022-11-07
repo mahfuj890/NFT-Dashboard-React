@@ -91,6 +91,8 @@ function Header() {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+ 
+  
   return (
     <header className="header_wrapper">
       <div className="header_search_user_area d-flex align-items-center justify-content-between flex-wrap-wrap g-lg">
@@ -220,7 +222,7 @@ function Header() {
             >
               <img src={userImage} alt="userImage" />
             </button>
-            <OutSideDetectHook outsideHooks={handleUserClose}>
+            <OutSideDetectHook outsideHooks={handleUserClose} >
               <div
                 className={`dropdwon_area user_dropdown_area ${
                   userDropdown ? "dropdownActive" : ""

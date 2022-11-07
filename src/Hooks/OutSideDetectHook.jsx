@@ -1,12 +1,15 @@
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
-function OutSideDetectHook({ outsideHooks, children }) {
+function OutSideDetectHook({ outsideHooks, children, handleOverlay }) {
+  const [overlay, setOverlay] = useState(false);
   const innerAreaRef = useRef(null);
   const handleOutsideClick = (e) => {
     if (innerAreaRef.current && !innerAreaRef.current.contains(e.target)) {
       outsideHooks && outsideHooks();
+      console.log("innerAreaRef");
     }
   };
+
   useEffect(() => {
     document.addEventListener("click", handleOutsideClick, true);
     document.addEventListener("touchstart", handleOutsideClick, true);
@@ -19,7 +22,20 @@ function OutSideDetectHook({ outsideHooks, children }) {
   if (!children) {
     return null;
   }
-  return <div ref={innerAreaRef} style={{height:"100%"}}>{children}</div>;
+  return (
+    <>
+      <div ref={innerAreaRef} style={{ height: "100%" }}>
+        {children}
+      </div>
+      <div
+        className={`overlay ${handleOverlay ? "outside_overlay" : " "}`}
+      ></div>
+    </>
+  );
 }
+
+OutSideDetectHook.defaultProps = {
+  handleOverlay: false,
+};
 
 export default OutSideDetectHook;

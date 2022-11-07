@@ -869,11 +869,11 @@ input[type="number"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  .select__input-container{
-    .select__input{
-       &:focus{
+  .select__input-container {
+    .select__input {
+      &:focus {
         border: none !important;
-       }
+      }
     }
   }
 }
@@ -906,13 +906,15 @@ input[type="number"] {
   }
 }
 
-//Tooltip 
-.tooltip_area{
-    @include themify($themes) {
-      font-size: 14px;
-      font-weight: 500;
-
+//Tooltip
+.tooltip_area {
+  @include themify($themes) {
+    font-size: 14px;
+    font-weight: 500;
   }
+}
 
-   
+//Overlay
+.outside_overlay {
+ display: block !important;
 }

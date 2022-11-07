@@ -3742,4 +3742,8 @@ input[type=number] {
 .theme-dark .tooltip_area {
   font-size: 14px;
   font-weight: 500;
+}
+
+.outside_overlay {
+  display: block !important;
 }/*# sourceMappingURL=style.css.map */
